@@ -1157,6 +1157,10 @@ body {
     display: flex;
   }
 
+  .main-nav a.active {
+    color: var(--text);
+  }
+
   .main-nav li {
     margin: 10px 0;
   }

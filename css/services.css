@@ -122,7 +122,6 @@ body {
   display: flex;
   align-items: center;
   text-decoration: none;
- 
 }
 
 .logo h1 {
@@ -140,10 +139,9 @@ body {
   height: 100px;
   width: auto;
   vertical-align: middle;
-  
+
   /* filter: brightness(0) invert(1); */
   margin: 0 5px;
- 
 }
 
 .logo-text {
@@ -402,7 +400,6 @@ body {
     opacity: 1;
   }
 }
-
 
 /* Scroll to Top Button */
 .scroll-to-top {
@@ -823,7 +820,6 @@ body {
   margin-bottom: 10px;
 }
 
-
 .footer-col h3 {
   font-size: 1.3rem;
   margin-bottom: 25px;
@@ -962,6 +958,10 @@ body {
 
   .main-nav.active ul {
     display: flex;
+  }
+
+  .main-nav a.active {
+    color: var(--text);
   }
 
   .main-nav li {

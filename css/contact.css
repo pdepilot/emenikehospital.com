@@ -122,7 +122,6 @@ body {
   display: flex;
   align-items: center;
   text-decoration: none;
- 
 }
 
 .logo h1 {
@@ -140,10 +139,9 @@ body {
   height: 100px;
   width: auto;
   vertical-align: middle;
-  
+
   /* filter: brightness(0) invert(1); */
   margin: 0 5px;
- 
 }
 
 .logo-text {
@@ -214,7 +212,6 @@ body {
   color: var(--text);
 }
 
-
 /* Scroll to Top Button */
 .scroll-to-top {
   position: fixed;
@@ -251,10 +248,10 @@ body {
 
 /* Hero Section */
 .contact-hero {
-   background: linear-gradient(
+  background: linear-gradient(
       135deg,
       rgba(7, 177, 208, 0.85) 0%,
-    rgba(7, 177, 208, 0.7) 100%
+      rgba(7, 177, 208, 0.7) 100%
     ),
     url("/images/IMG-20251102-WA0021_edit_10053728273986.jpg");
   background-position: center;
@@ -565,7 +562,6 @@ textarea.form-control {
   margin-bottom: 10px;
 }
 
-
 .footer-col h3 {
   font-size: 1.3rem;
   margin-bottom: 25px;
@@ -703,6 +699,10 @@ textarea.form-control {
 
   .main-nav.active ul {
     display: flex;
+  }
+
+  .main-nav a.active {
+    color: var(--text);
   }
 
   .main-nav li {

@@ -37,7 +37,6 @@ body {
   padding: 0 20px;
 }
 
-
 /* Top Bar Styles */
 .topbar {
   background: var(--secondary);
@@ -123,7 +122,6 @@ body {
   display: flex;
   align-items: center;
   text-decoration: none;
- 
 }
 
 .logo h1 {
@@ -141,10 +139,9 @@ body {
   height: 100px;
   width: auto;
   vertical-align: middle;
-  
+
   /* filter: brightness(0) invert(1); */
   margin: 0 5px;
- 
 }
 
 .logo-text {
@@ -313,7 +310,6 @@ body {
   text-align: center;
   padding-top: 120px; /* Space for header */
 }
-
 
 .hero-contact-info {
   display: flex;
@@ -935,6 +931,10 @@ body {
 
   .main-nav.active ul {
     display: flex;
+  }
+
+  .main-nav a.active {
+    color: var(--text);
   }
 
   .main-nav li {

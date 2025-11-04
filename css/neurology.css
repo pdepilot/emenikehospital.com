@@ -326,7 +326,6 @@ body {
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-
 /* Neurology Services Section */
 .neurology-services {
   padding: 100px 0;
@@ -889,6 +888,10 @@ body {
 
   .main-nav.active ul {
     display: flex;
+  }
+
+  .main-nav a.active {
+    color: var(--text);
   }
 
   .main-nav li {
