@@ -708,7 +708,7 @@ body {
       rgba(7, 177, 208, 0.9) 0%,
       rgba(7, 177, 208, 0.8) 100%
     ),
-    url("https://images.unsplash.com/photo-1584467735871-8db9ac8e5e3a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80");
+    url("/images/IMG-20251102-WA0022.jpg");
   color: var(--white);
   padding: 60px 0;
   text-align: center;
@@ -964,7 +964,7 @@ body {
       rgba(7, 177, 208, 0.9) 0%,
       rgba(7, 177, 208, 0.8) 100%
     ),
-    url("https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80");
+    url("/images/IMG-20251102-WA0021_edit_10053728273986.jpg");
   background-size: cover;
   background-position: center;
   color: var(--white);
