@@ -200,7 +200,7 @@ body {
 }
 
 .btn-outline:hover {
-  background: var(--secondary);
+  background: var(--text);
   color: white;
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(42, 178, 123, 0.2);
@@ -716,12 +716,13 @@ body {
       rgba(7, 177, 208, 0.9) 0%,
       rgba(7, 177, 208, 0.8) 100%
     ),
-    url("https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80");
+    url("/images/IMG-20251102-WA0022.jpg");
   color: var(--white);
   padding: 60px 0;
   text-align: center;
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
 }
 
 .emergency-banner h2 {
@@ -974,11 +975,12 @@ body {
       rgba(7, 177, 208, 0.9) 0%,
       rgba(7, 177, 208, 0.8) 100%
     ),
-    url("https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80");
+    url("/images/IMG-20251102-WA0020.jpg");
   background-size: cover;
   background-position: center;
   color: var(--white);
   text-align: center;
+  background-attachment: fixed;
 }
 
 .cta-section h2 {
