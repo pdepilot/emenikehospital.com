@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Doctors - Doctors Hospital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/doctors.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="topbar">
+        <div class="container topbar-inner">
+            <div class="top-left">24/7 Opened</div>
+            <div class="top-right">
+                <span><i class="fas fa-envelope"></i> Info@emenikehospital.com</span>
+                <span class="phone"><i class="fas fa-phone"></i> +234 800 123 4567</span>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-inner">
+             <div class="logo">
+                <h1>
+                    <span class="logo-text">Emenike</span>
+                    <img
+                        src="images/IMG-20251102-WA0019-removebg-preview.png"
+                        alt="Emenike Hospital Logo"
+                        class="logo-image"
+                    />
+                    <span class="logo-text">Hospital</span>
+                </h1>
+            </div>
+
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="doctors.html" class="active">Doctors</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a class="btn-outline" href="book-appoint.html">Book Appointment</a></li>
+                </ul>
+            </nav>
+
+            <button class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Carousel Section -->
+    <section class="hero-carousel">
+        <div class="carousel-container">
+            <div class="carousel-slides">
+                <!-- Slide 1 -->
+                <div class="carousel-slide active" style="background-image: url('https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80')">
+                    <div class="carousel-content">
+                        <h1>Meet Our Expert Medical Team</h1>
+                        <p>Our board-certified physicians and specialists are dedicated to providing exceptional healthcare with compassion and expertise.</p>
+                        <ul class="breadcrumb">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="doctors.html">Our Doctors</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Slide 2 -->
+                <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')">
+                    <div class="carousel-content">
+                        <h1>Specialized Medical Expertise</h1>
+                        <p>Our doctors bring years of experience and specialized training across various medical disciplines.</p>
+                        <ul class="breadcrumb">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="doctors.html">Our Doctors</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Slide 3 -->
+                <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')">
+                    <div class="carousel-content">
+                        <h1>Compassionate Patient Care</h1>
+                        <p>We believe in treating patients with empathy, respect, and personalized attention.</p>
+                        <ul class="breadcrumb">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="doctors.html">Our Doctors</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Slide 4 -->
+                <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1551076805-e1869033e561?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')">
+                    <div class="carousel-content">
+                        <h1>Innovative Medical Leadership</h1>
+                        <p>Our medical directors and department heads lead with vision and commitment to excellence.</p>
+                        <ul class="breadcrumb">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="doctors.html">Our Doctors</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Carousel Navigation -->
+            <div class="carousel-nav">
+                <button id="prevSlide" aria-label="Previous slide">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button id="nextSlide" aria-label="Next slide">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            
+            <!-- Carousel Controls -->
+            <div class="carousel-controls">
+                <div class="carousel-dots">
+                    <span class="carousel-dot active" data-slide="0"></span>
+                    <span class="carousel-dot" data-slide="1"></span>
+                    <span class="carousel-dot" data-slide="2"></span>
+                    <span class="carousel-dot" data-slide="3"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctors Section -->
+    <section class="doctors-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Medical Specialists</h2>
+                <p>Meet our team of highly qualified and experienced medical professionals dedicated to your health and well-being.</p>
+            </div>
+            
+            <div class="doctors-grid">
+                <div class="doctor-card">
+                    <div class="doctor-image">
+                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Dr. Sarah Johnson">
+                        <div class="doctor-overlay">
+                            <div class="doctor-specialty">Cardiologist</div>
+                            <div class="doctor-experience">15+ Years Experience</div>
+                        </div>
+                    </div>
+                    <div class="doctor-info">
+                        <h3>Dr. Sarah Johnson</h3>
+                        <p>Specializes in interventional cardiology and heart disease prevention with extensive research background.</p>
+                        <div class="doctor-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="doctor-card">
+                    <div class="doctor-image">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Dr. Michael Chen">
+                        <div class="doctor-overlay">
+                            <div class="doctor-specialty">Neurologist</div>
+                            <div class="doctor-experience">12+ Years Experience</div>
+                        </div>
+                    </div>
+                    <div class="doctor-info">
+                        <h3>Dr. Michael Chen</h3>
+                        <p>Expert in neurological disorders with specialization in stroke treatment and brain health.</p>
+                        <div class="doctor-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="doctor-card">
+                    <div class="doctor-image">
+                        <img src="https://images.unsplash.com/photo-1594824947933-d0501ba2fe65?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Dr. Emily Rodriguez">
+                        <div class="doctor-overlay">
+                            <div class="doctor-specialty">Pediatrician</div>
+                            <div class="doctor-experience">10+ Years Experience</div>
+                        </div>
+                    </div>
+                    <div class="doctor-info">
+                        <h3>Dr. Emily Rodriguez</h3>
+                        <p>Specialized in child healthcare with focus on preventive medicine and developmental pediatrics.</p>
+                        <div class="doctor-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="doctor-card">
+                    <div class="doctor-image">
+                        <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Dr. James Wilson">
+                        <div class="doctor-overlay">
+                            <div class="doctor-specialty">Orthopedic Surgeon</div>
+                            <div class="doctor-experience">14+ Years Experience</div>
+                        </div>
+                    </div>
+                    <div class="doctor-info">
+                        <h3>Dr. James Wilson</h3>
+                        <p>Expert in joint replacement, sports medicine, and minimally invasive orthopedic procedures.</p>
+                        <div class="doctor-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="doctor-card">
+                    <div class="doctor-image">
+                        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80" alt="Dr. Amina Bello">
+                        <div class="doctor-overlay">
+                            <div class="doctor-specialty">Oncologist</div>
+                            <div class="doctor-experience">16+ Years Experience</div>
+                        </div>
+                    </div>
+                    <div class="doctor-info">
+                        <h3>Dr. Amina Bello</h3>
+                        <p>Specializes in cancer treatment with expertise in chemotherapy and targeted therapy approaches.</p>
+                        <div class="doctor-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="doctor-card">
+                    <div class="doctor-image">
+                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Dr. Robert Kim">
+                        <div class="doctor-overlay">
+                            <div class="doctor-specialty">Dermatologist</div>
+                            <div class="doctor-experience">11+ Years Experience</div>
+                        </div>
+                    </div>
+                    <div class="doctor-info">
+                        <h3>Dr. Robert Kim</h3>
+                        <p>Expert in skin conditions, cosmetic dermatology, and advanced laser treatments.</p>
+                        <div class="doctor-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specialties Section -->
+    <section class="specialties-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Medical Specialties</h2>
+                <p>Our doctors cover a wide range of medical specialties to provide comprehensive healthcare services.</p>
+            </div>
+            
+            <div class="specialties-grid">
+                <div class="specialty-card">
+                    <div class="specialty-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Cardiology</h3>
+                    <p>Heart disease prevention, diagnosis, and treatment with advanced cardiac care.</p>
+                    <a href="#" class="specialty-link">View Doctors <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="specialty-card">
+                    <div class="specialty-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Neurology</h3>
+                    <p>Treatment of nervous system disorders, strokes, and neurological conditions.</p>
+                    <a href="#" class="specialty-link">View Doctors <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="specialty-card">
+                    <div class="specialty-icon">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <h3>Pediatrics</h3>
+                    <p>Comprehensive healthcare for infants, children, and adolescents.</p>
+                    <a href="#" class="specialty-link">View Doctors <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="specialty-card">
+                    <div class="specialty-icon">
+                        <i class="fas fa-bone"></i>
+                    </div>
+                    <h3>Orthopedics</h3>
+                    <p>Musculoskeletal care, joint replacement, and sports medicine.</p>
+                    <a href="#" class="specialty-link">View Doctors <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="specialty-card">
+                    <div class="specialty-icon">
+                        <i class="fas fa-lungs"></i>
+                    </div>
+                    <h3>Pulmonology</h3>
+                    <p>Respiratory system disorders, asthma, COPD, and sleep medicine.</p>
+                    <a href="#" class="specialty-link">View Doctors <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="specialty-card">
+                    <div class="specialty-icon">
+                        <i class="fas fa-dna"></i>
+                    </div>
+                    <h3>Oncology</h3>
+                    <p>Cancer diagnosis, treatment, and comprehensive cancer care.</p>
+                    <a href="#" class="specialty-link">View Doctors <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="specialty-card">
+                    <div class="specialty-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Ophthalmology</h3>
+                    <p>Eye care, vision correction, and treatment of eye diseases.</p>
+                    <a href="#" class="specialty-link">View Doctors <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="specialty-card">
+                    <div class="specialty-icon">
+                        <i class="fas fa-tooth"></i>
+                    </div>
+                    <h3>Dentistry</h3>
+                    <p>Oral health, dental procedures, and cosmetic dentistry.</p>
+                    <a href="#" class="specialty-link">View Doctors <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Team -->
+    <section class="leadership-section">
+        <div class="container">
+            <div class="leadership-grid">
+                <div class="leadership-content">
+                    <h2>Medical Leadership</h2>
+                    <p>Our medical directors and department heads provide strategic leadership and ensure the highest standards of patient care across all specialties.</p>
+                    
+                    <ul class="leadership-list">
+                        <li><i class="fas fa-check-circle"></i> Board-certified physicians with extensive experience</li>
+                        <li><i class="fas fa-check-circle"></i> Commitment to medical excellence and innovation</li>
+                        <li><i class="fas fa-check-circle"></i> Ongoing medical education and training programs</li>
+                        <li><i class="fas fa-check-circle"></i> Collaborative approach to patient care</li>
+                        <li><i class="fas fa-check-circle"></i> Research and clinical trial participation</li>
+                    </ul>
+                    
+                    <a href="#" class="btn-outline">Meet Our Leadership</a>
+                </div>
+                
+                <div class="leadership-image">
+                    <img src="/images/undefined.jpeg" alt="Medical Leadership Team">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Schedule a Consultation</h2>
+            <p>Book an appointment with one of our specialists and experience personalized medical care from our expert team.</p>
+            <a href="appointment.html" class="btn-primary">Book an Appointment</a>
+        </div>
+    </section>
+
+     <!-- NEW: Footer with Logo -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img
+                            src="/images/IMG-20251102-WA0019-removebg-preview.png"
+                            alt="Emenike Hospital Logo"
+                            class="footer-logo-image"
+                        />
+                        <span class="footer-logo-text">Emenike Hospital</span>
+                    </div>
+                    <p>Emenike Hospital: Where excellence, compassion, and innovation redefine healthcare. Our cutting-edge facility offers personalized, top-tier care across various specialties, ensuring every patient receives exceptional treatment.</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="doctors.html">Our Doctors</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Cardiology</a></li>
+                        <li><a href="#">Neurology</a></li>
+                        <li><a href="#">Pediatrics</a></li>
+                        <li><a href="#">Orthopedics</a></li>
+                        <li><a href="#">Emergency Care</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Plot 123 Naze Roundabout, Owerri</p>
+                    <p><i class="fas fa-phone"></i> +234 800 123 4567</p>
+                    <p><i class="fas fa-envelope"></i> info@emenikehospital.com</p>
+                    <p><i class="fas fa-clock"></i> 24/7 Opened</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> Emenike Hospital. All Rights Reserved | Developed By ERIBS tech</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+
+    <script src="javascript/doctor.js"></script>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Your Test Results | Emenike Hospital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/test-result.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="topbar">
+        <div class="container topbar-inner">
+            <div class="top-left">24/7 Opened</div>
+            <div class="top-right">
+                <span><i class="fas fa-envelope"></i> info@emenikehospital.com</span>
+                <span class="phone"><i class="fas fa-phone"></i> +234 800 123 4567</span>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-inner">
+           <div class="logo">
+                <h1>
+                    <span class="logo-text">Emenike</span>
+                    <img
+                        src="images/IMG-20251102-WA0019-removebg-preview.png"
+                        alt="Emenike Hospital Logo"
+                        class="logo-image"
+                    />
+                    <span class="logo-text">Hospital</span>
+                </h1>
+            </div>
+
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="index.html" >Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="doctors.html">Doctors</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.html" class="active">Track-Results</a></li>
+                    <li><a class="btn-outline" href="book-appoint.html">Book Appointment</a></li>
+                </ul>
+            </nav>
+
+            <button class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="tracking-hero">
+        <div class="container tracking-hero-content">
+            <h1>Track Your Test Results</h1>
+            <p>Quickly and securely check the status of your medical tests with our easy-to-use tracking system</p>
+        </div>
+    </section>
+
+    <!-- Tracking Section -->
+    <section class="tracking-section">
+        <div class="container">
+            <div class="tracking-container">
+                <div class="tracking-header">
+                    <h2>Enter Your Tracking Number</h2>
+                    <p>Please enter the tracking number provided to you during your visit</p>
+                </div>
+                
+                <div class="tracking-form">
+                    <div class="form-group">
+                        <label for="tracking-number">Tracking Number</label>
+                        <input type="text" id="tracking-number" class="form-control" placeholder="e.g. EH-2023-58742">
+                    </div>
+                    
+                    <button id="track-results" class="btn-primary">
+                        <i class="fas fa-search"></i> Check Results Status
+                    </button>
+                </div>
+                
+                <!-- Loading Animation -->
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <p>Searching for your results...</p>
+                </div>
+                
+                <!-- Results Section -->
+                <div class="results-section" id="results-section">
+                    <div class="results-header">
+                        <h3>Your Test Results</h3>
+                        <div class="status-badge status-ready" id="status-badge">Ready</div>
+                        <p id="result-message">Your test results are ready for review</p>
+                    </div>
+                    
+                    <div class="results-details">
+                        <div class="detail-row">
+                            <div class="detail-label">Patient Name:</div>
+                            <div class="detail-value" id="patient-name">John Doe</div>
+                        </div>
+                        <div class="detail-row">
+                            <div class="detail-label">Tracking Number:</div>
+                            <div class="detail-value" id="result-tracking-number">EH-2023-58742</div>
+                        </div>
+                        <div class="detail-row">
+                            <div class="detail-label">Test Type:</div>
+                            <div class="detail-value" id="test-type">Complete Blood Count</div>
+                        </div>
+                        <div class="detail-row">
+                            <div class="detail-label">Collection Date:</div>
+                            <div class="detail-value" id="collection-date">October 15, 2023</div>
+                        </div>
+                        <div class="detail-row">
+                            <div class="detail-label">Completed Date:</div>
+                            <div class="detail-value" id="completed-date">October 17, 2023</div>
+                        </div>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <a href="#" class="btn-secondary" id="download-btn">
+                            <i class="fas fa-download"></i> Download Results
+                        </a>
+                        <a href="contact.html" class="btn-secondary">
+                            <i class="fas fa-comments"></i> Contact Doctor
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Track With Us</h2>
+                <p>Our patient portal provides secure and convenient access to your medical information</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Secure & Private</h3>
+                    <p>Your medical information is protected with bank-level security and strict privacy controls.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Instant Results</h3>
+                    <p>Get notified as soon as your test results are available, often before your doctor contacts you.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-history"></i>
+                    </div>
+                    <h3>Historical Data</h3>
+                    <p>Access your complete test history to track changes and monitor your health over time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- NEW: Footer with Logo -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img
+                            src="images/IMG-20251102-WA0019-removebg-preview.png"
+                            alt="Emenike Hospital Logo"
+                            class="footer-logo-image"
+                        />
+                        <span class="footer-logo-text">Emenike Hospital</span>
+                    </div>
+                    <p>Emenike Hospital: Where excellence, compassion, and innovation redefine healthcare. Our cutting-edge facility offers personalized, top-tier care across various specialties, ensuring every patient receives exceptional treatment.</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="doctors.html">Our Doctors</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Cardiology</a></li>
+                        <li><a href="#">Neurology</a></li>
+                        <li><a href="#">Pediatrics</a></li>
+                        <li><a href="#">Orthopedics</a></li>
+                        <li><a href="#">Emergency Care</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Plot 123 Naze Roundabout, Owerri</p>
+                    <p><i class="fas fa-phone"></i> +234 800 123 4567</p>
+                    <p><i class="fas fa-envelope"></i> info@emenikehospital.com</p>
+                    <p><i class="fas fa-clock"></i> 24/7 Opened</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> Emenike Hospital. All Rights Reserved | Developed By ERIBS tech</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+
+    <script src="javascript/test-result.js"></script>
+</body>
+</html>

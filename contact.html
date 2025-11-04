@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Doctors Hospital</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/contact.css" />
+  </head>
+  <body>
+    <!-- Top Bar -->
+    <div class="topbar">
+      <div class="container topbar-inner">
+        <div class="top-left">24/7 Opened</div>
+        <div class="top-right">
+          <span><i class="fas fa-envelope"></i> info@emenikehospital.com</span>
+          <span class="phone"
+            ><i class="fas fa-phone"></i> +234 800 123 4567</span
+          >
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" aria-label="LinkedIn"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="logo">
+          <h1>
+            <span class="logo-text">Emenike</span>
+            <img
+              src="images/IMG-20251102-WA0019-removebg-preview.png"
+              alt="Emenike Hospital Logo"
+              class="logo-image"
+            />
+            <span class="logo-text">Hospital</span>
+          </h1>
+        </div>
+
+        <nav class="main-nav" id="mainNav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="doctors.html">Doctors</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+            <li><a href="contact.html">Track-Results</a></li>
+            <li>
+              <a class="btn-outline" href="book-appoint.html"
+                >Book Appointment</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <button class="nav-toggle" id="navToggle">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="contact-hero">
+      <div class="container">
+        <h1>Get In Touch With Us</h1>
+        <p>
+          We're here to answer your questions and provide the healthcare support
+          you need. Reach out to us through any of the channels below.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Contact Us</h2>
+          <p>
+            We're always ready to assist you with your healthcare needs. Send us
+            a message or visit our facility.
+          </p>
+        </div>
+
+        <div class="contact-container">
+          <!-- Contact Form -->
+          <div class="contact-form">
+            <form id="contactForm">
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  class="form-control"
+                  placeholder="Enter your full name"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input
+                  type="email"
+                  id="email"
+                  class="form-control"
+                  placeholder="Enter your email address"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  class="form-control"
+                  placeholder="Enter your phone number"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input
+                  type="text"
+                  id="subject"
+                  class="form-control"
+                  placeholder="What is this regarding?"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  class="form-control"
+                  placeholder="Tell us how we can help you..."
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn-primary">
+                <i class="fas fa-paper-plane"></i> Send Message
+              </button>
+            </form>
+          </div>
+
+          <!-- Contact Information -->
+          <div class="contact-info">
+            <div class="info-card">
+              <div class="info-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="info-content">
+                <h3>Our Location</h3>
+                <p>Plot 123 Naze Roundabout,</p>
+                <p>Imo State, Owerri 100001</p>
+                <p>Nigeria</p>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <div class="info-content">
+                <h3>Phone Numbers</h3>
+                <p>Main: +234 800 123 4567</p>
+                <p>Emergency: +234 800 987 6543</p>
+                <p>Appointments: +234 800 555 7890</p>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="info-content">
+                <h3>Email Addresses</h3>
+                <p>General: info@doctorshospital.com</p>
+                <p>Appointments: appointments@doctorshospital.com</p>
+                <p>Emergency: emergency@doctorshospital.com</p>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="info-content">
+                <h3>Working Hours</h3>
+                <p>Monday - Sunday: 24/7</p>
+                <p>Emergency: 24/7</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Find Us</h2>
+          <p>
+            Visit our state-of-the-art medical facility located in the heart of
+            the city.
+          </p>
+        </div>
+
+        <div class="map-container">
+          <div class="map-placeholder">
+            <div>
+              <i
+                class="fas fa-map-marked-alt"
+                style="font-size: 3rem; margin-bottom: 20px"
+              ></i>
+              <p>Interactive Map Location</p>
+              <p>
+                <i class="fas fa-map-marker-alt"></i> Plot 123 Naze Roundabout,
+                Owerri
+              </p>
+              <p><i class="fas fa-phone"></i> +234 800 123 4567</p>
+              <p><i class="fas fa-envelope"></i> info@emenikehospital.com</p>
+              <p><i class="fas fa-clock"></i> 24/7 Opened</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Frequently Asked Questions</h2>
+          <p>
+            Find quick answers to common questions about our services and
+            facilities.
+          </p>
+        </div>
+
+        <div class="faq-container">
+          <div class="faq-item">
+            <div class="faq-question">
+              How do I book an appointment?
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                You can book an appointment by calling our appointment desk at
+                +234 800 555 7890, using our online booking system on our
+                website, or visiting our facility in person. Our staff will
+                assist you in scheduling a convenient time with the appropriate
+                specialist.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              What should I bring to my first appointment?
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                For your first appointment, please bring a valid ID, your health
+                insurance card (if applicable), any previous medical records or
+                test results, a list of current medications, and a form of
+                payment. Arriving 15 minutes early will help ensure a smooth
+                registration process.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              Do you accept health insurance?
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Yes, we accept most major health insurance providers. Please
+                contact our billing department at +234 800 123 4567 ext. 2 to
+                verify if your specific insurance plan is accepted. We also
+                offer flexible payment plans for patients without insurance
+                coverage.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              What are your emergency services like?
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Our emergency department is open 24/7 and staffed with
+                experienced emergency physicians, nurses, and specialists. We
+                have state-of-the-art equipment for diagnostics and treatment.
+                In case of emergency, please call +234 800 987 6543 or come
+                directly to our emergency entrance.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              Can I get a second opinion from your specialists?
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Absolutely. We encourage patients to seek second opinions when
+                facing significant medical decisions. Our specialists are
+                available for consultations and will thoroughly review your
+                medical history, test results, and provide their expert opinion
+                on your condition and treatment options.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEW: Footer with Logo -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-col">
+            <div class="footer-logo">
+              <img
+                src="/images/IMG-20251102-WA0019-removebg-preview.png"
+                alt="Emenike Hospital Logo"
+                class="footer-logo-image"
+              />
+              <span class="footer-logo-text">Emenike Hospital</span>
+            </div>
+            <p>
+              Emenike Hospital: Where excellence, compassion, and innovation
+              redefine healthcare. Our cutting-edge facility offers
+              personalized, top-tier care across various specialties, ensuring
+              every patient receives exceptional treatment.
+            </p>
+            <div class="social-icons">
+              <a href="#" aria-label="Facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" aria-label="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" aria-label="LinkedIn"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a href="#" aria-label="YouTube"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="doctors.html">Our Doctors</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Our Services</h3>
+            <ul class="footer-links">
+              <li><a href="#">Cardiology</a></li>
+              <li><a href="#">Neurology</a></li>
+              <li><a href="#">Pediatrics</a></li>
+              <li><a href="#">Orthopedics</a></li>
+              <li><a href="#">Emergency Care</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Contact Info</h3>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> Plot 123 Naze Roundabout,
+              Owerri
+            </p>
+            <p><i class="fas fa-phone"></i> +234 800 123 4567</p>
+            <p><i class="fas fa-envelope"></i> info@emenikehospital.com</p>
+            <p><i class="fas fa-clock"></i> 24/7 Opened</p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            &copy; <span id="year"></span> Emenike Hospital. All Rights Reserved
+            | Developed By ERIBS tech
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="javascript/contact.js"></script>
+  </body>
+</html>

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment - Doctors Hospital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/book-appoint.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="topbar">
+        <div class="container topbar-inner">
+            <div class="top-left">24/7 Opened</div>
+            <div class="top-right">
+                <span><i class="fas fa-envelope"></i> info@emenikehospital.com</span>
+                <span class="phone"><i class="fas fa-phone"></i> +234 800 123 4567</span>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-inner">
+           <div class="logo">
+                <h1>
+                    <span class="logo-text">Emenike</span>
+                    <img
+                        src="images/IMG-20251102-WA0019-removebg-preview.png"
+                        alt="Emenike Hospital Logo"
+                        class="logo-image"
+                    />
+                    <span class="logo-text">Hospital</span>
+                </h1>
+            </div>
+
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="index.html" >Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="doctors.html">Doctors</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.html">Track-Results</a></li>
+                    <li><a class="btn-outline" href="book-appoint.html" class="active">Book Appointment</a></li>
+                </ul>
+            </nav>
+
+            <button class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="appointment-hero">
+        <div class="container">
+            <h1>Book Your Appointment</h1>
+            <p>Schedule your visit with our expert medical team in just a few simple steps. Your health journey starts here.</p>
+        </div>
+    </section>
+
+    <!-- Appointment Section -->
+    <section class="appointment-section">
+        <div class="container">
+            <div class="appointment-container">
+                <!-- Appointment Steps -->
+                <div class="appointment-steps">
+                    <div class="step-indicator">
+                        <div class="step active" data-step="1">
+                            <div class="step-number">1</div>
+                            <div class="step-label">Personal Info</div>
+                        </div>
+                        <div class="step" data-step="2">
+                            <div class="step-number">2</div>
+                            <div class="step-label">Select Doctor</div>
+                        </div>
+                        <div class="step" data-step="3">
+                            <div class="step-number">3</div>
+                            <div class="step-label">Date & Time</div>
+                        </div>
+                        <div class="step" data-step="4">
+                            <div class="step-number">4</div>
+                            <div class="step-label">Confirmation</div>
+                        </div>
+                    </div>
+
+                    <div class="appointment-summary">
+                        <h3 class="summary-title"><i class="fas fa-calendar-check"></i> Appointment Summary</h3>
+                        <div class="summary-item">
+                            <span class="summary-label">Service:</span>
+                            <span class="summary-value" id="summary-service">Not selected</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Doctor:</span>
+                            <span class="summary-value" id="summary-doctor">Not selected</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Date & Time:</span>
+                            <span class="summary-value" id="summary-datetime">Not selected</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Patient:</span>
+                            <span class="summary-value" id="summary-patient">-</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Appointment Form -->
+                <div class="appointment-form-container">
+                    <!-- Step 1: Personal Information -->
+                    <div class="form-step active" id="step-1">
+                        <h2 class="step-title">Personal Information</h2>
+                        <p class="step-description">Please provide your basic information to get started.</p>
+                        
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="firstName" class="form-label">First Name</label>
+                                <input type="text" id="firstName" class="form-control" placeholder="Enter your first name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="lastName" class="form-label">Last Name</label>
+                                <input type="text" id="lastName" class="form-control" placeholder="Enter your last name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" id="email" class="form-control" placeholder="Enter your email address" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone" class="form-label">Phone Number</label>
+                                <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="dob" class="form-label">Date of Birth</label>
+                                <input type="date" id="dob" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="gender" class="form-label">Gender</label>
+                                <div class="select-wrapper">
+                                    <select id="gender" class="form-control" required>
+                                        <option value="">Select gender</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group full-width">
+                                <label for="address" class="form-label">Address</label>
+                                <textarea id="address" class="form-control" placeholder="Enter your full address"></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="form-navigation">
+                            <button class="btn-next" id="next-1">Next <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Select Doctor & Service -->
+                    <div class="form-step" id="step-2">
+                        <h2 class="step-title">Select Doctor & Service</h2>
+                        <p class="step-description">Choose the medical service and specialist you'd like to consult with.</p>
+                        
+                        <div class="form-group">
+                            <label for="service" class="form-label">Medical Service</label>
+                            <div class="select-wrapper">
+                                <select id="service" class="form-control" required>
+                                    <option value="">Select a service</option>
+                                    <option value="cardiology">Cardiology</option>
+                                    <option value="neurology">Neurology</option>
+                                    <option value="pediatrics">Pediatrics</option>
+                                    <option value="orthopedics">Orthopedics</option>
+                                    <option value="dental">Dental Care</option>
+                                    <option value="ophthalmology">Ophthalmology</option>
+                                    <option value="dermatology">Dermatology</option>
+                                    <option value="general">General Consultation</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Select Doctor</label>
+                            <div class="doctor-selection" id="doctor-selection">
+                                <!-- Doctors will be populated by JavaScript -->
+                            </div>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="symptoms" class="form-label">Symptoms / Reason for Visit</label>
+                            <textarea id="symptoms" class="form-control" placeholder="Please describe your symptoms or reason for the appointment"></textarea>
+                        </div>
+                        
+                        <div class="form-navigation">
+                            <button class="btn-prev" id="prev-2"><i class="fas fa-arrow-left"></i> Previous</button>
+                            <button class="btn-next" id="next-2">Next <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Date & Time -->
+                    <div class="form-step" id="step-3">
+                        <h2 class="step-title">Select Date & Time</h2>
+                        <p class="step-description">Choose an available time slot for your appointment.</p>
+                        
+                        <div class="form-group">
+                            <label for="appointment-date" class="form-label">Preferred Date</label>
+                            <input type="date" id="appointment-date" class="form-control" min="" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Available Time Slots</label>
+                            <div class="time-slots" id="time-slots">
+                                <!-- Time slots will be populated by JavaScript -->
+                            </div>
+                        </div>
+                        
+                        <div class="form-navigation">
+                            <button class="btn-prev" id="prev-3"><i class="fas fa-arrow-left"></i> Previous</button>
+                            <button class="btn-next" id="next-3">Next <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Confirmation -->
+                    <div class="form-step" id="step-4">
+                        <div class="confirmation-step">
+                            <div class="confirmation-icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <h2 class="confirmation-title">Appointment Confirmed!</h2>
+                            <p class="confirmation-message">Your appointment has been successfully scheduled. You will receive a confirmation email shortly.</p>
+                            
+                            <div class="appointment-details">
+                                <h3 class="summary-title"><i class="fas fa-calendar-alt"></i> Appointment Details</h3>
+                                <div class="summary-item">
+                                    <span class="summary-label">Appointment ID:</span>
+                                    <span class="summary-value" id="confirmation-id">AP-2023-001</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span class="summary-label">Patient Name:</span>
+                                    <span class="summary-value" id="confirmation-name">-</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span class="summary-label">Service:</span>
+                                    <span class="summary-value" id="confirmation-service">-</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span class="summary-label">Doctor:</span>
+                                    <span class="summary-value" id="confirmation-doctor">-</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span class="summary-label">Date & Time:</span>
+                                    <span class="summary-value" id="confirmation-datetime">-</span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-navigation">
+                                <button class="btn-prev" id="prev-4"><i class="fas fa-arrow-left"></i> Previous</button>
+                                <a href="index.html" class="btn-submit">Back to Home <i class="fas fa-home"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="feature-title">Quick Booking</h3>
+                    <p class="feature-description">Book your appointment in just a few clicks with our streamlined process.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3 class="feature-title">Expert Doctors</h3>
+                    <p class="feature-description">Choose from our team of board-certified specialists and doctors.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h3 class="feature-title">Reminder Alerts</h3>
+                    <p class="feature-description">Get SMS and email reminders before your appointment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Footer with Logo -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img
+                            src="/images/IMG-20251102-WA0019-removebg-preview.png"
+                            alt="Emenike Hospital Logo"
+                            class="footer-logo-image"
+                        />
+                        <span class="footer-logo-text">Emenike Hospital</span>
+                    </div>
+                    <p>Emenike Hospital: Where excellence, compassion, and innovation redefine healthcare. Our cutting-edge facility offers personalized, top-tier care across various specialties, ensuring every patient receives exceptional treatment.</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="doctors.html">Our Doctors</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Cardiology</a></li>
+                        <li><a href="#">Neurology</a></li>
+                        <li><a href="#">Pediatrics</a></li>
+                        <li><a href="#">Orthopedics</a></li>
+                        <li><a href="#">Emergency Care</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Plot 123 Naze Roundabout, Owerri</p>
+                    <p><i class="fas fa-phone"></i> +234 800 123 4567</p>
+                    <p><i class="fas fa-envelope"></i> info@emenikehospital.com</p>
+                    <p><i class="fas fa-clock"></i> 24/7 Opened</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> Emenike Hospital. All Rights Reserved | Developed By ERIBS tech</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+
+    <script src="javascript/book-appoint.js"></script>
+</body>
+</html>
