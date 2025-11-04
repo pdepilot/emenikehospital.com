@@ -701,6 +701,10 @@ textarea.form-control {
     display: flex;
   }
 
+  .main-nav a:hover {
+    color: var(--white);
+  }
+
   .main-nav a.active {
     color: var(--text);
   }

@@ -962,6 +962,10 @@ body {
     color: var(--text);
   }
 
+  .main-nav a:hover {
+    color: var(--white);
+  }
+
   .main-nav li {
     margin: 10px 0;
   }

@@ -757,6 +757,10 @@ body {
     margin: 10px 0;
   }
 
+  .main-nav a:hover {
+    color: var(--white);
+  }
+
   .topbar-inner {
     flex-direction: column;
     gap: 8px;

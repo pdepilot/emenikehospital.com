@@ -959,6 +959,9 @@ body {
   .main-nav.active ul {
     display: flex;
   }
+  .main-nav a:hover {
+    color: var(--white);
+  }
 
   .main-nav a.active {
     color: var(--text);
