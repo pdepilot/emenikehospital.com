@@ -1,7 +1,15 @@
+/* CSS Reset and Base Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
 }
 
 :root {
@@ -13,7 +21,7 @@
   --text: #333;
   --text-light: #666;
   --white: #ffffff;
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   --transition: all 0.3s ease;
   --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
   --neuro-gradient: linear-gradient(135deg, #8e44ad 0%, #6c3483 100%);
@@ -21,17 +29,18 @@
 
 body {
   font-family: "Inter", sans-serif;
-  line-height: 1.6;
+  line-height: 1.5;
   color: var(--text);
   background-color: #f8fafc;
   overflow-x: hidden;
+  font-size: 16px;
 }
 
 .container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 15px;
 }
 
 /* Top Bar Styles */
@@ -47,6 +56,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .top-left {
@@ -57,7 +67,8 @@ body {
 .top-right {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
 .top-right span {
@@ -112,7 +123,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1px 0;
+  padding: 10px 0;
 }
 
 .logo {
@@ -122,7 +133,7 @@ body {
 }
 
 .logo h1 {
-  font-size: 2.2rem;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
   font-weight: 700;
   color: var(--white);
   display: flex;
@@ -133,7 +144,7 @@ body {
 }
 
 .logo-image {
-  height: 100px;
+  height: clamp(60px, 10vw, 100px);
   width: auto;
   vertical-align: middle;
   margin: 0 5px;
@@ -147,10 +158,11 @@ body {
 .main-nav ul {
   display: flex;
   list-style: none;
+  flex-wrap: wrap;
 }
 
 .main-nav li {
-  margin-left: 25px;
+  margin-left: 15px;
 }
 
 .main-nav a {
@@ -159,6 +171,7 @@ body {
   font-weight: 600;
   transition: color 0.3s;
   position: relative;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
 }
 
 .main-nav a:hover {
@@ -183,12 +196,13 @@ body {
   background: transparent;
   border: 2px solid var(--secondary);
   color: var(--secondary);
-  padding: 10px 25px;
+  padding: 8px 20px;
   border-radius: 30px;
   font-weight: 700;
   transition: all 0.3s;
   text-decoration: none;
   display: inline-block;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
 }
 
 .btn-outline:hover {
@@ -206,15 +220,15 @@ body {
   cursor: pointer;
   color: var(--text);
 }
-
-/* Neurology Hero Section */
+/* Neurology Hero Section - Mobile First */
 .neurology-hero {
   background: var(--secondary);
   color: var(--white);
-  padding: 100px 0;
+  padding: 60px 0;
   text-align: center;
   position: relative;
   overflow: hidden;
+  width: 100%;
 }
 
 .neurology-hero::before {
@@ -224,7 +238,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80")
+  background: url("https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80")
     center/cover no-repeat;
   opacity: 0.15;
   z-index: 1;
@@ -234,118 +248,144 @@ body {
 .neurology-hero-content {
   position: relative;
   z-index: 2;
+  width: 100%;
 }
 
 .neurology-hero h1 {
-  font-size: 3.5rem;
-  margin-bottom: 20px;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  line-height: 1.3;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .neurology-hero p {
-  font-size: 1.3rem;
-  max-width: 700px;
-  margin: 0 auto 30px;
+  font-size: 1rem;
+  max-width: 100%;
+  margin: 0 auto 25px;
   opacity: 0.9;
+  line-height: 1.5;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .hero-buttons {
   display: flex;
-  gap: 15px;
-  justify-content: center;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  width: 100%;
 }
 
 .btn-primary {
   background: var(--white);
   color: var(--secondary);
-  padding: 12px 30px;
+  padding: 12px 25px;
   border-radius: 30px;
   font-weight: 700;
   text-decoration: none;
   display: inline-block;
   transition: var(--transition);
   white-space: nowrap;
+  font-size: 0.95rem;
+  width: 100%;
+  max-width: 280px;
+  text-align: center;
 }
 
 .btn-primary:hover {
   background: var(--light);
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 
 .btn-secondary {
   background: transparent;
   border: 2px solid var(--white);
   color: var(--white);
-  padding: 12px 30px;
+  padding: 12px 25px;
   border-radius: 30px;
   font-weight: 700;
   text-decoration: none;
   display: inline-block;
   transition: var(--transition);
   white-space: nowrap;
+  font-size: 0.95rem;
+  width: 100%;
+  max-width: 280px;
+  text-align: center;
 }
 
 .btn-secondary:hover {
   background: var(--white);
-  color: var(--text);
+  color: var(--secondary);
   transform: translateY(-3px);
 }
 
-
-/* Neurology Services Section */
+/* Neurology Services Section - Mobile First */
 .neurology-services {
-  padding: 100px 0;
+  padding: 60px 0;
   background: var(--white);
+  width: 100%;
+  overflow: hidden;
 }
 
 .section-header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   position: relative;
+  width: 100%;
 }
 
 .section-header h2 {
-  font-size: 2.5rem;
+  font-size: 1.8rem;
   color: var(--primary);
-  margin-bottom: 15px;
+  margin-bottom: 12px;
   position: relative;
   display: inline-block;
+  line-height: 1.3;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .section-header h2::after {
   content: "";
   position: absolute;
-  bottom: -10px;
+  bottom: -8px;
   left: 50%;
   transform: translateX(-50%);
-  width: 80px;
-  height: 4px;
+  width: 60px;
+  height: 3px;
   background: var(--secondary);
   border-radius: 2px;
 }
 
 .section-header p {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--text-light);
-  max-width: 700px;
+  max-width: 100%;
   margin: 0 auto;
+  line-height: 1.5;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  width: 100%;
 }
 
 .service-card {
   background: var(--white);
-  border-radius: 15px;
+  border-radius: 12px;
   overflow: hidden;
   box-shadow: var(--shadow);
   transition: var(--transition);
   position: relative;
+  width: 100%;
 }
 
 .service-card::before {
@@ -354,46 +394,54 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 5px;
+  height: 4px;
   background: var(--secondary);
   z-index: 1;
 }
 
 .service-card:hover {
-  transform: translateY(-15px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
 }
 
 .service-icon {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   background: var(--light);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 30px auto 20px;
-  font-size: 2rem;
+  margin: 20px auto 15px;
+  font-size: 1.5rem;
   color: var(--text);
   transition: var(--transition);
 }
 
 .service-content {
-  padding: 0 25px 30px;
+  padding: 0 18px 20px;
   text-align: center;
+  width: 100%;
 }
 
 .service-content h3 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
+  font-size: 1.2rem;
+  margin-bottom: 12px;
   color: var(--primary);
   transition: var(--transition);
+  line-height: 1.3;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .service-content p {
   color: var(--text-light);
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   transition: var(--transition);
+  line-height: 1.5;
+  font-size: 0.9rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .service-link {
@@ -403,6 +451,9 @@ body {
   display: inline-flex;
   align-items: center;
   transition: var(--transition);
+  font-size: 0.9rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .service-link i {
@@ -418,95 +469,106 @@ body {
   transform: translateX(5px);
 }
 
-/* Neurology Conditions Section */
+/* Neurology Conditions Section - Mobile First */
 .conditions-section {
-  padding: 100px 0;
+  padding: 60px 0;
   background: var(--light);
   position: relative;
   overflow: hidden;
-}
-
-.conditions-section::before {
-  content: "";
-  position: absolute;
-  top: -100px;
-  right: -100px;
-  width: 300px;
-  height: 300px;
-  background: var(--secondary);
-  border-radius: 50%;
-  opacity: 0.1;
+  width: 100%;
 }
 
 .conditions-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  grid-template-columns: 1fr;
+  gap: 40px;
   align-items: center;
+  width: 100%;
 }
 
 .conditions-content h2 {
-  font-size: 2.5rem;
+  font-size: 1.8rem;
   color: var(--primary);
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   position: relative;
+  line-height: 1.3;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .conditions-content h2::after {
   content: "";
   position: absolute;
-  bottom: -10px;
+  bottom: -8px;
   left: 0;
-  width: 80px;
-  height: 4px;
+  width: 60px;
+  height: 3px;
   background: var(--secondary);
   border-radius: 2px;
 }
 
 .conditions-content p {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   color: var(--text-light);
-  line-height: 1.7;
+  line-height: 1.5;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .conditions-list {
-  margin: 30px 0;
+  margin: 25px 0;
+  width: 100%;
 }
 
 .condition-item {
   display: flex;
   align-items: flex-start;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
+  width: 100%;
 }
 
 .condition-item i {
   background: var(--secondary);
   color: var(--white);
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 15px;
+  margin-right: 12px;
   flex-shrink: 0;
+  font-size: 0.8rem;
+}
+
+.condition-item-content {
+  flex: 1;
+  min-width: 0;
 }
 
 .condition-item-content h4 {
   color: var(--primary);
   margin-bottom: 5px;
+  font-size: 1.1rem;
+  line-height: 1.3;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .condition-item-content p {
   margin-bottom: 0;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .conditions-image {
-  border-radius: 15px;
+  border-radius: 12px;
   overflow: hidden;
   box-shadow: var(--shadow);
-  height: 500px;
+  height: 250px;
+  width: 100%;
 }
 
 .conditions-image img {
@@ -520,36 +582,41 @@ body {
   transform: scale(1.05);
 }
 
-/* Neurology Diagnostics Section */
+/* Neurology Diagnostics Section - Mobile First */
 .diagnostics-section {
-  padding: 100px 0;
+  padding: 60px 0;
   background: var(--white);
+  width: 100%;
+  overflow: hidden;
 }
 
 .diagnostics-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
+  grid-template-columns: 1fr;
+  gap: 25px;
+  width: 100%;
 }
 
 .diagnostic-card {
   background: var(--white);
-  border-radius: 15px;
+  border-radius: 12px;
   overflow: hidden;
   box-shadow: var(--shadow);
   transition: var(--transition);
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .diagnostic-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
 }
 
 .diagnostic-image {
-  height: 200px;
+  height: 180px;
   overflow: hidden;
+  width: 100%;
 }
 
 .diagnostic-image img {
@@ -564,155 +631,344 @@ body {
 }
 
 .diagnostic-content {
-  padding: 25px;
+  padding: 20px;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .diagnostic-content h3 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: var(--primary);
-  margin-bottom: 15px;
+  margin-bottom: 12px;
+  line-height: 1.3;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .diagnostic-content p {
   color: var(--text-light);
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   flex-grow: 1;
+  line-height: 1.5;
+  font-size: 0.9rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
-/* Neurology Team Section */
+/* Neurology Team Section - Mobile First */
 .team-section {
-  padding: 100px 0;
+  padding: 60px 0;
   background: var(--light);
+  width: 100%;
+  overflow: hidden;
 }
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+  grid-template-columns: 1fr;
+  gap: 25px;
+  width: 100%;
 }
 
 .team-card {
   background: var(--white);
-  border-radius: 15px;
+  border-radius: 12px;
   overflow: hidden;
   box-shadow: var(--shadow);
   transition: var(--transition);
   text-align: center;
+  width: 100%;
 }
 
 .team-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
 }
 
 .team-image {
   width: 100%;
-  height: 250px;
+  height: 200px;
   object-fit: cover;
 }
 
 .team-info {
-  padding: 25px 20px;
+  padding: 18px 15px;
+  width: 100%;
 }
 
 .team-name {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: var(--primary);
   margin-bottom: 5px;
+  line-height: 1.3;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .team-specialty {
   color: var(--secondary);
   font-weight: 600;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .team-bio {
   color: var(--text-light);
-  font-size: 0.9rem;
-  margin-bottom: 20px;
+  font-size: 0.85rem;
+  margin-bottom: 15px;
+  line-height: 1.5;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
-/* Neurology Stats Section */
+/* Neurology Stats Section - Mobile First */
 .stats-section {
-  padding: 80px 0;
+  padding: 50px 0;
   background: rgb(90, 90, 248);
   color: var(--white);
   text-align: center;
+  width: 100%;
+  overflow: hidden;
 }
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  width: 100%;
 }
 
 .stat-item {
-  padding: 30px 20px;
-  border-radius: 15px;
+  padding: 20px 15px;
+  border-radius: 12px;
   background: rgba(255, 255, 255, 0.1);
   transition: var(--transition);
   backdrop-filter: blur(10px);
+  width: 100%;
 }
 
 .stat-item:hover {
-  transform: translateY(-10px);
+  transform: translateY(-8px);
   background: rgba(255, 255, 255, 0.2);
 }
 
 .stat-number {
-  font-size: 2.5rem;
+  font-size: 1.8rem;
   font-weight: 800;
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .stat-label {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 600;
   opacity: 0.9;
+  line-height: 1.3;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
-/* Neurology CTA Section */
+/* Neurology CTA Section - Mobile First */
 .cta-section {
-  padding: 100px 0;
+  padding: 60px 0;
   background: linear-gradient(
       135deg,
       rgba(7, 177, 208, 0.9) 0%,
       rgba(7, 177, 208, 0.8) 100%
     ),
-    url("https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80");
+    url("https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
   background-size: cover;
   background-position: center;
   color: var(--white);
   text-align: center;
-  background-attachment: fixed;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.cta-section .container {
+  position: relative;
+  z-index: 2;
 }
 
 .cta-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  line-height: 1.3;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .cta-section p {
-  font-size: 1.2rem;
-  margin-bottom: 40px;
-  max-width: 700px;
+  font-size: 1rem;
+  margin-bottom: 30px;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
+  line-height: 1.5;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
+/* Footer with Logo - Mobile First */
+.site-footer {
+  background: var(--white);
+  color: var(--text);
+  padding: 30px 0 10px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.footer-col h3 {
+  font-size: 1.2rem;
+  margin-bottom: 18px;
+  color: var(--text);
+  position: relative;
+  padding-bottom: 8px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.footer-col h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 35px;
+  height: 2px;
+  background: var(--text);
+}
+
+.footer-col p {
+  margin-bottom: 18px;
+  color: var(--text);
+  line-height: 1.5;
+  font-size: 0.9rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.footer-links {
+  list-style: none;
+  width: 100%;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.footer-links a {
+  color: var(--text);
+  text-decoration: none;
+  transition: var(--transition);
+  font-size: 0.9rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.footer-links a:hover {
+  color: var(--dark);
+  padding-left: 5px;
+}
+
+.footer-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.footer-logo-image {
+  height: 70px;
+  width: auto;
+  margin-bottom: 10px;
+  color: var(--text);
+  max-width: 100%;
+}
+
+.footer-logo-text {
+  color: var(--text);
+  font-weight: 700;
+  font-size: 1.2rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 25px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  color: var(--text);
+  font-size: 0.85rem;
+  width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: var(--text);
+  border-radius: 50%;
+  color: var(--white);
+  text-decoration: none;
+  transition: var(--transition);
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.social-icons a:hover {
+  background: var(--secondary);
+  transform: translateY(-3px);
+}
 
 /* Scroll to Top Button */
 .scroll-to-top {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 50px;
-  height: 50px;
+  bottom: 15px;
+  right: 15px;
+  width: 40px;
+  height: 40px;
   background: var(--primary);
   color: white;
   border: none;
@@ -721,8 +977,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-size: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   transition: var(--transition);
   z-index: 99;
   opacity: 0;
@@ -737,122 +993,18 @@ body {
 .scroll-to-top:hover {
   background: var(--secondary);
   transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Footer with Logo */
-.site-footer {
-  background: var(--white);
-  color: var(--text);
-  padding: 30px 0 10px;
-}
+/* Responsive Styles for Larger Screens */
+@media (min-width: 480px) {
+  .topbar-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
 
-.footer-content {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
-  margin-bottom: 10px;
-}
-
-.footer-col h3 {
-  font-size: 1.3rem;
-  margin-bottom: 25px;
-  color: var(--text);
-  position: relative;
-  padding-bottom: 10px;
-}
-
-.footer-col h3::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 40px;
-  height: 3px;
-  background: var(--text);
-}
-
-.footer-col p {
-  margin-bottom: 20px;
-  color: var(--text);
-}
-
-.footer-links {
-  list-style: none;
-}
-
-.footer-links li {
-  margin-bottom: 12px;
-}
-
-.footer-links a {
-  color: var(--text);
-  text-decoration: none;
-  transition: var(--transition);
-}
-
-.footer-links a:hover {
-  color: var(--dark);
-  padding-left: 5px;
-}
-
-.footer-logo {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.footer-logo-image {
-  height: 100px;
-  width: auto;
-  margin-right: 10px;
-  color: var(--text);
-}
-
-.footer-logo-text {
-  color: var(--text);
-  font-weight: 700;
-  font-size: 1.5rem;
-}
-
-.footer-bottom {
-  text-align: center;
-  padding-top: 30px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  color: var(--text);
-  font-size: 0.9rem;
-}
-
-/* Social Icons */
-.social-icons {
-  display: flex;
-  gap: 15px;
-  margin-top: 20px;
-}
-
-.social-icons a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  background: var(--text);
-  border-radius: 50%;
-  color: var(--white);
-  text-decoration: none;
-  transition: var(--transition);
-}
-
-.social-icons a:hover {
-  background: var(--white);
-  color: var(--secondary);
-  transform: translateY(-3px);
-}
-
-/* Responsive Styles */
-@media (max-width: 1024px) {
-  .services-grid,
-  .team-grid {
+  .services-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -860,50 +1012,295 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .conditions-container,
+  .hero-buttons {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .topbar {
+    font-size: 0.8rem;
+  }
+
+  .topbar-inner {
+    flex-direction: row;
+  }
+
+  .logo h1 {
+    font-size: 1.6rem;
+  }
+
+  .logo-image {
+    height: 60px;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .main-nav {
+    position: static;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    background: transparent;
+    width: auto;
+  }
+
+  .main-nav ul {
+    display: flex;
+    padding: 0;
+    gap: 15px;
+  }
+
+  .main-nav li {
+    border-bottom: none;
+    width: auto;
+  }
+
+  .main-nav a {
+    color: var(--text);
+    padding: 5px 0;
+    font-size: 0.9rem;
+    width: auto;
+  }
+
+  .main-nav a.active {
+    color: var(--secondary);
+  }
+
+  .main-nav a.active::after {
+    background: var(--secondary);
+    bottom: -2px;
+  }
+
+  .btn-outline {
+    border-color: var(--secondary);
+    color: var(--secondary);
+    width: auto;
+  }
+
+  .btn-outline:hover {
+    background: var(--secondary);
+    color: var(--white);
+  }
+
+  .neurology-hero {
+    padding: 80px 0;
+  }
+
+  .neurology-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .neurology-hero p {
+    font-size: 1.1rem;
+  }
+
+  .neurology-services,
+  .conditions-section,
+  .diagnostics-section,
+  .team-section,
+  .cta-section {
+    padding: 80px 0;
+  }
+
+  .section-header h2 {
+    font-size: 2.2rem;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .conditions-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+  }
+
+  .conditions-image {
+    height: 350px;
+  }
+
   .diagnostics-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .stats-section {
+    padding: 70px 0;
   }
 
   .footer-content {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .footer-logo {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .footer-logo-image {
+    margin-right: 10px;
+    margin-bottom: 0;
+  }
 }
 
-@media (max-width: 768px) {
-  .nav-toggle {
-    display: block;
+@media (min-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
   }
 
-  .main-nav ul {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: rgba(7, 177, 208, 0.95);
-    flex-direction: column;
-    padding: 20px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    z-index: 99;
-    backdrop-filter: blur(10px);
+  .team-grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 
-  .main-nav.active ul {
-    display: flex;
+  .footer-content {
+    grid-template-columns: repeat(4, 1fr);
   }
 
-  .main-nav a.active {
-    color: var(--text);
+  .neurology-hero h1 {
+    font-size: 2.5rem;
   }
 
-  .main-nav a:hover {
-    color: var(--white);
+  .section-header h2 {
+    font-size: 2.5rem;
   }
 
-  .main-nav li {
-    margin: 10px 0;
+  .conditions-content h2 {
+    font-size: 2.2rem;
+  }
+
+  .cta-section h2 {
+    font-size: 2.2rem;
+  }
+}
+
+/* Extra small devices (phones, 360px and down) */
+@media (max-width: 360px) {
+  .container {
+    padding: 0 10px;
+  }
+
+  .neurology-hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .conditions-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .cta-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .service-card,
+  .team-card,
+  .diagnostic-card {
+    border-radius: 10px;
+  }
+
+  .footer-logo-text {
+    font-size: 1.1rem;
+  }
+
+  .logo h1 {
+    font-size: 1.3rem;
+  }
+
+  .logo-image {
+    height: 45px;
+  }
+
+  .top-right span {
+    font-size: 0.7rem;
+  }
+
+  .top-right {
+    gap: 6px;
+  }
+}
+
+/* Extra extra small devices (phones, 320px and down) */
+@media (max-width: 320px) {
+  .container {
+    padding: 0 8px;
+  }
+
+  .neurology-hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .conditions-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .cta-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
+
+  .service-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+  }
+
+  .service-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .footer-logo-text {
+    font-size: 1rem;
+  }
+
+  .logo h1 {
+    font-size: 1.2rem;
+  }
+
+  .logo-image {
+    height: 40px;
+  }
+
+  .top-right span {
+    font-size: 0.65rem;
+  }
+
+  .top-right {
+    gap: 4px;
   }
 
   .topbar-inner {
@@ -917,45 +1314,93 @@ body {
     justify-content: center;
   }
 
-  .neurology-hero h1 {
-    font-size: 2.5rem;
-  }
 
-  .neurology-hero p {
-    font-size: 1.1rem;
+  .social-icons a {
+    width: 20px;
+    height: 20px;
+    font-size: 0.65rem;
   }
 
   .hero-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .services-grid,
-  .team-grid,
-  .stats-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .footer-content {
-    grid-template-columns: 1fr;
+    gap: 8px;
   }
 }
 
-@media (max-width: 480px) {
-  .neurology-hero {
-    padding: 80px 0;
+/* Ultra small devices (phones, 280px and down) */
+@media (max-width: 280px) {
+  .container {
+    padding: 0 5px;
   }
 
   .neurology-hero h1 {
-    font-size: 2rem;
+    font-size: 1.4rem;
   }
 
   .section-header h2 {
-    font-size: 2rem;
+    font-size: 1.4rem;
   }
 
-  .conditions-image,
-  .team-image {
-    height: 300px;
+  .conditions-content h2 {
+    font-size: 1.4rem;
+  }
+
+  .cta-section h2 {
+    font-size: 1.4rem;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 8px 14px;
+    font-size: 0.8rem;
+  }
+
+  .logo h1 {
+    font-size: 1.1rem;
+  }
+
+  .logo-image {
+    height: 35px;
+  }
+
+  .top-right span {
+    font-size: 0.6rem;
+  }
+
+  .topbar {
+    padding: 6px 0;
+  }
+
+  .topbar-inner {
+    gap: 4px;
+  }
+
+  .social-icons {
+    gap: 5px;
+  }
+
+  .social-icons a {
+    width: 18px;
+    height: 18px;
+    font-size: 0.6rem;
+  }
+
+  .hero-buttons {
+    gap: 6px;
+  }
+
+  .service-content {
+    padding: 0 12px 15px;
+  }
+
+  .service-content h3 {
+    font-size: 1rem;
+  }
+
+  .service-content p {
+    font-size: 0.85rem;
+  }
+
+  .service-link {
+    font-size: 0.85rem;
   }
 }
