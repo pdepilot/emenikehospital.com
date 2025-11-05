@@ -9,7 +9,6 @@ navToggle.addEventListener("click", () => {
   mainNav.classList.toggle("active");
 });
 
-
 // Header scroll effect
 window.addEventListener("scroll", function () {
   const header = document.querySelector(".site-header");

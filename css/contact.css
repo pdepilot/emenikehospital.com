@@ -50,6 +50,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .top-left {
@@ -60,7 +61,8 @@ body {
 .top-right {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
 .top-right span {
@@ -115,7 +117,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1px 0;
+  padding: 10px 0;
+  height: 100px;
 }
 
 .logo {
@@ -125,7 +128,7 @@ body {
 }
 
 .logo h1 {
-  font-size: 2.2rem;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
   font-weight: 700;
   color: var(--white);
   display: flex;
@@ -136,11 +139,9 @@ body {
 }
 
 .logo-image {
-  height: 100px;
+  height: clamp(60px, 10vw, 100px);
   width: auto;
   vertical-align: middle;
-
-  /* filter: brightness(0) invert(1); */
   margin: 0 5px;
 }
 
@@ -152,10 +153,11 @@ body {
 .main-nav ul {
   display: flex;
   list-style: none;
+  flex-wrap: wrap;
 }
 
 .main-nav li {
-  margin-left: 25px;
+  margin-left: 15px;
 }
 
 .main-nav a {
@@ -164,6 +166,7 @@ body {
   font-weight: 600;
   transition: color 0.3s;
   position: relative;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
 }
 
 .main-nav a:hover {
@@ -188,12 +191,13 @@ body {
   background: transparent;
   border: 2px solid var(--secondary);
   color: var(--secondary);
-  padding: 10px 25px;
+  padding: 8px 20px;
   border-radius: 30px;
   font-weight: 700;
   transition: all 0.3s;
   text-decoration: none;
   display: inline-block;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
 }
 
 .btn-outline:hover {
@@ -211,6 +215,7 @@ body {
   cursor: pointer;
   color: var(--text);
 }
+
 
 /* Scroll to Top Button */
 .scroll-to-top {
@@ -256,27 +261,28 @@ body {
     url("/images/IMG-20251102-WA0021_edit_10053728273986.jpg");
   background-position: center;
   color: var(--white);
-  padding: 100px 0;
+  padding: clamp(60px, 10vw, 100px) 0;
   text-align: center;
   background-attachment: fixed;
 }
 
 .contact-hero h1 {
-  font-size: 3.5rem;
+  font-size: clamp(2rem, 5vw, 3.5rem);
   margin-bottom: 20px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .contact-hero p {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2vw, 1.2rem);
   max-width: 700px;
   margin: 0 auto;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  padding: 0 15px;
 }
 
 /* Contact Section */
 .contact-section {
-  padding: 100px 0;
+  padding: clamp(60px, 10vw, 100px) 0;
   position: relative;
   overflow: hidden;
 }
@@ -301,7 +307,7 @@ body {
 }
 
 .section-header h2 {
-  font-size: 2.5rem;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
   color: var(--primary);
   margin-bottom: 15px;
   position: relative;
@@ -321,10 +327,11 @@ body {
 }
 
 .section-header p {
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 2vw, 1.1rem);
   color: var(--text-light);
   max-width: 700px;
   margin: 0 auto;
+  padding: 0 15px;
 }
 
 .contact-container {
@@ -338,7 +345,7 @@ body {
 /* Contact Form */
 .contact-form {
   background: var(--white);
-  padding: 40px;
+  padding: clamp(25px, 5vw, 40px);
   border-radius: 15px;
   box-shadow: var(--shadow);
   transition: var(--transition);
@@ -395,6 +402,7 @@ textarea.form-control {
   align-items: center;
   justify-content: center;
   gap: 10px;
+  width: 100%;
 }
 
 .btn-primary:hover {
@@ -412,7 +420,7 @@ textarea.form-control {
 
 .info-card {
   background: var(--white);
-  padding: 30px;
+  padding: clamp(20px, 4vw, 30px);
   border-radius: 15px;
   box-shadow: var(--shadow);
   transition: var(--transition);
@@ -427,20 +435,20 @@ textarea.form-control {
 }
 
 .info-icon {
-  width: 60px;
-  height: 60px;
+  width: clamp(50px, 8vw, 60px);
+  height: clamp(50px, 8vw, 60px);
   background: var(--light);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
   color: var(--secondary);
   flex-shrink: 0;
 }
 
 .info-content h3 {
-  font-size: 1.3rem;
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
   color: var(--primary);
   margin-bottom: 10px;
 }
@@ -448,11 +456,12 @@ textarea.form-control {
 .info-content p {
   color: var(--text-light);
   margin-bottom: 5px;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
 }
 
 /* Map Section */
 .map-section {
-  padding: 0 0 100px;
+  padding: 0 0 clamp(60px, 10vw, 100px);
 }
 
 .map-container {
@@ -469,12 +478,14 @@ textarea.form-control {
   align-items: center;
   justify-content: center;
   color: var(--white);
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  text-align: center;
+  padding: 20px;
 }
 
 /* FAQ Section */
 .faq-section {
-  padding: 100px 0;
+  padding: clamp(60px, 10vw, 100px) 0;
   background: var(--light);
   position: relative;
   overflow: hidden;
@@ -513,8 +524,8 @@ textarea.form-control {
 }
 
 .faq-question {
-  padding: 20px 25px;
-  font-size: 1.1rem;
+  padding: clamp(15px, 3vw, 20px) clamp(20px, 4vw, 25px);
+  font-size: clamp(1rem, 2vw, 1.1rem);
   font-weight: 600;
   color: var(--primary);
   cursor: pointer;
@@ -529,14 +540,14 @@ textarea.form-control {
 }
 
 .faq-answer {
-  padding: 0 25px;
+  padding: 0 clamp(20px, 4vw, 25px);
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease, padding 0.3s ease;
 }
 
 .faq-item.active .faq-answer {
-  padding: 0 25px 25px;
+  padding: 0 clamp(20px, 4vw, 25px) clamp(20px, 4vw, 25px);
   max-height: 500px;
 }
 
@@ -563,7 +574,7 @@ textarea.form-control {
 }
 
 .footer-col h3 {
-  font-size: 1.3rem;
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
   margin-bottom: 25px;
   color: var(--text);
   position: relative;
@@ -583,6 +594,7 @@ textarea.form-control {
 .footer-col p {
   margin-bottom: 20px;
   color: var(--text);
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
 }
 
 .footer-links {
@@ -597,6 +609,7 @@ textarea.form-control {
   color: var(--text);
   text-decoration: none;
   transition: var(--transition);
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
 }
 
 .footer-links a:hover {
@@ -608,9 +621,10 @@ textarea.form-control {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 .footer-logo-image {
-  height: 100px;
+  height: clamp(60px, 10vw, 100px);
   width: auto;
   margin-right: 10px;
   color: var(--text);
@@ -619,7 +633,7 @@ textarea.form-control {
 .footer-logo-text {
   color: var(--text);
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
 }
 
 .footer-bottom {
@@ -713,10 +727,6 @@ textarea.form-control {
     margin: 10px 0;
   }
 
-  .contact-hero h1 {
-    font-size: 2.5rem;
-  }
-
   .contact-container {
     grid-template-columns: 1fr;
   }
@@ -724,19 +734,75 @@ textarea.form-control {
   .footer-content {
     grid-template-columns: 1fr;
   }
+
+  .topbar-inner {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .top-right {
+    justify-content: center;
+  }
 }
 
 @media (max-width: 480px) {
-  .contact-hero h1 {
-    font-size: 2rem;
+  .contact-form,
+  .info-card {
+    padding: 20px;
   }
 
-  .section-header h2 {
-    font-size: 2rem;
+  .info-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .info-icon {
+    align-self: center;
+  }
+
+  .logo h1 {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .logo-image {
+    margin: 5px 0;
+  }
+
+  .top-right span {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 320px) {
+  .container {
+    padding: 0 10px;
   }
 
   .contact-form,
   .info-card {
-    padding: 25px;
+    padding: 15px;
+  }
+
+  .btn-primary {
+    padding: 12px 20px;
+  }
+
+  .faq-question {
+    padding: 12px 15px;
+  }
+
+  .faq-answer {
+    padding: 0 15px;
+  }
+
+  .faq-item.active .faq-answer {
+    padding: 0 15px 15px;
   }
 }
