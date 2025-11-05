@@ -7,7 +7,7 @@
 :root {
   --primary: #07b1d0f3;
   --secondary: #07b1d0;
-  --accent: #e74c3c;
+  --accent: #ff6b6b;
   --light: #f0f9f4;
   --dark: #0b2a25;
   --text: #333;
@@ -16,14 +16,15 @@
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   --transition: all 0.3s ease;
   --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-  --cardiac-gradient: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  --pediatrics-gradient: linear-gradient(135deg, #ff9e7d 0%, #ff6b6b 100%);
+  --child-bg: #fff9f9;
 }
 
 body {
   font-family: "Inter", sans-serif;
   line-height: 1.6;
   color: var(--text);
-  background-color: #f8fafc;
+  background-color: var(--child-bg);
   overflow-x: hidden;
 }
 
@@ -31,7 +32,7 @@ body {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 20px;
 }
 
 /* Top Bar Styles */
@@ -212,13 +213,226 @@ body {
   color: var(--text);
 }
 
+/* Pediatrics Hero Section */
+.pediatrics-hero {
+  background: var(--pediatrics-gradient);
+  color: var(--white);
+  padding: 100px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.pediatrics-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80")
+    center/cover no-repeat;
+  opacity: 0.15;
+  z-index: 1;
+  background-attachment: fixed;
+}
+
+.pediatrics-hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.pediatrics-hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.pediatrics-hero p {
+  font-size: 1.3rem;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  opacity: 0.9;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: var(--white);
+  color: var(--accent);
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.btn-primary:hover {
+  background: var(--light);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid var(--white);
+  color: var(--white);
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.btn-secondary:hover {
+  background: var(--white);
+  color: var(--accent);
+  transform: translateY(-3px);
+}
+
+/* Pediatrics Services Section */
+.pediatrics-services {
+  padding: 100px 0;
+  background: var(--white);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 15px;
+  position: relative;
+  display: inline-block;
+}
+
+.section-header h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--secondary);
+  border-radius: 2px;
+}
+
+.section-header p {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.service-card {
+  background: var(--white);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  position: relative;
+  border: 2px solid transparent;
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: var(--pediatrics-gradient);
+  z-index: 1;
+}
+
+.service-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  border-color: #ffe0e0;
+}
+
+.service-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px auto 20px;
+  font-size: 2rem;
+  color: var(--accent);
+  transition: var(--transition);
+}
+
+.service-content {
+  padding: 0 25px 30px;
+  text-align: center;
+}
+
+.service-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: var(--primary);
+  transition: var(--transition);
+}
+
+.service-content p {
+  color: var(--text-light);
+  margin-bottom: 20px;
+  transition: var(--transition);
+}
+
+.service-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  transition: var(--transition);
+}
+
+.service-link i {
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+.service-link:hover {
+  color: var(--primary);
+}
+
+.service-link:hover i {
+  transform: translateX(5px);
+}
+
+
 /* Scroll to Top Button */
 .scroll-to-top {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 45px;
-  height: 45px;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
   background: var(--primary);
   color: white;
   border: none;
@@ -246,231 +460,15 @@ body {
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Cardiology Hero Section */
-.cardiology-hero {
-  background: var(--secondary);
-  color: var(--white);
-  padding: 80px 0;
-  text-align: center;
+/* Child-Friendly Environment Section */
+.environment-section {
+  padding: 100px 0;
+  background: var(--child-bg);
   position: relative;
   overflow: hidden;
 }
 
-.cardiology-hero::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url("/images/heart.jpeg")
-    center/cover no-repeat;
-  opacity: 0.2;
-  z-index: 1;
-  background-attachment: fixed;
-}
-
-.cardiology-hero-content {
-  position: relative;
-  z-index: 2;
-}
-
-.cardiology-hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.cardiology-hero p {
-  font-size: 1.1rem;
-  max-width: 700px;
-  margin: 0 auto 30px;
-  opacity: 0.9;
-  line-height: 1.6;
-}
-
-.hero-buttons {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.btn-primary {
-  background: var(--white);
-  color: var(--secondary);
-  padding: 12px 25px;
-  border-radius: 30px;
-  font-weight: 700;
-  text-decoration: none;
-  display: inline-block;
-  transition: var(--transition);
-  white-space: nowrap;
-  font-size: 0.95rem;
-}
-
-.btn-primary:hover {
-  background: var(--light);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-.btn-secondary {
-  background: transparent;
-  border: 2px solid var(--white);
-  color: var(--white);
-  padding: 12px 25px;
-  border-radius: 30px;
-  font-weight: 700;
-  text-decoration: none;
-  display: inline-block;
-  transition: var(--transition);
-  white-space: nowrap;
-  font-size: 0.95rem;
-}
-
-.btn-secondary:hover {
-  background: var(--white);
-  color: var(--secondary);
-  transform: translateY(-3px);
-}
-
-/* Cardiology Services Section */
-.cardiology-services {
-  padding: 80px 0;
-  background: var(--white);
-}
-
-.section-header {
-  text-align: center;
-  margin-bottom: 50px;
-  position: relative;
-}
-
-.section-header h2 {
-  font-size: 2.2rem;
-  color: var(--primary);
-  margin-bottom: 15px;
-  position: relative;
-  display: inline-block;
-}
-
-.section-header h2::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 4px;
-  background: var(--secondary);
-  border-radius: 2px;
-}
-
-.section-header p {
-  font-size: 1.1rem;
-  color: var(--text-light);
-  max-width: 700px;
-  margin: 0 auto;
-  line-height: 1.6;
-}
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
-}
-
-.service-card {
-  background: var(--white);
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: var(--shadow);
-  transition: var(--transition);
-  position: relative;
-}
-
-.service-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 5px;
-  background: var(--secondary);
-  z-index: 1;
-}
-
-.service-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-}
-
-.service-icon {
-  width: 70px;
-  height: 70px;
-  background: var(--light);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 25px auto 20px;
-  font-size: 1.8rem;
-  color: var(--text);
-  transition: var(--transition);
-}
-
-.service-content {
-  padding: 0 20px 25px;
-  text-align: center;
-}
-
-.service-content h3 {
-  font-size: 1.3rem;
-  margin-bottom: 15px;
-  color: var(--primary);
-  transition: var(--transition);
-}
-
-.service-content p {
-  color: var(--text-light);
-  margin-bottom: 20px;
-  transition: var(--transition);
-  line-height: 1.6;
-}
-
-.service-link {
-  color: var(--secondary);
-  text-decoration: none;
-  font-weight: 600;
-  display: inline-flex;
-  align-items: center;
-  transition: var(--transition);
-  font-size: 0.9rem;
-}
-
-.service-link i {
-  margin-left: 5px;
-  transition: transform 0.3s ease;
-}
-
-.service-link:hover {
-  color: var(--primary);
-}
-
-.service-link:hover i {
-  transform: translateX(5px);
-}
-
-/* Cardiology Procedures Section */
-.procedures-section {
-  padding: 80px 0;
-  background: var(--light);
-  position: relative;
-  overflow: hidden;
-}
-
-.procedures-section::before {
+.environment-section::before {
   content: "";
   position: absolute;
   top: -100px;
@@ -482,21 +480,21 @@ body {
   opacity: 0.1;
 }
 
-.procedures-container {
+.environment-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 50px;
+  gap: 60px;
   align-items: center;
 }
 
-.procedures-content h2 {
-  font-size: 2.2rem;
+.environment-content h2 {
+  font-size: 2.5rem;
   color: var(--primary);
   margin-bottom: 20px;
   position: relative;
 }
 
-.procedures-content h2::after {
+.environment-content h2::after {
   content: "";
   position: absolute;
   bottom: -10px;
@@ -507,75 +505,142 @@ body {
   border-radius: 2px;
 }
 
-.procedures-content p {
+.environment-content p {
   margin-bottom: 20px;
   color: var(--text-light);
   line-height: 1.7;
 }
 
-.procedures-list {
+.environment-features {
   margin: 30px 0;
 }
 
-.procedure-item {
+.feature-item {
   display: flex;
   align-items: flex-start;
   margin-bottom: 20px;
 }
 
-.procedure-item i {
-  background: var(--secondary);
+.feature-item i {
+  background: var(--pediatrics-gradient);
   color: var(--white);
-  width: 35px;
-  height: 35px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-right: 15px;
   flex-shrink: 0;
-  font-size: 0.9rem;
 }
 
-.procedure-item-content h4 {
+.feature-item-content h4 {
   color: var(--primary);
   margin-bottom: 5px;
-  font-size: 1.1rem;
 }
 
-.procedure-item-content p {
+.feature-item-content p {
   margin-bottom: 0;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
 }
 
-.procedures-image {
+.environment-image {
   border-radius: 15px;
   overflow: hidden;
   box-shadow: var(--shadow);
-  height: 400px;
+  height: 500px;
+  position: relative;
 }
 
-.procedures-image img {
+.environment-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: var(--transition);
 }
 
-.procedures-image:hover img {
+.environment-image:hover img {
   transform: scale(1.05);
 }
 
-/* Cardiology Team Section */
-.team-section {
-  padding: 80px 0;
+/* Age Groups Section */
+.age-groups-section {
+  padding: 100px 0;
   background: var(--white);
+}
+
+.age-groups-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.age-group-card {
+  background: var(--white);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  text-align: center;
+  padding: 40px 30px;
+  border-top: 5px solid var(--accent);
+}
+
+.age-group-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.age-group-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--child-bg);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 25px;
+  font-size: 2rem;
+  color: var(--accent);
+}
+
+.age-group-card h3 {
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+
+.age-group-card p {
+  color: var(--text-light);
+  margin-bottom: 20px;
+}
+
+.age-group-list {
+  text-align: left;
+  margin-top: 20px;
+}
+
+.age-group-list li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.age-group-list i {
+  color: var(--accent);
+  margin-right: 10px;
+}
+
+/* Pediatrics Team Section */
+.team-section {
+  padding: 100px 0;
+  background: var(--child-bg);
 }
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
 }
 
 .team-card {
@@ -589,55 +654,53 @@ body {
 
 .team-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 .team-image {
   width: 100%;
-  height: 220px;
+  height: 250px;
   object-fit: cover;
 }
 
 .team-info {
-  padding: 20px 15px;
+  padding: 25px 20px;
 }
 
 .team-name {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: var(--primary);
   margin-bottom: 5px;
 }
 
 .team-specialty {
-  color: var(--secondary);
+  color: var(--accent);
   font-weight: 600;
   margin-bottom: 15px;
-  font-size: 0.9rem;
 }
 
 .team-bio {
   color: var(--text-light);
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   margin-bottom: 20px;
-  line-height: 1.5;
 }
 
-/* Cardiology Stats Section */
+/* Pediatrics Stats Section */
 .stats-section {
-  padding: 70px 0;
-  background: rgb(76, 76, 238);
+  padding: 80px 0;
+  background: var(--pediatrics-gradient);
   color: var(--white);
   text-align: center;
 }
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
 }
 
 .stat-item {
-  padding: 25px 15px;
+  padding: 30px 20px;
   border-radius: 15px;
   background: rgba(255, 255, 255, 0.1);
   transition: var(--transition);
@@ -650,68 +713,45 @@ body {
 }
 
 .stat-number {
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   font-weight: 800;
   display: block;
   margin-bottom: 10px;
 }
 
 .stat-label {
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 600;
   opacity: 0.9;
 }
 
-/* Cardiology CTA Section */
+/* Pediatrics CTA Section */
 .cta-section {
-  padding: 80px 0;
+  padding: 100px 0;
   background: linear-gradient(
       135deg,
       rgba(7, 177, 208, 0.9) 0%,
       rgba(7, 177, 208, 0.8) 100%
     ),
-    url("/images/heart.jpeg");
-  background: url("/images/heart.jpeg");
+    url("https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80");
   background-size: cover;
   background-position: center;
-  color: var(--text);
+  color: var(--white);
   text-align: center;
-  position: relative;
   background-attachment: fixed;
 }
 
-.cta-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-      135deg,
-      rgba(7, 177, 208, 0.9) 0%,
-      rgba(7, 177, 208, 0.8) 100%
-    );
-  z-index: 1;
-}
-
-.cta-section .container {
-  position: relative;
-  z-index: 2;
-}
-
 .cta-section h2 {
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   margin-bottom: 20px;
 }
 
 .cta-section p {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   margin-bottom: 40px;
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
-  line-height: 1.6;
 }
 
 /* Footer with Logo */
@@ -723,14 +763,14 @@ body {
 
 .footer-content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 30px;
   margin-bottom: 10px;
 }
 
 .footer-col h3 {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  margin-bottom: 25px;
   color: var(--text);
   position: relative;
   padding-bottom: 10px;
@@ -749,7 +789,6 @@ body {
 .footer-col p {
   margin-bottom: 20px;
   color: var(--text);
-  line-height: 1.6;
 }
 
 .footer-links {
@@ -764,7 +803,6 @@ body {
   color: var(--text);
   text-decoration: none;
   transition: var(--transition);
-  font-size: 0.9rem;
 }
 
 .footer-links a:hover {
@@ -788,13 +826,13 @@ body {
 .footer-logo-text {
   color: var(--text);
   font-weight: 700;
-  font-size: 1.3rem;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
 }
 
 .footer-bottom {
   text-align: center;
   padding-top: 30px;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   color: var(--text);
   font-size: 0.9rem;
 }
@@ -802,7 +840,7 @@ body {
 /* Social Icons */
 .social-icons {
   display: flex;
-  gap: 12px;
+  gap: 15px;
   margin-top: 20px;
 }
 
@@ -810,31 +848,40 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 35px;
-  height: 35px;
+  width: 40px;
+  height: 40px;
   background: var(--text);
   border-radius: 50%;
   color: var(--white);
   text-decoration: none;
   transition: var(--transition);
-  font-size: 0.9rem;
 }
 
 .social-icons a:hover {
-  background: var(--secondary);
+  background: var(--white);
+  color: var(--secondary);
   transform: translateY(-3px);
 }
 
 /* Responsive Styles */
 @media (max-width: 1024px) {
-  .procedures-container {
+  .services-grid,
+  .team-grid,
+  .age-groups-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .environment-container {
     grid-template-columns: 1fr;
     gap: 40px;
   }
 
-  .procedures-image {
-    height: 350px;
-    order: -1;
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -861,16 +908,16 @@ body {
     display: flex;
   }
 
-  .main-nav a.active {
-    color: var(--text);
-  }
-
-  .main-nav a:hover {
-    color: var(--white);
-  }
-
   .main-nav li {
     margin: 10px 0;
+  }
+
+  .scroll-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    font-size: 1rem;
   }
 
   .topbar-inner {
@@ -884,156 +931,46 @@ body {
     justify-content: center;
   }
 
-  .phone {
-    margin-right: 0;
+  .pediatrics-hero h1 {
+    font-size: 2.5rem;
   }
 
-  .cardiology-hero h1 {
-    font-size: 2rem;
-  }
-
-  .cardiology-hero p {
-    font-size: 1rem;
+  .pediatrics-hero p {
+    font-size: 1.1rem;
   }
 
   .hero-buttons {
     flex-direction: column;
     align-items: center;
-    gap: 10px;
   }
 
-  .btn-primary,
-  .btn-secondary {
-    width: 100%;
-    max-width: 300px;
-    text-align: center;
-  }
-
-  .section-header h2 {
-    font-size: 1.8rem;
-  }
-
-  .section-header p {
-    font-size: 1rem;
-  }
-
-  .services-grid {
+  .services-grid,
+  .team-grid,
+  .stats-grid,
+  .age-groups-grid {
     grid-template-columns: 1fr;
-  }
-
-  .procedures-content h2 {
-    font-size: 1.8rem;
-  }
-
-  .team-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .cta-section h2 {
-    font-size: 1.8rem;
-  }
-
-  .cta-section p {
-    font-size: 1rem;
   }
 
   .footer-content {
     grid-template-columns: 1fr;
   }
-
-  .logo h1 {
-    font-size: 1.5rem;
-  }
-
-  .logo-image {
-    height: 60px;
-  }
 }
 
 @media (max-width: 480px) {
-  .container {
-    padding: 0 10px;
+  .pediatrics-hero {
+    padding: 80px 0;
   }
 
-  .cardiology-hero {
-    padding: 60px 0;
+  .pediatrics-hero h1 {
+    font-size: 2rem;
   }
 
-  .cardiology-hero h1 {
-    font-size: 1.8rem;
+  .section-header h2 {
+    font-size: 2rem;
   }
 
-  .cardiology-services,
-  .procedures-section,
-  .team-section,
-  .cta-section {
-    padding: 60px 0;
-  }
-
-  .stats-section {
-    padding: 50px 0;
-  }
-
-  .stats-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .stat-item {
-    padding: 20px 15px;
-  }
-
-  .stat-number {
-    font-size: 1.8rem;
-  }
-
-  .service-icon {
-    width: 60px;
-    height: 60px;
-    font-size: 1.5rem;
-  }
-
-  .service-content h3 {
-    font-size: 1.2rem;
-  }
-
-  .procedure-item {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .procedure-item i {
-    margin-bottom: 10px;
-  }
-
-  .top-right span {
-    font-size: 0.8rem;
-  }
-
-  .social-icons a {
-    width: 30px;
-    height: 30px;
-    font-size: 0.8rem;
-  }
-
-  .footer-logo {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .footer-logo-image {
-    margin-right: 0;
-    margin-bottom: 10px;
-  }
-
-  .scroll-to-top {
-    width: 40px;
-    height: 40px;
-    font-size: 1rem;
-    bottom: 15px;
-    right: 15px;
+  .environment-image,
+  .team-image {
+    height: 300px;
   }
 }

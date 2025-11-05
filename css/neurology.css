@@ -228,6 +228,7 @@ body {
     center/cover no-repeat;
   opacity: 0.15;
   z-index: 1;
+  background-attachment: fixed;
 }
 
 .neurology-hero-content {
@@ -292,39 +293,6 @@ body {
   transform: translateY(-3px);
 }
 
-/* Scroll to Top Button */
-.scroll-to-top {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 50px;
-  height: 50px;
-  background: var(--primary);
-  color: white;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transition: var(--transition);
-  z-index: 99;
-  opacity: 0;
-  visibility: hidden;
-}
-
-.scroll-to-top.visible {
-  opacity: 1;
-  visibility: visible;
-}
-
-.scroll-to-top:hover {
-  background: var(--secondary);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-}
 
 /* Neurology Services Section */
 .neurology-services {
@@ -406,7 +374,7 @@ body {
   justify-content: center;
   margin: 30px auto 20px;
   font-size: 2rem;
-  color: var(--accent);
+  color: var(--text);
   transition: var(--transition);
 }
 
@@ -671,7 +639,7 @@ body {
 /* Neurology Stats Section */
 .stats-section {
   padding: 80px 0;
-  background: var(--text);
+  background: rgb(90, 90, 248);
   color: var(--white);
   text-align: center;
 }
@@ -721,6 +689,7 @@ body {
   background-position: center;
   color: var(--white);
   text-align: center;
+  background-attachment: fixed;
 }
 
 .cta-section h2 {
@@ -734,6 +703,41 @@ body {
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+}
+
+
+/* Scroll to Top Button */
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: var(--transition);
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-to-top:hover {
+  background: var(--secondary);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Footer with Logo */

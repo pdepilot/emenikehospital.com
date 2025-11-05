@@ -40,8 +40,74 @@ body {
   margin: 0 auto;
   padding: 0 15px;
 }
+/* Top Bar Styles */
+.topbar {
+  background: var(--secondary);
+  color: #fff;
+  font-size: 0.85rem;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
 
-/* Header Styles - Fully Responsive */
+.topbar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.top-left {
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.top-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.top-right span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.top-right i {
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+.phone {
+  margin-right: 10px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 12px;
+}
+
+.social-icons a {
+  color: #fff;
+  text-decoration: none;
+  transition: opacity 0.3s;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+.social-icons a:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-1px);
+}
+
+/* Header Styles */
 .site-header {
   background: #fff;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
@@ -54,18 +120,17 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 0;
+  padding: 10px 0;
 }
 
 .logo {
   display: flex;
   align-items: center;
   text-decoration: none;
-  flex-shrink: 0;
 }
 
 .logo h1 {
-  font-size: 1.5rem;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
   font-weight: 700;
   color: var(--white);
   display: flex;
@@ -76,7 +141,7 @@ body {
 }
 
 .logo-image {
-  height: 60px;
+  height: clamp(60px, 10vw, 100px);
   width: auto;
   vertical-align: middle;
   margin: 0 5px;
@@ -103,8 +168,7 @@ body {
   font-weight: 600;
   transition: color 0.3s;
   position: relative;
-  font-size: 0.9rem;
-  white-space: nowrap;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
 }
 
 .main-nav a:hover {
@@ -129,17 +193,17 @@ body {
   background: transparent;
   border: 2px solid var(--secondary);
   color: var(--secondary);
-  padding: 8px 16px;
+  padding: 8px 20px;
   border-radius: 30px;
   font-weight: 700;
   transition: all 0.3s;
   text-decoration: none;
   display: inline-block;
-  font-size: 0.9rem;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
 }
 
 .btn-outline:hover {
-  background: var(--secondary);
+  background: var(--text);
   color: white;
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(42, 178, 123, 0.2);
@@ -152,7 +216,6 @@ body {
   font-size: 1.5rem;
   cursor: pointer;
   color: var(--text);
-  padding: 5px;
 }
 
 /* Orthopedics Hero Section - Fully Responsive */
@@ -176,6 +239,7 @@ body {
     center/cover no-repeat;
   opacity: 0.15;
   z-index: 1;
+  background-attachment: fixed;
 }
 
 .orthopedics-hero-content {
@@ -653,6 +717,7 @@ body {
   background-position: center;
   color: var(--white);
   text-align: center;
+  background-attachment: fixed;
 }
 
 .cta-section h2 {
@@ -669,23 +734,60 @@ body {
   line-height: 1.5;
 }
 
-/* Footer - Fully Responsive */
+
+
+/* Scroll to Top Button */
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: var(--transition);
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-to-top:hover {
+  background: var(--secondary);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer with Logo */
 .site-footer {
-  background: var(--dark);
-  color: var(--white);
-  padding: 50px 0 15px;
+  background: var(--white);
+  color: var(--text);
+  padding: 30px 0 10px;
 }
 
 .footer-content {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .footer-col h3 {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  margin-bottom: 25px;
+  color: var(--text);
   position: relative;
   padding-bottom: 10px;
 }
@@ -697,32 +799,12 @@ body {
   left: 0;
   width: 40px;
   height: 3px;
-  background: var(--white);
-}
-
-.footer-logo {
-  display: flex;
-  align-items: center;
-  margin-bottom: 15px;
-}
-
-.footer-logo-image {
-  height: 60px;
-  width: auto;
-  margin-right: 10px;
-}
-
-.footer-logo-text {
-  color: var(--white);
-  font-weight: 700;
-  font-size: 1.3rem;
+  background: var(--text);
 }
 
 .footer-col p {
-  margin-bottom: 15px;
-  opacity: 0.8;
-  font-size: 0.9rem;
-  line-height: 1.5;
+  margin-bottom: 20px;
+  color: var(--text);
 }
 
 .footer-links {
@@ -730,54 +812,71 @@ body {
 }
 
 .footer-links li {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .footer-links a {
-  color: var(--white);
+  color: var(--text);
   text-decoration: none;
   transition: var(--transition);
-  opacity: 0.8;
-  font-size: 0.9rem;
 }
 
 .footer-links a:hover {
-  opacity: 1;
+  color: var(--dark);
   padding-left: 5px;
 }
 
+.footer-logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.footer-logo-image {
+  height: 80px;
+  width: auto;
+  margin-right: 10px;
+  color: var(--text);
+}
+
+.footer-logo-text {
+  color: var(--text);
+  font-weight: 700;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+/* Social Icons */
 .social-icons {
   display: flex;
-  gap: 12px;
-  margin-top: 15px;
+  gap: 15px;
+  margin-top: 20px;
 }
 
 .social-icons a {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 35px;
-  height: 35px;
-  background: rgba(255, 255, 255, 0.1);
+  width: 40px;
+  height: 40px;
+  background: var(--text);
   border-radius: 50%;
   color: var(--white);
   text-decoration: none;
   transition: var(--transition);
-  font-size: 0.9rem;
 }
 
 .social-icons a:hover {
-  background: var(--primary);
+  background: var(--white);
+  color: var(--secondary);
   transform: translateY(-3px);
-}
-
-.footer-bottom {
-  text-align: center;
-  padding-top: 25px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  color: var(--white);
-  font-size: 0.85rem;
-  opacity: 0.7;
 }
 
 /* ========== RESPONSIVE MEDIA QUERIES ========== */
@@ -828,9 +927,28 @@ body {
     display: flex;
   }
 
+  .main-nav a.active {
+    color: var(--white);
+  }
+
   .main-nav li {
     margin: 10px 0;
   }
+
+  .topbar-inner {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+  .header-inner{
+    height: 100px;
+  }
+
+  .top-right {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
 
   .orthopedics-hero h1 {
     font-size: 2rem;
