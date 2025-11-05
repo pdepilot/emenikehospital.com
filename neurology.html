@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* CSS Reset and Base Styles */
         * {
             margin: 0;
             padding: 0;
@@ -22,7 +23,7 @@
             --text: #333;
             --text-light: #666;
             --white: #ffffff;
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
             --transition: all 0.3s ease;
             --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             --neuro-gradient: linear-gradient(135deg, #8e44ad 0%, #6c3483 100%);
@@ -30,10 +31,11 @@
 
         body {
             font-family: "Inter", sans-serif;
-            line-height: 1.6;
+            line-height: 1.5;
             color: var(--text);
             background-color: #f8fafc;
             overflow-x: hidden;
+            font-size: 16px;
         }
 
         .container {
@@ -43,21 +45,21 @@
             padding: 0 15px;
         }
 
-        /* Top Bar Styles */
+        /* Top Bar Styles - Mobile First */
         .topbar {
             background: var(--secondary);
             color: #fff;
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             padding: 8px 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .topbar-inner {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
+            gap: 8px;
+            text-align: center;
         }
 
         .top-left {
@@ -67,43 +69,41 @@
 
         .top-right {
             display: flex;
-            align-items: center;
-            gap: 15px;
             flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
         }
 
         .top-right span {
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 5px;
+            white-space: nowrap;
         }
 
         .top-right i {
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             opacity: 0.9;
-        }
-
-        .phone {
-            margin-right: 10px;
         }
 
         .social-icons {
             display: flex;
-            gap: 12px;
+            gap: 8px;
         }
 
         .social-icons a {
             color: #fff;
             text-decoration: none;
-            transition: opacity 0.3s;
-            width: 24px;
-            height: 24px;
+            width: 22px;
+            height: 22px;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.15);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.8rem;
+            font-size: 0.7rem;
+            transition: var(--transition);
         }
 
         .social-icons a:hover {
@@ -111,10 +111,10 @@
             transform: translateY(-1px);
         }
 
-        /* Header Styles */
+        /* Header Styles - Mobile First */
         .site-header {
             background: #fff;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -124,7 +124,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 0;
+            padding: 12px 0;
             position: relative;
         }
 
@@ -135,7 +135,7 @@
         }
 
         .logo h1 {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
             font-weight: 700;
             color: var(--white);
             display: flex;
@@ -146,7 +146,7 @@
         }
 
         .logo-image {
-            height: 70px;
+            height: 50px;
             width: auto;
             vertical-align: middle;
             margin: 0 5px;
@@ -157,111 +157,102 @@
             font-weight: 700;
         }
 
+        .main-nav {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: rgba(7, 177, 208, 0.98);
+            z-index: 99;
+            transform: translateY(-10px);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .main-nav.active {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+
         .main-nav ul {
-            display: flex;
             list-style: none;
-            flex-wrap: wrap;
+            padding: 20px 15px;
         }
 
         .main-nav li {
-            margin-left: 20px;
+            margin: 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .main-nav li:last-child {
+            border-bottom: none;
         }
 
         .main-nav a {
             text-decoration: none;
-            color: var(--text);
+            color: var(--white);
             font-weight: 600;
-            transition: color 0.3s;
+            transition: var(--transition);
             position: relative;
-            font-size: 0.95rem;
+            font-size: 1rem;
+            display: block;
+            padding: 12px 0;
         }
 
         .main-nav a:hover {
-            color: var(--secondary);
+            color: var(--light);
         }
 
         .main-nav a.active {
-            color: var(--secondary);
+            color: var(--light);
         }
 
         .main-nav a.active::after {
             content: "";
             position: absolute;
-            bottom: -5px;
+            bottom: 8px;
             left: 0;
             width: 100%;
             height: 2px;
-            background: var(--dark);
+            background: var(--light);
         }
 
         .btn-outline {
             background: transparent;
-            border: 2px solid var(--secondary);
-            color: var(--secondary);
-            padding: 8px 20px;
+            border: 2px solid var(--white);
+            color: var(--white);
+            padding: 10px 20px;
             border-radius: 30px;
             font-weight: 700;
             transition: all 0.3s;
             text-decoration: none;
             display: inline-block;
             font-size: 0.9rem;
+            text-align: center;
         }
 
         .btn-outline:hover {
-            background: var(--text);
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(42, 178, 123, 0.2);
+            background: var(--white);
+            color: var(--secondary);
         }
 
         .nav-toggle {
-            display: none;
+            display: block;
             background: none;
             border: none;
             font-size: 1.5rem;
             cursor: pointer;
             color: var(--text);
+            z-index: 101;
         }
 
-        /* Scroll to Top Button */
-        .scroll-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 45px;
-            height: 45px;
-            background: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            transition: var(--transition);
-            z-index: 99;
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        .scroll-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .scroll-to-top:hover {
-            background: var(--secondary);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Neurology Hero Section */
+        /* Neurology Hero Section - Mobile First */
         .neurology-hero {
             background: var(--secondary);
             color: var(--white);
-            padding: 80px 0;
+            padding: 60px 0;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -285,24 +276,25 @@
         }
 
         .neurology-hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            line-height: 1.3;
         }
 
         .neurology-hero p {
-            font-size: 1.1rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
+            font-size: 1rem;
+            max-width: 100%;
+            margin: 0 auto 25px;
             opacity: 0.9;
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
         .hero-buttons {
             display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
         }
 
         .btn-primary {
@@ -316,12 +308,15 @@
             transition: var(--transition);
             white-space: nowrap;
             font-size: 0.95rem;
+            width: 100%;
+            max-width: 280px;
+            text-align: center;
         }
 
         .btn-primary:hover {
             background: var(--light);
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
         }
 
         .btn-secondary {
@@ -336,6 +331,9 @@
             transition: var(--transition);
             white-space: nowrap;
             font-size: 0.95rem;
+            width: 100%;
+            max-width: 280px;
+            text-align: center;
         }
 
         .btn-secondary:hover {
@@ -344,55 +342,56 @@
             transform: translateY(-3px);
         }
 
-        /* Neurology Services Section */
+        /* Neurology Services Section - Mobile First */
         .neurology-services {
-            padding: 80px 0;
+            padding: 60px 0;
             background: var(--white);
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             position: relative;
         }
 
         .section-header h2 {
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             color: var(--primary);
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             position: relative;
             display: inline-block;
+            line-height: 1.3;
         }
 
         .section-header h2::after {
             content: "";
             position: absolute;
-            bottom: -10px;
+            bottom: -8px;
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
+            width: 60px;
+            height: 3px;
             background: var(--secondary);
             border-radius: 2px;
         }
 
         .section-header p {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: var(--text-light);
-            max-width: 700px;
+            max-width: 100%;
             margin: 0 auto;
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+            grid-template-columns: 1fr;
+            gap: 20px;
         }
 
         .service-card {
             background: var(--white);
-            border-radius: 15px;
+            border-radius: 12px;
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: var(--transition);
@@ -405,47 +404,49 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 5px;
+            height: 4px;
             background: var(--secondary);
             z-index: 1;
         }
 
         .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
         }
 
         .service-icon {
-            width: 70px;
-            height: 70px;
+            width: 60px;
+            height: 60px;
             background: var(--light);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 25px auto 20px;
-            font-size: 1.8rem;
+            margin: 20px auto 15px;
+            font-size: 1.5rem;
             color: var(--text);
             transition: var(--transition);
         }
 
         .service-content {
-            padding: 0 20px 25px;
+            padding: 0 18px 20px;
             text-align: center;
         }
 
         .service-content h3 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
+            font-size: 1.2rem;
+            margin-bottom: 12px;
             color: var(--primary);
             transition: var(--transition);
+            line-height: 1.3;
         }
 
         .service-content p {
             color: var(--text-light);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             transition: var(--transition);
-            line-height: 1.6;
+            line-height: 1.5;
+            font-size: 0.9rem;
         }
 
         .service-link {
@@ -471,97 +472,88 @@
             transform: translateX(5px);
         }
 
-        /* Neurology Conditions Section */
+        /* Neurology Conditions Section - Mobile First */
         .conditions-section {
-            padding: 80px 0;
+            padding: 60px 0;
             background: var(--light);
             position: relative;
             overflow: hidden;
         }
 
-        .conditions-section::before {
-            content: "";
-            position: absolute;
-            top: -100px;
-            right: -100px;
-            width: 300px;
-            height: 300px;
-            background: var(--secondary);
-            border-radius: 50%;
-            opacity: 0.1;
-        }
-
         .conditions-container {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            grid-template-columns: 1fr;
+            gap: 40px;
             align-items: center;
         }
 
         .conditions-content h2 {
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             color: var(--primary);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             position: relative;
+            line-height: 1.3;
         }
 
         .conditions-content h2::after {
             content: "";
             position: absolute;
-            bottom: -10px;
+            bottom: -8px;
             left: 0;
-            width: 80px;
-            height: 4px;
+            width: 60px;
+            height: 3px;
             background: var(--secondary);
             border-radius: 2px;
         }
 
         .conditions-content p {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             color: var(--text-light);
-            line-height: 1.7;
+            line-height: 1.5;
         }
 
         .conditions-list {
-            margin: 30px 0;
+            margin: 25px 0;
         }
 
         .condition-item {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
 
         .condition-item i {
             background: var(--secondary);
             color: var(--white);
-            width: 35px;
-            height: 35px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 15px;
+            margin-right: 12px;
             flex-shrink: 0;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
         }
 
         .condition-item-content h4 {
             color: var(--primary);
             margin-bottom: 5px;
             font-size: 1.1rem;
+            line-height: 1.3;
         }
 
         .condition-item-content p {
             margin-bottom: 0;
             font-size: 0.9rem;
+            line-height: 1.5;
         }
 
         .conditions-image {
-            border-radius: 15px;
+            border-radius: 12px;
             overflow: hidden;
             box-shadow: var(--shadow);
-            height: 400px;
+            height: 250px;
         }
 
         .conditions-image img {
@@ -575,21 +567,21 @@
             transform: scale(1.05);
         }
 
-        /* Neurology Diagnostics Section */
+        /* Neurology Diagnostics Section - Mobile First */
         .diagnostics-section {
-            padding: 80px 0;
+            padding: 60px 0;
             background: var(--white);
         }
 
         .diagnostics-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: 1fr;
+            gap: 25px;
         }
 
         .diagnostic-card {
             background: var(--white);
-            border-radius: 15px;
+            border-radius: 12px;
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: var(--transition);
@@ -598,12 +590,12 @@
         }
 
         .diagnostic-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
         }
 
         .diagnostic-image {
-            height: 200px;
+            height: 180px;
             overflow: hidden;
         }
 
@@ -619,40 +611,42 @@
         }
 
         .diagnostic-content {
-            padding: 25px;
+            padding: 20px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
         }
 
         .diagnostic-content h3 {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: var(--primary);
-            margin-bottom: 15px;
+            margin-bottom: 12px;
+            line-height: 1.3;
         }
 
         .diagnostic-content p {
             color: var(--text-light);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             flex-grow: 1;
-            line-height: 1.6;
+            line-height: 1.5;
+            font-size: 0.9rem;
         }
 
-        /* Neurology Team Section */
+        /* Neurology Team Section - Mobile First */
         .team-section {
-            padding: 80px 0;
+            padding: 60px 0;
             background: var(--light);
         }
 
         .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: 1fr;
             gap: 25px;
         }
 
         .team-card {
             background: var(--white);
-            border-radius: 15px;
+            border-radius: 12px;
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: var(--transition);
@@ -660,43 +654,44 @@
         }
 
         .team-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
         }
 
         .team-image {
             width: 100%;
-            height: 220px;
+            height: 200px;
             object-fit: cover;
         }
 
         .team-info {
-            padding: 20px 15px;
+            padding: 18px 15px;
         }
 
         .team-name {
             font-size: 1.2rem;
             color: var(--primary);
             margin-bottom: 5px;
+            line-height: 1.3;
         }
 
         .team-specialty {
             color: var(--secondary);
             font-weight: 600;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             font-size: 0.9rem;
         }
 
         .team-bio {
             color: var(--text-light);
             font-size: 0.85rem;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             line-height: 1.5;
         }
 
-        /* Neurology Stats Section */
+        /* Neurology Stats Section - Mobile First */
         .stats-section {
-            padding: 70px 0;
+            padding: 50px 0;
             background: rgb(90, 90, 248);
             color: var(--white);
             text-align: center;
@@ -704,39 +699,40 @@
 
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 25px;
+            grid-template-columns: 1fr;
+            gap: 20px;
         }
 
         .stat-item {
-            padding: 25px 15px;
-            border-radius: 15px;
+            padding: 20px 15px;
+            border-radius: 12px;
             background: rgba(255, 255, 255, 0.1);
             transition: var(--transition);
             backdrop-filter: blur(10px);
         }
 
         .stat-item:hover {
-            transform: translateY(-10px);
+            transform: translateY(-8px);
             background: rgba(255, 255, 255, 0.2);
         }
 
         .stat-number {
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             font-weight: 800;
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .stat-label {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-weight: 600;
             opacity: 0.9;
+            line-height: 1.3;
         }
 
-        /* Neurology CTA Section */
+        /* Neurology CTA Section - Mobile First */
         .cta-section {
-            padding: 80px 0;
+            padding: 60px 0;
             background: linear-gradient(
                 135deg,
                 rgba(7, 177, 208, 0.9) 0%,
@@ -767,20 +763,21 @@
         }
 
         .cta-section h2 {
-            font-size: 2.2rem;
-            margin-bottom: 20px;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            line-height: 1.3;
         }
 
         .cta-section p {
-            font-size: 1.1rem;
-            margin-bottom: 40px;
-            max-width: 700px;
+            font-size: 1rem;
+            margin-bottom: 30px;
+            max-width: 100%;
             margin-left: auto;
             margin-right: auto;
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
-        /* Footer with Logo */
+        /* Footer with Logo - Mobile First */
         .site-footer {
             background: var(--white);
             color: var(--text);
@@ -789,17 +786,17 @@
 
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: 1fr;
             gap: 30px;
             margin-bottom: 10px;
         }
 
         .footer-col h3 {
             font-size: 1.2rem;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             color: var(--text);
             position: relative;
-            padding-bottom: 10px;
+            padding-bottom: 8px;
         }
 
         .footer-col h3::after {
@@ -807,15 +804,16 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 40px;
-            height: 3px;
+            width: 35px;
+            height: 2px;
             background: var(--text);
         }
 
         .footer-col p {
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             color: var(--text);
-            line-height: 1.6;
+            line-height: 1.5;
+            font-size: 0.9rem;
         }
 
         .footer-links {
@@ -823,7 +821,7 @@
         }
 
         .footer-links li {
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .footer-links a {
@@ -840,50 +838,53 @@
 
         .footer-logo {
             display: flex;
+            flex-direction: column;
             align-items: center;
+            text-align: center;
             margin-bottom: 20px;
         }
 
         .footer-logo-image {
-            height: 80px;
+            height: 70px;
             width: auto;
-            margin-right: 10px;
+            margin-bottom: 10px;
             color: var(--text);
         }
 
         .footer-logo-text {
             color: var(--text);
             font-weight: 700;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
         }
 
         .footer-bottom {
             text-align: center;
-            padding-top: 30px;
+            padding-top: 25px;
             border-top: 1px solid rgba(0, 0, 0, 0.1);
             color: var(--text);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         /* Social Icons */
         .social-icons {
             display: flex;
-            gap: 12px;
-            margin-top: 20px;
+            gap: 10px;
+            margin-top: 18px;
+            justify-content: center;
         }
 
         .social-icons a {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 35px;
-            height: 35px;
+            width: 32px;
+            height: 32px;
             background: var(--text);
             border-radius: 50%;
             color: var(--white);
             text-decoration: none;
             transition: var(--transition);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         .social-icons a:hover {
@@ -891,234 +892,241 @@
             transform: translateY(-3px);
         }
 
-        /* Responsive Styles */
-        @media (max-width: 1024px) {
-            .conditions-container {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            
-            .conditions-image {
-                height: 350px;
-                order: -1;
-            }
+        /* Scroll to Top Button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 15px;
+            right: 15px;
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            transition: var(--transition);
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
         }
 
-        @media (max-width: 768px) {
-            .nav-toggle {
-                display: block;
-            }
+        .scroll-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
 
-            .main-nav ul {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: rgba(7, 177, 208, 0.95);
-                flex-direction: column;
-                padding: 20px;
-                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-                z-index: 99;
-                backdrop-filter: blur(10px);
-            }
+        .scroll-to-top:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
 
-            .main-nav.active ul {
-                display: flex;
-            }
-
-            .main-nav a {
-                color: var(--white);
-                font-size: 1rem;
-                padding: 10px 0;
-            }
-
-            .main-nav a:hover {
-                color: var(--light);
-            }
-
-            .main-nav a.active {
-                color: var(--light);
-            }
-
-            .main-nav a.active::after {
-                background: var(--light);
-            }
-
-            .main-nav li {
-                margin: 0;
-                width: 100%;
-                text-align: center;
-            }
-
+        /* Responsive Styles for Larger Screens */
+        @media (min-width: 480px) {
             .topbar-inner {
-                flex-direction: column;
-                gap: 8px;
-                text-align: center;
-            }
-
-            .top-right {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 10px;
-            }
-            
-            .phone {
-                margin-right: 0;
-            }
-            
-            .neurology-hero h1 {
-                font-size: 2rem;
-            }
-
-            .neurology-hero p {
-                font-size: 1rem;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-                gap: 10px;
-            }
-            
-            .btn-primary, .btn-secondary {
-                width: 100%;
-                max-width: 300px;
-                text-align: center;
-            }
-            
-            .section-header h2 {
-                font-size: 1.8rem;
-            }
-            
-            .section-header p {
-                font-size: 1rem;
+                flex-direction: row;
+                justify-content: space-between;
+                text-align: left;
             }
             
             .services-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .conditions-content h2 {
-                font-size: 1.8rem;
-            }
-            
-            .team-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
             }
             
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
             
-            .cta-section h2 {
-                font-size: 1.8rem;
+            .hero-buttons {
+                flex-direction: row;
+                justify-content: center;
             }
             
-            .cta-section p {
-                font-size: 1rem;
+            .btn-primary, .btn-secondary {
+                width: auto;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .topbar {
+                font-size: 0.8rem;
             }
             
-            .footer-content {
-                grid-template-columns: 1fr;
+            .topbar-inner {
+                flex-direction: row;
             }
             
             .logo h1 {
-                font-size: 1.5rem;
+                font-size: 1.6rem;
             }
             
             .logo-image {
                 height: 60px;
             }
+            
+            .nav-toggle {
+                display: none;
+            }
+            
+            .main-nav {
+                position: static;
+                transform: none;
+                opacity: 1;
+                visibility: visible;
+                background: transparent;
+                width: auto;
+            }
+            
+            .main-nav ul {
+                display: flex;
+                padding: 0;
+                gap: 15px;
+            }
+            
+            .main-nav li {
+                border-bottom: none;
+            }
+            
+            .main-nav a {
+                color: var(--text);
+                padding: 5px 0;
+                font-size: 0.9rem;
+            }
+            
+            .main-nav a.active {
+                color: var(--secondary);
+            }
+            
+            .main-nav a.active::after {
+                background: var(--secondary);
+                bottom: -2px;
+            }
+            
+            .btn-outline {
+                border-color: var(--secondary);
+                color: var(--secondary);
+            }
+            
+            .btn-outline:hover {
+                background: var(--secondary);
+                color: var(--white);
+            }
+            
+            .neurology-hero {
+                padding: 80px 0;
+            }
+            
+            .neurology-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .neurology-hero p {
+                font-size: 1.1rem;
+            }
+            
+            .neurology-services, .conditions-section, .diagnostics-section, .team-section, .cta-section {
+                padding: 80px 0;
+            }
+            
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .conditions-container {
+                grid-template-columns: 1fr 1fr;
+                gap: 50px;
+            }
+            
+            .conditions-image {
+                height: 350px;
+            }
+            
+            .diagnostics-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .stats-section {
+                padding: 70px 0;
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-logo {
+                flex-direction: row;
+                text-align: left;
+            }
+            
+            .footer-logo-image {
+                margin-right: 10px;
+                margin-bottom: 0;
+            }
         }
 
-        @media (max-width: 480px) {
+        @media (min-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 30px;
+            }
+            
+            .team-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .neurology-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2.5rem;
+            }
+            
+            .conditions-content h2 {
+                font-size: 2.2rem;
+            }
+            
+            .cta-section h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        /* Extra small devices (phones, 360px and down) */
+        @media (max-width: 360px) {
             .container {
                 padding: 0 10px;
             }
             
-            .neurology-hero {
-                padding: 60px 0;
-            }
-            
-            .neurology-hero h1 {
-                font-size: 1.8rem;
-            }
-            
-            .neurology-services, .conditions-section, .diagnostics-section, .team-section, .cta-section {
-                padding: 60px 0;
-            }
-            
-            .stats-section {
-                padding: 50px 0;
-            }
-            
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .stat-item {
-                padding: 20px 15px;
-            }
-            
-            .stat-number {
-                font-size: 1.8rem;
-            }
-            
-            .service-icon {
-                width: 60px;
-                height: 60px;
-                font-size: 1.5rem;
-            }
-            
-            .service-content h3 {
-                font-size: 1.2rem;
-            }
-            
-            .condition-item {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .condition-item i {
-                margin-bottom: 10px;
-            }
-            
-            .top-right span {
-                font-size: 0.8rem;
-            }
-            
-            .social-icons a {
-                width: 30px;
-                height: 30px;
-                font-size: 0.8rem;
-            }
-            
-            .footer-logo {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .footer-logo-image {
-                margin-right: 0;
-                margin-bottom: 10px;
-            }
-            
-            .scroll-to-top {
-                width: 40px;
-                height: 40px;
-                font-size: 1rem;
-                bottom: 15px;
-                right: 15px;
-            }
-        }
-
-        @media (max-width: 360px) {
             .neurology-hero h1 {
                 font-size: 1.6rem;
             }
             
             .section-header h2 {
+                font-size: 1.6rem;
+            }
+            
+            .conditions-content h2 {
                 font-size: 1.6rem;
             }
             
@@ -1144,7 +1152,65 @@
             }
             
             .logo-image {
+                height: 45px;
+            }
+            
+            .top-right span {
+                font-size: 0.7rem;
+            }
+        }
+
+        /* Extra extra small devices (phones, 320px and down) */
+        @media (max-width: 320px) {
+            .container {
+                padding: 0 8px;
+            }
+            
+            .neurology-hero h1 {
+                font-size: 1.5rem;
+            }
+            
+            .section-header h2 {
+                font-size: 1.5rem;
+            }
+            
+            .conditions-content h2 {
+                font-size: 1.5rem;
+            }
+            
+            .cta-section h2 {
+                font-size: 1.5rem;
+            }
+            
+            .btn-primary, .btn-secondary {
+                padding: 8px 16px;
+                font-size: 0.85rem;
+            }
+            
+            .service-icon {
+                width: 50px;
                 height: 50px;
+                font-size: 1.3rem;
+            }
+            
+            .service-content h3 {
+                font-size: 1.1rem;
+            }
+            
+            .footer-logo-text {
+                font-size: 1rem;
+            }
+            
+            .logo h1 {
+                font-size: 1.2rem;
+            }
+            
+            .logo-image {
+                height: 40px;
+            }
+            
+            .top-right span {
+                font-size: 0.65rem;
             }
         }
     </style>
@@ -1156,7 +1222,7 @@
             <div class="top-left">24/7 Opened</div>
             <div class="top-right">
                 <span><i class="fas fa-envelope"></i> info@emenikehospital.com</span>
-                <span class="phone"><i class="fas fa-phone"></i> +234 800 123 4567</span>
+                <span><i class="fas fa-phone"></i> +234 800 123 4567</span>
                 <div class="social-icons">
                     <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
@@ -1174,7 +1240,7 @@
                 <h1>
                     <span class="logo-text">Emenike</span>
                     <img
-                         src="images/IMG-20251102-WA0019-removebg-preview.png"
+                        src="images/IMG-20251102-WA0019-removebg-preview.png"
                         alt="Emenike Hospital Logo"
                         class="logo-image"
                     />
@@ -1539,8 +1605,28 @@
         if (navToggle && mainNav) {
             navToggle.addEventListener("click", () => {
                 mainNav.classList.toggle("active");
+                // Change icon based on menu state
+                const icon = navToggle.querySelector('i');
+                if (mainNav.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
             });
         }
+
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('.main-nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('active');
+                const icon = navToggle.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
 
         // Header scroll effect
         window.addEventListener("scroll", function () {

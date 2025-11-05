@@ -1,3 +1,4 @@
+/* CSS Reset and Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +8,7 @@
 :root {
   --primary: #07b1d0f3;
   --secondary: #07b1d0;
-  --accent: #ff6b6b;
+  --accent: #2ecc71;
   --light: #f0f9f4;
   --dark: #0b2a25;
   --text: #333;
@@ -16,23 +17,29 @@
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   --transition: all 0.3s ease;
   --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-  --pediatrics-gradient: linear-gradient(135deg, #ff9e7d 0%, #ff6b6b 100%);
-  --child-bg: #fff9f9;
+  --dental-gradient: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+  --dental-light: #f0fdf4;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: "Inter", sans-serif;
   line-height: 1.6;
   color: var(--text);
-  background-color: var(--child-bg);
+  background-color: #f8fafc;
   overflow-x: hidden;
+  min-width: 320px;
 }
 
 .container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 15px;
 }
 
 /* Top Bar Styles */
@@ -213,46 +220,48 @@ body {
   color: var(--text);
 }
 
-/* Pediatrics Hero Section */
-.pediatrics-hero {
+/* Dental Hero Section - Fully Responsive */
+.dental-hero {
   background: var(--secondary);
   color: var(--white);
-  padding: 100px 0;
+  padding: 80px 0;
   text-align: center;
   position: relative;
   overflow: hidden;
 }
 
-.pediatrics-hero::before {
+.dental-hero::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80")
+  background: url("https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80")
     center/cover no-repeat;
   opacity: 0.15;
   z-index: 1;
   background-attachment: fixed;
 }
 
-.pediatrics-hero-content {
+.dental-hero-content {
   position: relative;
   z-index: 2;
 }
 
-.pediatrics-hero h1 {
-  font-size: 3.5rem;
+.dental-hero h1 {
+  font-size: 2.5rem;
   margin-bottom: 20px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  line-height: 1.2;
 }
 
-.pediatrics-hero p {
-  font-size: 1.3rem;
+.dental-hero p {
+  font-size: 1.1rem;
   max-width: 700px;
   margin: 0 auto 30px;
   opacity: 0.9;
+  line-height: 1.5;
 }
 
 .hero-buttons {
@@ -265,13 +274,14 @@ body {
 .btn-primary {
   background: var(--white);
   color: var(--secondary);
-  padding: 12px 30px;
+  padding: 12px 25px;
   border-radius: 30px;
   font-weight: 700;
   text-decoration: none;
   display: inline-block;
   transition: var(--transition);
   white-space: nowrap;
+  font-size: 1rem;
 }
 
 .btn-primary:hover {
@@ -284,13 +294,14 @@ body {
   background: transparent;
   border: 2px solid var(--white);
   color: var(--white);
-  padding: 12px 30px;
+  padding: 12px 25px;
   border-radius: 30px;
   font-weight: 700;
   text-decoration: none;
   display: inline-block;
   transition: var(--transition);
   white-space: nowrap;
+  font-size: 1rem;
 }
 
 .btn-secondary:hover {
@@ -299,20 +310,20 @@ body {
   transform: translateY(-3px);
 }
 
-/* Pediatrics Services Section */
-.pediatrics-services {
-  padding: 100px 0;
+/* Dental Services Section - Fully Responsive */
+.dental-services {
+  padding: 80px 0;
   background: var(--white);
 }
 
 .section-header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
   position: relative;
 }
 
 .section-header h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: var(--primary);
   margin-bottom: 15px;
   position: relative;
@@ -332,16 +343,17 @@ body {
 }
 
 .section-header p {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--text-light);
   max-width: 700px;
   margin: 0 auto;
+  line-height: 1.5;
 }
 
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 25px;
 }
 
 .service-card {
@@ -366,50 +378,53 @@ body {
 }
 
 .service-card:hover {
-  transform: translateY(-15px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-  border-color: #ffe0e0;
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  border-color: #e0f7e9;
 }
 
 .service-icon {
-  width: 80px;
-  height: 80px;
-  background: var(--light);
+  width: 70px;
+  height: 70px;
+  background: var(--secondary);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 30px auto 20px;
-  font-size: 2rem;
-  color: var(--text);
+  margin: 25px auto 15px;
+  font-size: 1.8rem;
+  color: var(--white);
   transition: var(--transition);
 }
 
 .service-content {
-  padding: 0 25px 30px;
+  padding: 0 20px 25px;
   text-align: center;
 }
 
 .service-content h3 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-  color: var(--primary);
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  color: var(--white);
   transition: var(--transition);
 }
 
 .service-content p {
   color: var(--text-light);
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   transition: var(--transition);
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
 .service-link {
-  color: var(--text);
+  color: var(--secondary);
   text-decoration: none;
   font-weight: 600;
   display: inline-flex;
   align-items: center;
   transition: var(--transition);
+  font-size: 0.95rem;
 }
 
 .service-link i {
@@ -418,57 +433,22 @@ body {
 }
 
 .service-link:hover {
-  color: var(--primary);
+  color: var(--text);
 }
 
 .service-link:hover i {
   transform: translateX(5px);
 }
 
-
-/* Scroll to Top Button */
-.scroll-to-top {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 50px;
-  height: 50px;
-  background: var(--primary);
-  color: white;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transition: var(--transition);
-  z-index: 99;
-  opacity: 0;
-  visibility: hidden;
-}
-
-.scroll-to-top.visible {
-  opacity: 1;
-  visibility: visible;
-}
-
-.scroll-to-top:hover {
+/* Dental Categories Section - Fully Responsive */
+.categories-section {
+  padding: 80px 0;
   background: var(--secondary);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-}
-
-/* Child-Friendly Environment Section */
-.environment-section {
-  padding: 100px 0;
-  background: var(--child-bg);
   position: relative;
   overflow: hidden;
 }
 
-.environment-section::before {
+.categories-section::before {
   content: "";
   position: absolute;
   top: -100px;
@@ -480,21 +460,21 @@ body {
   opacity: 0.1;
 }
 
-.environment-container {
+.categories-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  gap: 50px;
   align-items: center;
 }
 
-.environment-content h2 {
-  font-size: 2.5rem;
-  color: var(--primary);
+.categories-content h2 {
+  font-size: 2rem;
+  color: var(--white);
   margin-bottom: 20px;
   position: relative;
 }
 
-.environment-content h2::after {
+.categories-content h2::after {
   content: "";
   position: absolute;
   bottom: -10px;
@@ -505,142 +485,149 @@ body {
   border-radius: 2px;
 }
 
-.environment-content p {
+.categories-content p {
   margin-bottom: 20px;
-  color: var(--text-light);
+  color: var(--text);
   line-height: 1.7;
+  font-size: 1rem;
 }
 
-.environment-features {
-  margin: 30px 0;
+.categories-list {
+  margin: 25px 0;
 }
 
-.feature-item {
+.category-item {
   display: flex;
   align-items: flex-start;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
-.feature-item i {
-  background: var(--secondary);
+.category-item i {
+  background: var(--text);
   color: var(--white);
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 15px;
+  margin-right: 12px;
   flex-shrink: 0;
+  font-size: 0.9rem;
 }
 
-.feature-item-content h4 {
-  color: var(--primary);
+.category-item-content h4 {
+  color: var(--secondary);
   margin-bottom: 5px;
+  font-size: 1.1rem;
 }
 
-.feature-item-content p {
+.category-item-content p {
   margin-bottom: 0;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 }
 
-.environment-image {
+.categories-image {
   border-radius: 15px;
   overflow: hidden;
   box-shadow: var(--shadow);
-  height: 500px;
+  height: 400px;
   position: relative;
 }
 
-.environment-image img {
+.categories-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: var(--transition);
 }
 
-.environment-image:hover img {
+.categories-image:hover img {
   transform: scale(1.05);
 }
 
-/* Age Groups Section */
-.age-groups-section {
-  padding: 100px 0;
+/* Dental Technology Section - Fully Responsive */
+.technology-section {
+  padding: 80px 0;
   background: var(--white);
 }
 
-.age-groups-grid {
+.technology-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 30px;
 }
 
-.age-group-card {
+.technology-card {
   background: var(--white);
   border-radius: 15px;
   overflow: hidden;
   box-shadow: var(--shadow);
   transition: var(--transition);
-  text-align: center;
-  padding: 40px 30px;
-  border-top: 5px solid var(--secondary);
-}
-
-.age-group-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-}
-
-.age-group-icon {
-  width: 80px;
-  height: 80px;
-  background: var(--secondary);
-  border-radius: 50%;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 25px;
-  font-size: 2rem;
-  color: var(--white);
+  flex-direction: column;
 }
 
-.age-group-card h3 {
-  font-size: 1.5rem;
-  color: var(--primary);
-  margin-bottom: 15px;
+.technology-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
-.age-group-card p {
-  color: var(--text-light);
-  margin-bottom: 20px;
+.technology-image {
+  height: 180px;
+  overflow: hidden;
 }
 
-.age-group-list {
-  text-align: left;
-  margin-top: 20px;
+.technology-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
 }
 
-.age-group-list li {
-  margin-bottom: 10px;
+.technology-card:hover .technology-image img {
+  transform: scale(1.1);
+}
+
+.technology-content {
+  padding: 20px;
+  flex-grow: 1;
   display: flex;
-  align-items: center;
+  flex-direction: column;
 }
 
-.age-group-list i {
+.technology-content h3 {
+  font-size: 1.3rem;
   color: var(--secondary);
-  margin-right: 10px;
+  margin-bottom: 12px;
 }
 
-/* Pediatrics Team Section */
+.technology-content p {
+  color: var(--text);
+  margin-bottom: 15px;
+  flex-grow: 1;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Dental Team Section - Fully Responsive */
 .team-section {
-  padding: 100px 0;
+  padding: 80px 0;
   background: var(--secondary);
+}
+
+.team-section h2 {
+    color: var(--white);
+}
+
+.team-section p {
+    color: var(--text);
 }
 
 .team-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+  gap: 25px;
 }
 
 .team-card {
@@ -653,22 +640,22 @@ body {
 }
 
 .team-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 .team-image {
   width: 100%;
-  height: 250px;
+  height: 200px;
   object-fit: cover;
 }
 
 .team-info {
-  padding: 25px 20px;
+  padding: 20px 15px;
 }
 
 .team-name {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: var(--primary);
   margin-bottom: 5px;
 }
@@ -676,64 +663,66 @@ body {
 .team-specialty {
   color: var(--secondary);
   font-weight: 600;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
 }
 
 .team-bio {
-  color: var(--text-light);
-  font-size: 0.9rem;
-  margin-bottom: 20px;
+  color: var(--text);
+  font-size: 0.85rem;
+  margin-bottom: 15px;
+  line-height: 1.5;
 }
 
-/* Pediatrics Stats Section */
+/* Dental Stats Section - Fully Responsive */
 .stats-section {
-  padding: 80px 0;
+  padding: 70px 0;
   background: var(--white);
-  color: var(--secondary);
+  color: var(--text);
   text-align: center;
 }
 
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+  gap: 25px;
 }
 
 .stat-item {
-  padding: 30px 20px;
+  padding: 25px 15px;
   border-radius: 15px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(7, 177, 208, 0.95);
   transition: var(--transition);
   backdrop-filter: blur(10px);
 }
 
 .stat-item:hover {
-  transform: translateY(-10px);
+  transform: translateY(-8px);
   background: rgba(255, 255, 255, 0.2);
 }
 
 .stat-number {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 800;
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .stat-label {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 600;
   opacity: 0.9;
 }
 
-/* Pediatrics CTA Section */
+/* Dental CTA Section - Fully Responsive */
 .cta-section {
-  padding: 100px 0;
+  padding: 80px 0;
   background: linear-gradient(
       135deg,
       rgba(7, 177, 208, 0.9) 0%,
       rgba(7, 177, 208, 0.8) 100%
     ),
-    url("https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80");
+    url("https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80");
   background-size: cover;
   background-position: center;
   color: var(--white);
@@ -742,16 +731,17 @@ body {
 }
 
 .cta-section h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-bottom: 20px;
 }
 
 .cta-section p {
-  font-size: 1.2rem;
-  margin-bottom: 40px;
+  font-size: 1.1rem;
+  margin-bottom: 35px;
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+  line-height: 1.5;
 }
 
 /* Footer with Logo */
@@ -863,11 +853,46 @@ body {
   transform: translateY(-3px);
 }
 
-/* Responsive Styles */
+/* Scroll to Top Button */
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: var(--transition);
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-to-top:hover {
+  background: var(--secondary);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* ========== RESPONSIVE MEDIA QUERIES ========== */
+
+/* Tablets and Small Laptops */
 @media (max-width: 1024px) {
   .services-grid,
-  .team-grid,
-  .age-groups-grid {
+  .team-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -875,7 +900,8 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .environment-container {
+  .categories-container,
+  .technology-grid {
     grid-template-columns: 1fr;
     gap: 40px;
   }
@@ -885,6 +911,7 @@ body {
   }
 }
 
+/* Tablets and Large Phones */
 @media (max-width: 768px) {
   .nav-toggle {
     display: block;
@@ -912,12 +939,8 @@ body {
     margin: 10px 0;
   }
 
-  .scroll-to-top {
-    bottom: 20px;
-    right: 20px;
-    width: 45px;
-    height: 45px;
-    font-size: 1rem;
+  .header-inner {
+    height: 100px;
   }
 
   .topbar-inner {
@@ -931,12 +954,20 @@ body {
     justify-content: center;
   }
 
-  .pediatrics-hero h1 {
-    font-size: 2.5rem;
+  .scroll-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    font-size: 1rem;
   }
 
-  .pediatrics-hero p {
-    font-size: 1.1rem;
+  .dental-hero h1 {
+    font-size: 2rem;
+  }
+
+  .dental-hero p {
+    font-size: 1rem;
   }
 
   .hero-buttons {
@@ -944,33 +975,95 @@ body {
     align-items: center;
   }
 
+  .section-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .categories-image,
+  .team-image {
+    height: 300px;
+  }
+}
+
+/* Small Phones */
+@media (max-width: 576px) {
+  .container {
+    padding: 0 10px;
+  }
+
+  .dental-hero {
+    padding: 60px 0;
+  }
+
+  .dental-hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.6rem;
+  }
+
   .services-grid,
   .team-grid,
   .stats-grid,
-  .age-groups-grid {
+  .technology-grid {
     grid-template-columns: 1fr;
   }
 
   .footer-content {
     grid-template-columns: 1fr;
   }
-}
 
-@media (max-width: 480px) {
-  .pediatrics-hero {
-    padding: 80px 0;
+  .btn-primary,
+  .btn-secondary {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    width: 100%;
+    max-width: 280px;
   }
 
-  .pediatrics-hero h1 {
-    font-size: 2rem;
+  .logo h1 {
+    font-size: 1.3rem;
+  }
+
+  .logo-image {
+    height: 50px;
+  }
+
+  .service-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+}
+
+/* Extra Small Phones */
+@media (max-width: 375px) {
+  .dental-hero h1 {
+    font-size: 1.6rem;
   }
 
   .section-header h2 {
-    font-size: 2rem;
+    font-size: 1.4rem;
   }
 
-  .environment-image,
-  .team-image {
-    height: 300px;
+  .service-content h3,
+  .technology-content h3,
+  .team-name {
+    font-size: 1.1rem;
+  }
+
+  .stat-number {
+    font-size: 1.8rem;
+  }
+
+  .footer-logo {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-logo-image {
+    margin-right: 0;
+    margin-bottom: 10px;
   }
 }
