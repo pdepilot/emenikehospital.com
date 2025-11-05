@@ -215,7 +215,7 @@ body {
 
 /* Pediatrics Hero Section */
 .pediatrics-hero {
-  background: var(--pediatrics-gradient);
+  background: var(--secondary);
   color: var(--white);
   padding: 100px 0;
   text-align: center;
