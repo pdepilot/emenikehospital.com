@@ -118,7 +118,6 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 10px 0;
-  height: 100px;
 }
 
 .logo {
@@ -215,6 +214,7 @@ body {
   cursor: pointer;
   color: var(--text);
 }
+
 
 
 /* Scroll to Top Button */
@@ -569,12 +569,12 @@ textarea.form-control {
 .footer-content {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
+  gap: 30px;
   margin-bottom: 10px;
 }
 
 .footer-col h3 {
-  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
   margin-bottom: 25px;
   color: var(--text);
   position: relative;
@@ -594,7 +594,6 @@ textarea.form-control {
 .footer-col p {
   margin-bottom: 20px;
   color: var(--text);
-  font-size: clamp(0.9rem, 1.5vw, 1rem);
 }
 
 .footer-links {
@@ -609,7 +608,6 @@ textarea.form-control {
   color: var(--text);
   text-decoration: none;
   transition: var(--transition);
-  font-size: clamp(0.9rem, 1.5vw, 1rem);
 }
 
 .footer-links a:hover {
@@ -621,10 +619,10 @@ textarea.form-control {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
-  flex-wrap: wrap;
 }
+
 .footer-logo-image {
-  height: clamp(60px, 10vw, 100px);
+  height: 80px;
   width: auto;
   margin-right: 10px;
   color: var(--text);
@@ -633,7 +631,7 @@ textarea.form-control {
 .footer-logo-text {
   color: var(--text);
   font-weight: 700;
-  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
 }
 
 .footer-bottom {
@@ -704,28 +702,42 @@ textarea.form-control {
     top: 100%;
     left: 0;
     width: 100%;
-    background: var(--white);
+    background: rgba(7, 177, 208, 0.95);
     flex-direction: column;
     padding: 20px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     z-index: 99;
+    backdrop-filter: blur(10px);
   }
 
   .main-nav.active ul {
     display: flex;
   }
 
-  .main-nav a:hover {
-    color: var(--white);
-  }
-
   .main-nav a.active {
     color: var(--text);
+  }
+
+  .main-nav a:hover {
+    color: var(--white);
   }
 
   .main-nav li {
     margin: 10px 0;
   }
+
+  .topbar-inner {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .top-right {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  
 
   .contact-container {
     grid-template-columns: 1fr;
@@ -736,11 +748,13 @@ textarea.form-control {
   }
 
   .topbar-inner {
-    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
     text-align: center;
   }
 
   .top-right {
+    flex-wrap: wrap;
     justify-content: center;
   }
 }
@@ -760,14 +774,6 @@ textarea.form-control {
     align-self: center;
   }
 
-  .logo h1 {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .logo-image {
-    margin: 5px 0;
-  }
 
   .top-right span {
     flex-direction: column;
