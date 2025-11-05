@@ -716,7 +716,7 @@ body {
       rgba(7, 177, 208, 0.9) 0%,
       rgba(7, 177, 208, 0.8) 100%
     ),
-    url("/images/IMG-20251102-WA0022.jpg");
+    url("../images/IMG-20251102-WA0022.jpg");
   color: var(--white);
   padding: 60px 0;
   text-align: center;
@@ -975,7 +975,7 @@ body {
       rgba(7, 177, 208, 0.9) 0%,
       rgba(7, 177, 208, 0.8) 100%
     ),
-    url("/images/IMG-20251102-WA0020.jpg");
+    url("../images/IMG-20251102-WA0020.jpg");
   background-size: cover;
   background-position: center;
   color: var(--white);
