@@ -246,11 +246,11 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
+  /* background: linear-gradient(
     135deg,
     rgba(7, 177, 208, 0.85) 0%,
     rgba(7, 177, 208, 0.7) 100%
-  );
+  ); */
   z-index: 1;
 }
 
@@ -280,7 +280,7 @@ body {
 }
 
 .slide-content {
-  color: var(--white);
+  color: var(--secondary);
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -292,7 +292,7 @@ body {
   font-size: clamp(2rem, 5vw, 3.5rem);
   margin-bottom: 20px;
   line-height: 1.2;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 2px 4px rgb(0, 0, 0);
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
@@ -301,7 +301,7 @@ body {
   font-size: clamp(1rem, 2.5vw, 1.3rem);
   max-width: 600px;
   margin-bottom: 30px;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  text-shadow: 10px 10px 20px rgb(0, 0, 0);
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
@@ -354,6 +354,7 @@ body {
 
 .hero-features {
   display: flex;
+  color: var(--text);
   gap: 30px;
   margin-bottom: 30px;
   flex-wrap: wrap;
@@ -366,10 +367,11 @@ body {
 }
 
 .hero-feature i {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(3, 48, 252, 0.884);
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  color: var(--white);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -412,7 +414,7 @@ body {
 /* Stats Section */
 .stats-section {
   padding: 80px 0;
-  background: var(--white);
+  background: var(--secondary);
 }
 
 .stats-grid {
@@ -796,7 +798,7 @@ body {
 }
 
 .doctor-bio {
-  color: var(--text-light);
+  color: var(--text);
   font-size: 0.9rem;
   margin-bottom: 20px;
 }
@@ -804,7 +806,7 @@ body {
 /* Testimonials Section */
 .testimonials-section {
   padding: 100px 0;
-  background: var(--light);
+  background: var(--secondary);
   position: relative;
   overflow: hidden;
 }
@@ -865,6 +867,15 @@ body {
   gap: 15px;
 }
 
+.section-header h2 {
+  color: var(--white);
+}
+
+.section-header p {
+  color: var(--text);
+}
+
+
 .author-avatar {
   width: 50px;
   height: 50px;
@@ -878,7 +889,7 @@ body {
 }
 
 .author-info p {
-  color: var(--text-light);
+  color: var(--text);
   font-size: 0.9rem;
 }
 
