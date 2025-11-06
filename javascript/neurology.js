@@ -1,4 +1,4 @@
- // Set current year in footer
+// Set current year in footer
 document.getElementById("year").textContent = new Date().getFullYear();
 
 // Mobile navigation toggle
@@ -12,27 +12,38 @@ if (navToggle && mainNav) {
 }
 
 // Header scroll effect
+let lastScrollTop = 0;
+const topbar = document.getElementById("topbar");
+const mainHeader = document.getElementById("mainHeader");
+const topbarHeight = topbar.offsetHeight;
+
 window.addEventListener("scroll", function () {
-  const header = document.querySelector(".site-header");
-  if (window.scrollY > 50) {
-    header.classList.add("scrolled");
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+  // Hide topbar when scrolling down
+  if (scrollTop > lastScrollTop && scrollTop > 100) {
+    topbar.classList.add("hidden");
   } else {
-    header.classList.remove("scrolled");
+    topbar.classList.remove("hidden");
   }
+
+  // Make main header fixed when topbar is scrolled out of view
+  if (scrollTop > topbarHeight) {
+    mainHeader.classList.add("fixed");
+    mainHeader.classList.add("scrolled");
+  } else {
+    mainHeader.classList.remove("fixed");
+    mainHeader.classList.remove("scrolled");
+  }
+
+  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 
   // Show/hide scroll to top button
   const scrollToTopBtn = document.getElementById("scrollToTop");
-  if (window.scrollY > 300) {
+  if (scrollTop > 300) {
     scrollToTopBtn.classList.add("visible");
   } else {
     scrollToTopBtn.classList.remove("visible");
-  }
-
-  // Scroll animation for about section background
-  const aboutBgAnimation = document.getElementById("aboutBgAnimation");
-  if (aboutBgAnimation) {
-    const scrollPosition = window.scrollY;
-    aboutBgAnimation.style.transform = `translateY(${scrollPosition * 0.2}px)`;
   }
 });
 
@@ -43,3 +54,24 @@ document.getElementById("scrollToTop").addEventListener("click", function () {
     behavior: "smooth",
   });
 });
+
+// Scroll reveal functionality
+function revealOnScroll() {
+  const revealElements = document.querySelectorAll(".reveal");
+  const windowHeight = window.innerHeight;
+  const revealPoint = 150;
+
+  revealElements.forEach((element) => {
+    const elementTop = element.getBoundingClientRect().top;
+
+    if (elementTop < windowHeight - revealPoint) {
+      element.classList.add("revealed");
+    }
+  });
+}
+
+// Initial check on page load
+window.addEventListener("load", revealOnScroll);
+
+// Check on scroll
+window.addEventListener("scroll", revealOnScroll);
