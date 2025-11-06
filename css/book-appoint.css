@@ -928,16 +928,32 @@ textarea.form-control {
     display: flex;
   }
 
-  .main-nav a:hover {
-    color: var(--white);
-  }
-
   .main-nav a.active {
     color: var(--text);
   }
 
+  .main-nav a:hover {
+    color: var(--white);
+  }
+
   .main-nav li {
     margin: 10px 0;
+  }
+
+  .topbar-inner {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .top-right {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero-video {
+    height: 80vh;
+    min-height: 600px;
   }
 
   .appointment-hero h1 {
