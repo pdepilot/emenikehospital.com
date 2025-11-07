@@ -250,11 +250,7 @@ body {
 
 /* Hero Section */
 .neurology-hero {
-  background: linear-gradient(
-      135deg,
-      rgba(7, 177, 208, 0.9) 0%,
-      rgba(7, 177, 208, 0.7) 100%
-    ),
+  background: 
     url("/images/brain.jpeg");
   background-size: cover;
   background-position: center;
@@ -287,10 +283,11 @@ body {
 }
 
 .neurology-hero h1 {
-  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-size: clamp(1.5rem, 6vw, 3rem);
   margin-bottom: 20px;
+  color: var(--secondary);
   line-height: 1.2;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 5px 5px 10px rgb(0, 0, 0);
   word-wrap: break-word;
 }
 
@@ -301,6 +298,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   word-wrap: break-word;
+  text-shadow: 5px 5px 10px rgb(0, 0, 0);
 }
 
 .hero-buttons {
@@ -427,7 +425,7 @@ body {
 
 /* About Neurology Section */
 .about-neurology {
-  background: var(--white);
+  background: var(--secondary);
 }
 
 .about-container {
@@ -444,7 +442,7 @@ body {
 
 .about-content h2 {
   font-size: clamp(2rem, 4vw, 2.5rem);
-  color: var(--primary);
+  color: var(--white);
   margin-bottom: 20px;
   position: relative;
 }
@@ -462,7 +460,7 @@ body {
 
 .about-content p {
   margin-bottom: 20px;
-  color: var(--text-light);
+  color: var(--text);
   line-height: 1.7;
 }
 
@@ -478,7 +476,7 @@ body {
 
 .about-feature i {
   background: var(--light);
-  color: var(--secondary);
+  color: var(--text);
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -608,7 +606,7 @@ body {
 }
 
 .service-content p {
-  color: var(--text-light);
+  color: var(--text);
   margin-bottom: 20px;
   transition: var(--transition);
   font-size: clamp(0.9rem, 1.5vw, 1rem);
@@ -642,7 +640,7 @@ body {
 
 /* Conditions Section */
 .neurology-conditions {
-  background: var(--white);
+  background: var(--secondary);
 }
 
 .conditions-grid {
@@ -658,7 +656,7 @@ body {
   padding: 30px;
   box-shadow: var(--shadow);
   transition: var(--transition);
-  border-left: 4px solid var(--secondary);
+  border-left: 4px solid var(--text);
   width: 100%;
 }
 
@@ -667,9 +665,10 @@ body {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
+
 .condition-card h3 {
   font-size: 1.3rem;
-  color: var(--primary);
+  color: var(--secondary);
   margin-bottom: 15px;
   display: flex;
   align-items: center;
@@ -681,7 +680,7 @@ body {
 }
 
 .condition-card p {
-  color: var(--text-light);
+  color: var(--text);
   margin-bottom: 15px;
 }
 
@@ -745,7 +744,7 @@ body {
 }
 
 .technology-content p {
-  color: var(--text-light);
+  color: var(--text);
   margin-bottom: 20px;
 }
 
@@ -788,7 +787,7 @@ body {
 
 .doctor-name {
   font-size: clamp(1.1rem, 2vw, 1.3rem);
-  color: var(--primary);
+  color: var(--secondary);
   margin-bottom: 5px;
 }
 
@@ -799,19 +798,15 @@ body {
 }
 
 .doctor-bio {
-  color: var(--text-light);
+  color: var(--text);
   font-size: 0.9rem;
   margin-bottom: 20px;
 }
 
 /* CTA Section */
 .neurology-cta {
-  background: linear-gradient(
-      135deg,
-      rgba(7, 177, 208, 0.9) 0%,
-      rgba(7, 177, 208, 0.8) 100%
-    ),
-    url("https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80");
+  background: 
+    url("/images/IMG-20251102-WA0022.jpg");
   background-size: cover;
   background-position: center;
   color: var(--white);
@@ -822,36 +817,39 @@ body {
 .neurology-cta h2 {
   font-size: clamp(1.8rem, 4vw, 2.5rem);
   margin-bottom: 20px;
+  color: var(--secondary);
+  text-shadow: 5px 5px 10px rgb(0, 0, 0);
 }
 
 .neurology-cta p {
-  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-size: clamp(1.5rem, 2vw, 1.2rem);
   margin-bottom: 40px;
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+  color: var(--white);
+  text-shadow: 5px 5px 10px rgb(0, 0, 0);
 }
 
 /* Footer with Logo */
 .site-footer {
-  background: var(--white);
+  background: var(--secondary);
   color: var(--text);
   padding: 30px 0 10px;
-  width: 100%;
+  
 }
 
 .footer-content {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
   margin-bottom: 10px;
-  width: 100%;
 }
 
 .footer-col h3 {
-  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  font-size: 1.3rem;
   margin-bottom: 25px;
-  color: var(--text);
+  color: var(--white);
   position: relative;
   padding-bottom: 10px;
 }
@@ -863,13 +861,17 @@ body {
   left: 0;
   width: 40px;
   height: 3px;
-  background: var(--text);
+  background: var(--white);
 }
 
 .footer-col p {
   margin-bottom: 20px;
   color: var(--text);
 }
+.footer-col i {
+  color: var(--white);
+}
+
 
 .footer-links {
   list-style: none;
@@ -886,7 +888,7 @@ body {
 }
 
 .footer-links a:hover {
-  color: var(--dark);
+  color: var(--white);
   padding-left: 5px;
 }
 
@@ -906,7 +908,7 @@ body {
 .footer-logo-text {
   color: var(--text);
   font-weight: 700;
-  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-size: 1.5rem;
 }
 
 .footer-bottom {
@@ -938,7 +940,7 @@ body {
 }
 
 .social-icons a:hover {
-  background: var(--white);
+  background: var(--text);
   color: var(--secondary);
   transform: translateY(-3px);
 }

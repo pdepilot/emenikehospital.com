@@ -248,12 +248,14 @@ body {
 
 /* Cardiology Hero Section */
 .cardiology-hero {
-  background: var(--secondary);
-  color: var(--white);
+  background: url("/images/heart.jpeg")
+    center/cover no-repeat;
+ 
   padding: 80px 0;
   text-align: center;
   position: relative;
   overflow: hidden;
+  background-attachment: fixed;
 }
 
 .cardiology-hero::before {
@@ -263,8 +265,6 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("/images/heart.jpeg")
-    center/cover no-repeat;
   opacity: 0.2;
   z-index: 1;
   background-attachment: fixed;
@@ -276,17 +276,20 @@ body {
 }
 
 .cardiology-hero h1 {
-  font-size: 2.5rem;
+  font-size: 2.9rem;
+  color: var(--secondary);
   margin-bottom: 20px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  text-shadow: 2px 2px 4px rgb(0, 0, 0);
 }
 
 .cardiology-hero p {
-  font-size: 1.1rem;
+  font-size: 1.5rem;
+  color: var(--white);
   max-width: 700px;
   margin: 0 auto 30px;
   opacity: 0.9;
   line-height: 1.6;
+  text-shadow: 5px 5px 10px rgb(0, 0, 0);
 }
 
 .hero-buttons {
@@ -317,8 +320,8 @@ body {
 
 .btn-secondary {
   background: transparent;
-  border: 2px solid var(--white);
-  color: var(--white);
+  border: 2px solid var(--secondary);
+  color: var(--text);
   padding: 12px 25px;
   border-radius: 30px;
   font-weight: 700;
@@ -465,7 +468,7 @@ body {
 /* Cardiology Procedures Section */
 .procedures-section {
   padding: 80px 0;
-  background: var(--light);
+  background: var(--secondary);
   position: relative;
   overflow: hidden;
 }
@@ -491,7 +494,7 @@ body {
 
 .procedures-content h2 {
   font-size: 2.2rem;
-  color: var(--primary);
+  color: var(--white);
   margin-bottom: 20px;
   position: relative;
 }
@@ -509,7 +512,7 @@ body {
 
 .procedures-content p {
   margin-bottom: 20px;
-  color: var(--text-light);
+  color: var(--text);
   line-height: 1.7;
 }
 
@@ -625,8 +628,8 @@ body {
 /* Cardiology Stats Section */
 .stats-section {
   padding: 70px 0;
-  background: rgb(76, 76, 238);
-  color: var(--white);
+  background: var(--secondary);
+  color: var(--text);
   text-align: center;
 }
 
@@ -639,7 +642,7 @@ body {
 .stat-item {
   padding: 25px 15px;
   border-radius: 15px;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--white);
   transition: var(--transition);
   backdrop-filter: blur(10px);
 }
@@ -665,13 +668,8 @@ body {
 /* Cardiology CTA Section */
 .cta-section {
   padding: 80px 0;
-  background: linear-gradient(
-      135deg,
-      rgba(7, 177, 208, 0.9) 0%,
-      rgba(7, 177, 208, 0.8) 100%
-    ),
+  background: 
     url("/images/heart.jpeg");
-  background: url("/images/heart.jpeg");
   background-size: cover;
   background-position: center;
   color: var(--text);
@@ -687,11 +685,6 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-      135deg,
-      rgba(7, 177, 208, 0.9) 0%,
-      rgba(7, 177, 208, 0.8) 100%
-    );
   z-index: 1;
 }
 
@@ -716,22 +709,23 @@ body {
 
 /* Footer with Logo */
 .site-footer {
-  background: var(--white);
+  background: var(--secondary);
   color: var(--text);
   padding: 30px 0 10px;
+  
 }
 
 .footer-content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
+  gap: 40px;
   margin-bottom: 10px;
 }
 
 .footer-col h3 {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-  color: var(--text);
+  font-size: 1.3rem;
+  margin-bottom: 25px;
+  color: var(--white);
   position: relative;
   padding-bottom: 10px;
 }
@@ -743,14 +737,17 @@ body {
   left: 0;
   width: 40px;
   height: 3px;
-  background: var(--text);
+  background: var(--white);
 }
 
 .footer-col p {
   margin-bottom: 20px;
   color: var(--text);
-  line-height: 1.6;
 }
+.footer-col i {
+  color: var(--white);
+}
+
 
 .footer-links {
   list-style: none;
@@ -764,11 +761,10 @@ body {
   color: var(--text);
   text-decoration: none;
   transition: var(--transition);
-  font-size: 0.9rem;
 }
 
 .footer-links a:hover {
-  color: var(--dark);
+  color: var(--white);
   padding-left: 5px;
 }
 
@@ -788,13 +784,13 @@ body {
 .footer-logo-text {
   color: var(--text);
   font-weight: 700;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
 }
 
 .footer-bottom {
   text-align: center;
   padding-top: 30px;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   color: var(--text);
   font-size: 0.9rem;
 }
@@ -802,7 +798,7 @@ body {
 /* Social Icons */
 .social-icons {
   display: flex;
-  gap: 12px;
+  gap: 15px;
   margin-top: 20px;
 }
 
@@ -810,20 +806,21 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 35px;
-  height: 35px;
+  width: 40px;
+  height: 40px;
   background: var(--text);
   border-radius: 50%;
   color: var(--white);
   text-decoration: none;
   transition: var(--transition);
-  font-size: 0.9rem;
 }
 
 .social-icons a:hover {
-  background: var(--secondary);
+  background: var(--text);
+  color: var(--secondary);
   transform: translateY(-3px);
 }
+
 
 /* Responsive Styles */
 @media (max-width: 1024px) {

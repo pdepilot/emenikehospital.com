@@ -261,11 +261,6 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    135deg,
-    rgba(7, 177, 208, 0.85) 0%,
-    rgba(7, 177, 208, 0.7) 100%
-  );
   z-index: 1;
 }
 
@@ -282,22 +277,20 @@ body {
 }
 
 .carousel-content h1 {
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: var(--secondary);
+  font-size: 3rem;
   margin-bottom: 20px;
   line-height: 1.2;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  word-wrap: break-word;
-  overflow-wrap: break-word;
   animation: fadeInUp 1s ease-out;
 }
 
 .carousel-content p {
-  font-size: clamp(1rem, 2.5vw, 1.3rem);
+   color: var(--text);
+  font-size: 1.8rem;
   max-width: 700px;
   margin: 0 auto 30px;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-  word-wrap: break-word;
-  overflow-wrap: break-word;
+  text-shadow: 3px 3px 3px rgb(255, 255, 255);
   animation: fadeInUp 1s ease-out 0.3s both;
 }
 
@@ -315,7 +308,8 @@ body {
 }
 
 .breadcrumb a {
-  color: #fff;
+  color: #000000;
+  font-size: 1.5rem;
   text-decoration: none;
   transition: color 0.3s;
 }
@@ -326,8 +320,10 @@ body {
 
 .breadcrumb li:not(:last-child)::after {
   content: ">";
+  color: #000000;
   margin-left: 10px;
 }
+
 
 /* Carousel Controls */
 .carousel-controls {
@@ -355,7 +351,7 @@ body {
 }
 
 .carousel-dot.active {
-  background: white;
+  background: rgb(8, 8, 8);
   transform: scale(1.2);
 }
 
@@ -371,7 +367,7 @@ body {
 }
 
 .carousel-nav button {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(49, 157, 245, 0.753);
   border: none;
   width: 50px;
   height: 50px;
@@ -427,7 +423,7 @@ body {
 /* Mission Section */
 .mission-section {
   padding: 80px 0;
-  background: white;
+  background: var(--secondary);
 }
 
 .mission-grid {
@@ -439,13 +435,13 @@ body {
 
 .mission-content h2 {
   font-size: clamp(2rem, 4vw, 2.5rem);
-  color: var(--primary);
+  color: var(--white);
   margin-bottom: 20px;
 }
 
 .mission-content p {
   margin-bottom: 20px;
-  color: var(--text-light);
+  color: var(--text);
 }
 
 .mission-stats {
@@ -552,7 +548,7 @@ body {
 /* Timeline Section */
 .timeline-section {
   padding: 80px 0;
-  background: white;
+  background: var(--secondary);
 }
 
 .timeline {
@@ -568,7 +564,7 @@ body {
   top: 0;
   bottom: 0;
   width: 4px;
-  background: var(--secondary);
+  background: var(--white);
   transform: translateX(-50%);
 }
 
@@ -595,7 +591,7 @@ body {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  background: var(--secondary);
+  background: var(--text);
   color: white;
   padding: 10px 20px;
   border-radius: 30px;
@@ -681,13 +677,9 @@ body {
 
 /* CTA Section */
 .cta-section {
-  padding: 80px 0;
-  background: linear-gradient(
-      135deg,
-      rgba(7, 177, 208, 0.9) 0%,
-      rgba(7, 177, 208, 0.8) 100%
-    ),
-    url("/images/test-result.jpg");
+  padding: 100px 0;
+  background: 
+    url("../images/IMG-20251102-WA0020.jpg");
   background-size: cover;
   background-position: center;
   color: var(--white);
@@ -695,54 +687,74 @@ body {
   background-attachment: fixed;
 }
 
+.cta-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("https://images.unsplash.com/photo-1551076805-e1869033e561?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1;
+  background-attachment: fixed;
+}
+
 .cta-section h2 {
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  color: var(--text);
+  font-size: clamp(2.5rem, 4vw, 3rem);
   margin-bottom: 20px;
+  text-shadow: 10px 10px 20px rgb(9, 25, 243);
 }
 
 .cta-section p {
-  font-size: clamp(1rem, 2vw, 1.2rem);
-  margin-bottom: 40px;
+  font-size: 1.2rem;
   max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto 30px;
+  position: relative;
+  z-index: 2;
 }
 
 .btn-primary {
-  background: var(--white);
+  background: white;
   color: var(--primary);
-  padding: 12px 30px;
+  padding: 15px 35px;
   border-radius: 30px;
   font-weight: 700;
   text-decoration: none;
   display: inline-block;
-  transition: var(--transition);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
 }
 
 .btn-primary:hover {
-  background: var(--light);
+  background: var(--text);
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
+
 /* Footer with Logo */
 .site-footer {
-  background: var(--white);
+  background: var(--secondary);
   color: var(--text);
   padding: 30px 0 10px;
+  
 }
 
 .footer-content {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
   margin-bottom: 10px;
 }
 
 .footer-col h3 {
-  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  font-size: 1.3rem;
   margin-bottom: 25px;
-  color: var(--text);
+  color: var(--white);
   position: relative;
   padding-bottom: 10px;
 }
@@ -754,13 +766,17 @@ body {
   left: 0;
   width: 40px;
   height: 3px;
-  background: var(--text);
+  background: var(--white);
 }
 
 .footer-col p {
   margin-bottom: 20px;
   color: var(--text);
 }
+.footer-col i {
+  color: var(--white);
+}
+
 
 .footer-links {
   list-style: none;
@@ -777,7 +793,7 @@ body {
 }
 
 .footer-links a:hover {
-  color: var(--dark);
+  color: var(--white);
   padding-left: 5px;
 }
 
@@ -797,7 +813,7 @@ body {
 .footer-logo-text {
   color: var(--text);
   font-weight: 700;
-  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-size: 1.5rem;
 }
 
 .footer-bottom {
@@ -823,13 +839,13 @@ body {
   height: 40px;
   background: var(--text);
   border-radius: 50%;
-  color: var(--white);
+  color: var(--secondary);
   text-decoration: none;
   transition: var(--transition);
 }
 
 .social-icons a:hover {
-  background: var(--white);
+  background: var(--text);
   color: var(--secondary);
   transform: translateY(-3px);
 }

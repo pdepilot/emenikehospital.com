@@ -246,11 +246,11 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
+  /* background: linear-gradient(
     135deg,
     rgba(7, 177, 208, 0.85) 0%,
     rgba(7, 177, 208, 0.7) 100%
-  );
+  ); */
   z-index: 1;
 }
 
@@ -280,7 +280,7 @@ body {
 }
 
 .slide-content {
-  color: var(--white);
+  color: var(--secondary);
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -298,10 +298,11 @@ body {
 }
 
 .slide-content p {
-  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  font-size: clamp(1.5rem, 2.5vw, 1.3rem);
+  color: var(--text);
   max-width: 600px;
   margin-bottom: 30px;
-  text-shadow: 10px 10px 20px rgb(0, 0, 0);
+  text-shadow: 10px 10px 20px rgb(255, 255, 255);
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
@@ -713,13 +714,9 @@ body {
 
 /* Emergency Banner */
 .emergency-banner {
-  background: linear-gradient(
-      135deg,
-      rgba(7, 177, 208, 0.9) 0%,
-      rgba(7, 177, 208, 0.8) 100%
-    ),
+  background: 
     url("../images/IMG-20251102-WA0022.jpg");
-  color: var(--white);
+  color: var(--text);
   padding: 60px 0;
   text-align: center;
   background-size: cover;
@@ -728,12 +725,15 @@ body {
 }
 
 .emergency-banner h2 {
+  color: var(--text);
   font-size: clamp(1.8rem, 4vw, 2.5rem);
   margin-bottom: 20px;
+  text-shadow: 10px 10px 20px rgb(9, 25, 243);
 }
 
 .emergency-banner p {
-  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--white);
+  font-size: clamp(1.5rem, 2vw, 1.2rem);
   margin-bottom: 30px;
   max-width: 700px;
   margin-left: auto;
@@ -742,7 +742,7 @@ body {
 
 .emergency-phone {
   font-size: clamp(1.8rem, 4vw, 2.5rem);
-  color: var(--white);
+  color: var(--secondary);
   font-weight: 800;
   display: block;
   margin-bottom: 20px;
@@ -752,7 +752,7 @@ body {
 /* Doctors Section */
 .doctors-section {
   padding: 100px 0;
-  background: var(--white);
+  background: var(--secondary);
 }
 
 .doctors-grid {
@@ -809,6 +809,7 @@ body {
   background: var(--secondary);
   position: relative;
   overflow: hidden;
+  
 }
 
 .testimonials-section::before {
@@ -818,7 +819,7 @@ body {
   left: -100px;
   width: 300px;
   height: 300px;
-  background: var(--secondary);
+  background: var(--white);
   border-radius: 50%;
   opacity: 0.1;
 }
@@ -857,7 +858,7 @@ body {
   left: 0;
   top: -10px;
   font-size: 3rem;
-  color: var(--secondary);
+  color: var(--text);
   opacity: 0.3;
 }
 
@@ -954,7 +955,7 @@ body {
 /* Insurance Section */
 .insurance-section {
   padding: 80px 0;
-  background: var(--light);
+  background: var(--secondary);
 }
 
 .insurance-logos {
@@ -973,6 +974,7 @@ body {
   transition: var(--transition);
 }
 
+
 .insurance-logo:hover {
   filter: grayscale(0%);
   opacity: 1;
@@ -981,11 +983,7 @@ body {
 /* CTA Section */
 .cta-section {
   padding: 100px 0;
-  background: linear-gradient(
-      135deg,
-      rgba(7, 177, 208, 0.9) 0%,
-      rgba(7, 177, 208, 0.8) 100%
-    ),
+  background: 
     url("../images/IMG-20251102-WA0020.jpg");
   background-size: cover;
   background-position: center;
@@ -995,8 +993,10 @@ body {
 }
 
 .cta-section h2 {
+  color: var(--text);
   font-size: clamp(1.8rem, 4vw, 2.5rem);
   margin-bottom: 20px;
+  text-shadow: 10px 10px 20px rgb(9, 25, 243);
 }
 
 .cta-section p {
@@ -1009,7 +1009,7 @@ body {
 
 /* Footer with Logo */
 .site-footer {
-  background: var(--white);
+  background: var(--secondary);
   color: var(--text);
   padding: 30px 0 10px;
 }
@@ -1024,7 +1024,7 @@ body {
 .footer-col h3 {
   font-size: clamp(1.1rem, 2vw, 1.3rem);
   margin-bottom: 25px;
-  color: var(--text);
+  color: var(--white);
   position: relative;
   padding-bottom: 10px;
 }
@@ -1036,7 +1036,7 @@ body {
   left: 0;
   width: 40px;
   height: 3px;
-  background: var(--text);
+  background: var(--white);
 }
 
 .footer-col p {
@@ -1059,7 +1059,7 @@ body {
 }
 
 .footer-links a:hover {
-  color: var(--dark);
+  color: var(--white);
   padding-left: 5px;
 }
 
@@ -1201,9 +1201,10 @@ body {
     flex-wrap: wrap;
     justify-content: center;
   }
+  
 
   .hero-video {
-    height: 80vh;
+    height: 100vh;
     min-height: 600px;
   }
 

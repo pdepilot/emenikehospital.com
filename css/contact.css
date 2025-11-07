@@ -253,11 +253,7 @@ body {
 
 /* Hero Section */
 .contact-hero {
-  background: linear-gradient(
-      135deg,
-      rgba(7, 177, 208, 0.85) 0%,
-      rgba(7, 177, 208, 0.7) 100%
-    ),
+  background: 
     url("/images/IMG-20251102-WA0021_edit_10053728273986.jpg");
   background-position: center;
   color: var(--white);
@@ -267,16 +263,18 @@ body {
 }
 
 .contact-hero h1 {
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: clamp(2.5rem, 7vw, 3.5rem);
+  color: var(--secondary);
   margin-bottom: 20px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 4px 4px 4px rgb(0, 0, 0);
 }
 
 .contact-hero p {
-  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-size: clamp(1.5rem, 2vw, 1.2rem);
   max-width: 700px;
+  color: var(--white);
   margin: 0 auto;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
   padding: 0 15px;
 }
 
@@ -344,7 +342,7 @@ body {
 
 /* Contact Form */
 .contact-form {
-  background: var(--white);
+  background: var(--secondary);
   padding: clamp(25px, 5vw, 40px);
   border-radius: 15px;
   box-shadow: var(--shadow);
@@ -389,8 +387,8 @@ textarea.form-control {
 }
 
 .btn-primary {
-  background: var(--secondary);
-  color: var(--white);
+  background: var(--white);
+  color: var(--text);
   border: none;
   padding: 14px 30px;
   border-radius: 30px;
@@ -406,7 +404,7 @@ textarea.form-control {
 }
 
 .btn-primary:hover {
-  background: var(--primary);
+  background: var(--text-light);
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(42, 178, 123, 0.3);
 }
@@ -462,6 +460,17 @@ textarea.form-control {
 /* Map Section */
 .map-section {
   padding: 0 0 clamp(60px, 10vw, 100px);
+  background: url("/images/heart.jpeg")
+    center/cover no-repeat;
+  background-attachment: fixed;
+}
+.section-header p{
+  color: var(--text);
+  font-size: 25px;
+}
+
+.section-header h2 {
+  color: var(--secondary);
 }
 
 .map-container {
@@ -561,22 +570,23 @@ textarea.form-control {
 
 /* Footer with Logo */
 .site-footer {
-  background: var(--white);
+  background: var(--secondary);
   color: var(--text);
   padding: 30px 0 10px;
+  
 }
 
 .footer-content {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
   margin-bottom: 10px;
 }
 
 .footer-col h3 {
-  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  font-size: 1.3rem;
   margin-bottom: 25px;
-  color: var(--text);
+  color: var(--white);
   position: relative;
   padding-bottom: 10px;
 }
@@ -588,13 +598,17 @@ textarea.form-control {
   left: 0;
   width: 40px;
   height: 3px;
-  background: var(--text);
+  background: var(--white);
 }
 
 .footer-col p {
   margin-bottom: 20px;
   color: var(--text);
 }
+.footer-col i {
+  color: var(--white);
+}
+
 
 .footer-links {
   list-style: none;
@@ -611,7 +625,7 @@ textarea.form-control {
 }
 
 .footer-links a:hover {
-  color: var(--dark);
+  color: var(--white);
   padding-left: 5px;
 }
 
@@ -631,7 +645,7 @@ textarea.form-control {
 .footer-logo-text {
   color: var(--text);
   font-weight: 700;
-  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-size: 1.5rem;
 }
 
 .footer-bottom {
@@ -663,7 +677,7 @@ textarea.form-control {
 }
 
 .social-icons a:hover {
-  background: var(--white);
+  background: var(--text);
   color: var(--secondary);
   transform: translateY(-3px);
 }

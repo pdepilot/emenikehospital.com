@@ -17,6 +17,7 @@
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   --transition: all 0.3s ease;
 }
+
 html {
   scroll-behavior: smooth;
 }
@@ -33,7 +34,7 @@ body {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 15px;
 }
 
 /* Top Bar Styles */
@@ -49,6 +50,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .top-left {
@@ -59,7 +61,8 @@ body {
 .top-right {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
 .top-right span {
@@ -114,7 +117,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1px 0;
+  padding: 10px 0;
 }
 
 .logo {
@@ -124,7 +127,7 @@ body {
 }
 
 .logo h1 {
-  font-size: 2.2rem;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
   font-weight: 700;
   color: var(--white);
   display: flex;
@@ -135,11 +138,9 @@ body {
 }
 
 .logo-image {
-  height: 100px;
+  height: clamp(60px, 10vw, 100px);
   width: auto;
   vertical-align: middle;
-
-  /* filter: brightness(0) invert(1); */
   margin: 0 5px;
 }
 
@@ -151,10 +152,11 @@ body {
 .main-nav ul {
   display: flex;
   list-style: none;
+  flex-wrap: wrap;
 }
 
 .main-nav li {
-  margin-left: 25px;
+  margin-left: 15px;
 }
 
 .main-nav a {
@@ -163,6 +165,7 @@ body {
   font-weight: 600;
   transition: color 0.3s;
   position: relative;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
 }
 
 .main-nav a:hover {
@@ -187,12 +190,13 @@ body {
   background: transparent;
   border: 2px solid var(--secondary);
   color: var(--secondary);
-  padding: 10px 25px;
+  padding: 8px 20px;
   border-radius: 30px;
   font-weight: 700;
   transition: all 0.3s;
   text-decoration: none;
   display: inline-block;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
 }
 
 .btn-outline:hover {
@@ -214,8 +218,8 @@ body {
 /* Hero Carousel Section */
 .hero-carousel {
   position: relative;
-  height: 85vh;
-  min-height: 600px;
+  height: 70vh;
+  min-height: 500px;
   overflow: hidden;
 }
 
@@ -256,11 +260,6 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    135deg,
-    rgba(7, 177, 208, 0.85) 0%,
-    rgba(7, 177, 208, 0.7) 100%
-  );
   z-index: 1;
 }
 
@@ -276,7 +275,8 @@ body {
 }
 
 .carousel-content h1 {
-  font-size: 3.5rem;
+  color: var(--secondary);
+  font-size: 3rem;
   margin-bottom: 20px;
   line-height: 1.2;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
@@ -284,10 +284,11 @@ body {
 }
 
 .carousel-content p {
-  font-size: 1.3rem;
+  color: var(--text);
+  font-size: 1.8rem;
   max-width: 700px;
   margin: 0 auto 30px;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  text-shadow: 3px 3px 3px rgb(255, 255, 255);
   animation: fadeInUp 1s ease-out 0.3s both;
 }
 
@@ -297,6 +298,7 @@ body {
   list-style: none;
   margin-top: 20px;
   animation: fadeInUp 1s ease-out 0.6s both;
+  flex-wrap: wrap;
 }
 
 .breadcrumb li {
@@ -304,7 +306,8 @@ body {
 }
 
 .breadcrumb a {
-  color: #fff;
+  color: #000000;
+  font-size: 1.5rem;
   text-decoration: none;
   transition: color 0.3s;
 }
@@ -315,6 +318,7 @@ body {
 
 .breadcrumb li:not(:last-child)::after {
   content: ">";
+  color: #000000;
   margin-left: 10px;
 }
 
@@ -402,17 +406,17 @@ body {
 
 /* Doctors Section */
 .doctors-section {
-  padding: 100px 0;
+  padding: 80px 0;
   background: white;
 }
 
 .section-header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
 }
 
 .section-header h2 {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   color: var(--primary);
   margin-bottom: 15px;
   position: relative;
@@ -440,7 +444,7 @@ body {
 
 .doctors-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 30px;
 }
 
@@ -546,7 +550,7 @@ body {
 
 /* Specialties Section */
 .specialties-section {
-  padding: 100px 0;
+  padding: 80px 0;
   background: var(--light);
   position: relative;
   overflow: hidden;
@@ -578,7 +582,7 @@ body {
 
 .specialties-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 30px;
 }
 
@@ -652,8 +656,8 @@ body {
 
 /* Leadership Team */
 .leadership-section {
-  padding: 100px 0;
-  background: white;
+  padding: 80px 0;
+  background: var(--secondary);
 }
 
 .leadership-grid {
@@ -664,13 +668,13 @@ body {
 }
 
 .leadership-content h2 {
-  font-size: 2.5rem;
-  color: var(--primary);
+  font-size: 2.2rem;
+  color: var(--white);
   margin-bottom: 20px;
 }
 
 .leadership-content p {
-  color: var(--text-light);
+  color: var(--text);
   margin-bottom: 30px;
 }
 
@@ -685,7 +689,7 @@ body {
 }
 
 .leadership-list i {
-  color: var(--secondary);
+  color: var(--white);
   margin-right: 10px;
   margin-top: 5px;
   font-size: 1.2rem;
@@ -747,11 +751,13 @@ body {
 /* CTA Section */
 .cta-section {
   padding: 100px 0;
-  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-  color: white;
+  background: 
+    url("../images/IMG-20251102-WA0020.jpg");
+  background-size: cover;
+  background-position: center;
+  color: var(--white);
   text-align: center;
-  position: relative;
-  overflow: hidden;
+  background-attachment: fixed;
 }
 
 .cta-section::before {
@@ -761,21 +767,18 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-      135deg,
-      rgba(7, 177, 208, 0.9) 0%,
-      rgba(7, 177, 208, 0.8) 100%
-    ),
-    url("/images/undefined (1).jpeg");
+  background: url("https://images.unsplash.com/photo-1551076805-e1869033e561?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1;
   background-attachment: fixed;
-  align-items: center;
 }
 
 .cta-section h2 {
-  font-size: 2.5rem;
+  color: var(--text);
+  font-size: clamp(2.5rem, 4vw, 3rem);
   margin-bottom: 20px;
-  position: relative;
-  z-index: 2;
+  text-shadow: 10px 10px 20px rgb(9, 25, 243);
 }
 
 .cta-section p {
@@ -800,21 +803,22 @@ body {
 }
 
 .btn-primary:hover {
-  background: var(--light);
+  background: var(--text);
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* Footer with Logo */
 .site-footer {
-  background: var(--white);
+  background: var(--secondary);
   color: var(--text);
   padding: 30px 0 10px;
+  
 }
 
 .footer-content {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 40px;
   margin-bottom: 10px;
 }
@@ -822,7 +826,7 @@ body {
 .footer-col h3 {
   font-size: 1.3rem;
   margin-bottom: 25px;
-  color: var(--text);
+  color: var(--white);
   position: relative;
   padding-bottom: 10px;
 }
@@ -834,13 +838,17 @@ body {
   left: 0;
   width: 40px;
   height: 3px;
-  background: var(--text);
+  background: var(--white);
 }
 
 .footer-col p {
   margin-bottom: 20px;
   color: var(--text);
 }
+.footer-col i {
+  color: var(--white);
+}
+
 
 .footer-links {
   list-style: none;
@@ -857,7 +865,7 @@ body {
 }
 
 .footer-links a:hover {
-  color: var(--dark);
+  color: var(--white);
   padding-left: 5px;
 }
 
@@ -866,8 +874,9 @@ body {
   align-items: center;
   margin-bottom: 20px;
 }
+
 .footer-logo-image {
-  height: 100px;
+  height: 80px;
   width: auto;
   margin-right: 10px;
   color: var(--text);
@@ -912,10 +921,11 @@ body {
   color: var(--secondary);
   transform: translateY(-3px);
 }
+
 /* Responsive Styles */
 @media (max-width: 1024px) {
   .carousel-content h1 {
-    font-size: 3rem;
+    font-size: 2.2rem;
   }
 
   .doctors-grid {
@@ -931,8 +941,8 @@ body {
     gap: 40px;
   }
 
-  .footer-inner {
-    grid-template-columns: 1fr 1fr;
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -947,11 +957,12 @@ body {
     top: 100%;
     left: 0;
     width: 100%;
-    background: white;
+    background: rgba(7, 177, 208, 0.95);
     flex-direction: column;
     padding: 20px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     z-index: 99;
+    backdrop-filter: blur(10px);
   }
 
   .main-nav.active ul {
@@ -970,17 +981,29 @@ body {
     margin: 10px 0;
   }
 
+  .topbar-inner {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .top-right {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+
   .hero-carousel {
-    height: 70vh;
-    min-height: 500px;
+    height: 60vh;
+    min-height: 400px;
   }
 
   .carousel-content h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   .carousel-content p {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .carousel-nav {
@@ -995,7 +1018,7 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .footer-inner {
+  .footer-content {
     grid-template-columns: 1fr;
   }
 
@@ -1003,25 +1026,55 @@ body {
     flex-direction: column;
     gap: 15px;
   }
+
+  .topbar-inner {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .top-right {
+    justify-content: center;
+  }
 }
 
 @media (max-width: 480px) {
   .hero-carousel {
-    height: 60vh;
-    min-height: 400px;
+    height: 50vh;
+    min-height: 350px;
   }
 
   .carousel-content h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .carousel-content p {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   .section-header h2,
   .leadership-content h2,
   .cta-section h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
+  }
+
+  .logo h1 {
+    font-size: 1.5rem;
+  }
+
+  .logo-image {
+    height: 50px;
+  }
+
+  .doctor-image {
+    height: 250px;
+  }
+
+  .specialty-card {
+    padding: 30px 20px;
+  }
+
+  .btn-outline {
+    padding: 6px 15px;
+    font-size: 0.85rem;
   }
 }

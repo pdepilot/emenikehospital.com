@@ -35,7 +35,6 @@ document.getElementById("scrollToTop").addEventListener("click", function () {
   });
 });
 
-
 // Carousel functionality
 const slides = document.querySelectorAll(".carousel-slide");
 const dots = document.querySelectorAll(".carousel-dot");
@@ -141,9 +140,11 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Observe elements for animation
-document.querySelectorAll(".service-card, .specialized-item").forEach((el) => {
-  el.style.opacity = 0;
-  el.style.transform = "translateY(20px)";
-  el.style.transition = "opacity 0.5s ease, transform 0.5s ease";
-  observer.observe(el);
-});
+document
+  .querySelectorAll(".service-card, .specialized-item, .service-item")
+  .forEach((el) => {
+    el.style.opacity = 0;
+    el.style.transform = "translateY(20px)";
+    el.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+    observer.observe(el);
+  });

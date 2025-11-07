@@ -220,15 +220,11 @@ body {
 
 /* Hero Section */
 .appointment-hero {
-  background: linear-gradient(
-      135deg,
-      rgba(7, 177, 208, 0.85) 0%,
-      rgba(7, 177, 208, 0.7) 100%
-    ),
+  background: 
     url("/images/Afro Medical Professionals United- Worker's Day.jpeg");
   background-size: cover;
   background-position: center;
-  color: var(--white);
+  color: var(--secondary);
   padding: 80px 0 60px;
   text-align: center;
   position: relative;
@@ -245,10 +241,10 @@ body {
   height: 200%;
   background: radial-gradient(
     circle,
-    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0) 0%,
     transparent 70%
   );
-  animation: float 15s infinite linear;
+  animation: float 1s infinite linear;
 }
 
 @keyframes float {
@@ -261,18 +257,19 @@ body {
 }
 
 .appointment-hero h1 {
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
   margin-bottom: 20px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 2px 4px rgb(0, 0, 0);
   position: relative;
   z-index: 2;
 }
 
 .appointment-hero p {
-  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  font-size: clamp(1.3rem, 2.5vw, 1.2rem);
   max-width: 700px;
+  color: var(--white);
   margin: 0 auto;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 1px 3px rgb(0, 0, 0);
   position: relative;
   z-index: 2;
 }
@@ -314,7 +311,7 @@ body {
   left: 0;
   right: 0;
   height: 3px;
-  background: var(--light);
+  background: var(--white);
   z-index: 1;
 }
 
@@ -330,8 +327,8 @@ body {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: var(--light);
-  color: var(--text-light);
+  background: var(--white);
+  color: var(--text);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -617,7 +614,7 @@ textarea.form-control {
 
 /* Appointment Summary */
 .appointment-summary {
-  background: var(--light);
+  background: var(--secondary);
   border-radius: 12px;
   padding: 25px;
   margin-top: 25px;
@@ -625,7 +622,7 @@ textarea.form-control {
 
 .summary-title {
   font-size: clamp(1.1rem, 2vw, 1.2rem);
-  color: var(--primary);
+  color: var(--text);
   margin-bottom: 15px;
   display: flex;
   align-items: center;
@@ -644,12 +641,12 @@ textarea.form-control {
 }
 
 .summary-label {
-  color: var(--text-light);
+  color: var(--text);
 }
 
 .summary-value {
   font-weight: 600;
-  color: var(--primary);
+  color: var(--text);
 }
 
 /* Confirmation Step */
@@ -661,7 +658,7 @@ textarea.form-control {
 .confirmation-icon {
   width: 80px;
   height: 80px;
-  background: var(--light);
+  background: var(--secondary);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -744,22 +741,23 @@ textarea.form-control {
 
 /* Footer with Logo */
 .site-footer {
-  background: var(--white);
+  background: var(--secondary);
   color: var(--text);
   padding: 30px 0 10px;
+  
 }
 
 .footer-content {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
   margin-bottom: 10px;
 }
 
 .footer-col h3 {
-  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  font-size: 1.3rem;
   margin-bottom: 25px;
-  color: var(--text);
+  color: var(--white);
   position: relative;
   padding-bottom: 10px;
 }
@@ -771,13 +769,17 @@ textarea.form-control {
   left: 0;
   width: 40px;
   height: 3px;
-  background: var(--text);
+  background: var(--white);
 }
 
 .footer-col p {
   margin-bottom: 20px;
   color: var(--text);
 }
+.footer-col i {
+  color: var(--white);
+}
+
 
 .footer-links {
   list-style: none;
@@ -794,7 +796,7 @@ textarea.form-control {
 }
 
 .footer-links a:hover {
-  color: var(--dark);
+  color: var(--white);
   padding-left: 5px;
 }
 
@@ -814,7 +816,7 @@ textarea.form-control {
 .footer-logo-text {
   color: var(--text);
   font-weight: 700;
-  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-size: 1.5rem;
 }
 
 .footer-bottom {
@@ -846,7 +848,7 @@ textarea.form-control {
 }
 
 .social-icons a:hover {
-  background: var(--white);
+  background: var(--text);
   color: var(--secondary);
   transform: translateY(-3px);
 }

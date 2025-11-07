@@ -823,7 +823,7 @@ body {
 
 /* Footer with Logo */
 .site-footer {
-  background: var(--white);
+  background: var(--secondary);
   color: var(--text);
   padding: 30px 0 10px;
 }
@@ -831,14 +831,14 @@ body {
 .footer-content {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
+  gap: 30px;
   margin-bottom: 10px;
 }
 
 .footer-col h3 {
-  font-size: 1.3rem;
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
   margin-bottom: 25px;
-  color: var(--text);
+  color: var(--white);
   position: relative;
   padding-bottom: 10px;
 }
@@ -850,7 +850,7 @@ body {
   left: 0;
   width: 40px;
   height: 3px;
-  background: var(--text);
+  background: var(--white);
 }
 
 .footer-col p {
@@ -873,7 +873,7 @@ body {
 }
 
 .footer-links a:hover {
-  color: var(--dark);
+  color: var(--white);
   padding-left: 5px;
 }
 
@@ -884,7 +884,7 @@ body {
 }
 
 .footer-logo-image {
-  height: 100px;
+  height: 80px;
   width: auto;
   margin-right: 10px;
   color: var(--text);
@@ -893,7 +893,7 @@ body {
 .footer-logo-text {
   color: var(--text);
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
 }
 
 .footer-bottom {
@@ -929,7 +929,6 @@ body {
   color: var(--secondary);
   transform: translateY(-3px);
 }
-
 
 /* Scroll to Top Button */
 .scroll-to-top {

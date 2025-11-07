@@ -215,8 +215,8 @@ body {
 
 /* Pediatrics Hero Section */
 .pediatrics-hero {
-  background: var(--secondary);
-  color: var(--white);
+  background: url("https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80")
+    center/cover no-repeat;
   padding: 100px 0;
   text-align: center;
   position: relative;
@@ -230,8 +230,6 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80")
-    center/cover no-repeat;
   opacity: 0.15;
   z-index: 1;
   background-attachment: fixed;
@@ -243,16 +241,19 @@ body {
 }
 
 .pediatrics-hero h1 {
+  color: var(--secondary);
+  text-shadow: 2px 2px 4px rgb(255, 255, 255);
   font-size: 3.5rem;
   margin-bottom: 20px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  
 }
 
 .pediatrics-hero p {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   max-width: 700px;
   margin: 0 auto 30px;
   opacity: 0.9;
+  text-shadow: 2px 2px 4px rgb(255, 255, 255);
 }
 
 .hero-buttons {
@@ -728,12 +729,8 @@ body {
 /* Pediatrics CTA Section */
 .cta-section {
   padding: 100px 0;
-  background: linear-gradient(
-      135deg,
-      rgba(7, 177, 208, 0.9) 0%,
-      rgba(7, 177, 208, 0.8) 100%
-    ),
-    url("https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80");
+  background: 
+    url("/images/Oh, baby!.jpg");
   background-size: cover;
   background-position: center;
   color: var(--white);
@@ -742,36 +739,40 @@ body {
 }
 
 .cta-section h2 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
+  color: var(--secondary);
   margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgb(255, 255, 255);
 }
 
 .cta-section p {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   margin-bottom: 40px;
   max-width: 700px;
   margin-left: auto;
+  color: var(--text);
+  text-shadow: 2px 2px 4px rgb(255, 255, 255);
   margin-right: auto;
 }
 
 /* Footer with Logo */
 .site-footer {
-  background: var(--white);
+  background: var(--secondary);
   color: var(--text);
   padding: 30px 0 10px;
 }
 
 .footer-content {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
   margin-bottom: 10px;
 }
 
 .footer-col h3 {
-  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  font-size: 1.3rem;
   margin-bottom: 25px;
-  color: var(--text);
+  color: var(--white);
   position: relative;
   padding-bottom: 10px;
 }
@@ -783,12 +784,15 @@ body {
   left: 0;
   width: 40px;
   height: 3px;
-  background: var(--text);
+  background: var(--white);
 }
 
 .footer-col p {
   margin-bottom: 20px;
   color: var(--text);
+}
+.footer-col i {
+  color: var(--white);
 }
 
 .footer-links {
@@ -806,7 +810,7 @@ body {
 }
 
 .footer-links a:hover {
-  color: var(--dark);
+  color: var(--white);
   padding-left: 5px;
 }
 
@@ -826,7 +830,7 @@ body {
 .footer-logo-text {
   color: var(--text);
   font-weight: 700;
-  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-size: 1.5rem;
 }
 
 .footer-bottom {
@@ -858,11 +862,10 @@ body {
 }
 
 .social-icons a:hover {
-  background: var(--white);
+  background: var(--text);
   color: var(--secondary);
   transform: translateY(-3px);
 }
-
 /* Responsive Styles */
 @media (max-width: 1024px) {
   .services-grid,
