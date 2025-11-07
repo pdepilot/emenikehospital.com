@@ -187,7 +187,7 @@ body {
   background: var(--dark);
 }
 
-.btn-outline {
+.btn-outliner {
   background: transparent;
   border: 2px solid var(--secondary);
   color: var(--secondary);
@@ -200,7 +200,7 @@ body {
   font-size: clamp(0.9rem, 1.5vw, 1rem);
 }
 
-.btn-outline:hover {
+.btn-outliner:hover {
   background: var(--text);
   color: white;
   transform: translateY(-2px);
@@ -550,7 +550,6 @@ body {
 /* CTA Section */
 .cta-section {
   padding: 70px 0;
-  /* background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); */
   color: white;
   text-align: center;
   position: relative;

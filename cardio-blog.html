@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 Ways to Improve Your Heart Health | Emenike Hospital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #07b1d0f3;
+            --secondary: #07b1d0;
+            --accent: #07b1d0;
+            --light: #f0f9f4;
+            --dark: #0b2a25;
+            --text: #333;
+            --text-light: #666;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: #f8fafc;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Styles */
+        .site-header {
+            background: #fff;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo h1 {
+            font-size: clamp(1.5rem, 4vw, 2.2rem);
+            font-weight: 700;
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            margin: 0;
+            line-height: 1;
+            white-space: nowrap;
+        }
+
+        .logo-image {
+            height: clamp(60px, 10vw, 100px);
+            width: auto;
+            vertical-align: middle;
+            margin: 0 5px;
+        }
+
+        .logo-text {
+            color: var(--dark);
+            font-weight: 700;
+        }
+
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .main-nav li {
+            margin-left: 15px;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 600;
+            transition: color 0.3s;
+            position: relative;
+            font-size: clamp(0.9rem, 1.5vw, 1rem);
+        }
+
+        .main-nav a:hover {
+            color: var(--secondary);
+        }
+
+        .main-nav a.active {
+            color: var(--secondary);
+        }
+
+        .main-nav a.active::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--dark);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 700;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            font-size: clamp(0.9rem, 1.5vw, 1rem);
+        }
+
+        .btn-outline:hover {
+            background: var(--text);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(42, 178, 123, 0.2);
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text);
+        }
+
+        /* Blog Hero Section */
+        .blog-hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 100px 0 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23ffffff" opacity="0.1"><path d="M500 50c-150 0-150 50-300 50s-150-50-300-50 150-50 300-50 150 50 300 50z"/></svg>');
+            background-size: cover;
+        }
+
+        .blog-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .blog-hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .blog-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+
+        .blog-meta-item i {
+            color: var(--light);
+        }
+
+        .blog-category {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        /* Blog Content Section */
+        .blog-content {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .blog-container {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 40px;
+        }
+
+        .blog-main {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .blog-article {
+            padding: 40px;
+        }
+
+        .blog-intro {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 30px;
+            line-height: 1.7;
+            border-left: 4px solid var(--secondary);
+            padding-left: 20px;
+        }
+
+        .blog-section {
+            margin-bottom: 40px;
+        }
+
+        .blog-section h2 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .blog-section h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--secondary);
+        }
+
+        .blog-section p {
+            margin-bottom: 15px;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .blog-section ul, .blog-section ol {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        .blog-section li {
+            margin-bottom: 10px;
+            color: var(--text-light);
+        }
+
+        .tip-box {
+            background: var(--light);
+            border-left: 4px solid var(--secondary);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .tip-box h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tip-box h3 i {
+            color: var(--secondary);
+        }
+
+        .quote-box {
+            background: var(--light);
+            padding: 30px;
+            border-radius: 10px;
+            margin: 30px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .quote-box::before, .quote-box::after {
+            content: '"';
+            position: absolute;
+            font-size: 4rem;
+            color: var(--secondary);
+            opacity: 0.3;
+        }
+
+        .quote-box::before {
+            top: 10px;
+            left: 20px;
+        }
+
+        .quote-box::after {
+            bottom: 10px;
+            right: 20px;
+        }
+
+        .quote-text {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--text);
+            margin-bottom: 15px;
+        }
+
+        .quote-author {
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        /* Heart Health Tips */
+        .health-tips {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .health-tip {
+            display: flex;
+            gap: 25px;
+            padding: 25px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-left: 5px solid var(--secondary);
+        }
+
+        .health-tip:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .tip-number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .tip-content h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .tip-content p {
+            margin-bottom: 15px;
+        }
+
+        .tip-benefits {
+            background: var(--light);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        .tip-benefits h4 {
+            color: var(--secondary);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tip-benefits ul {
+            margin-bottom: 0;
+        }
+
+        .tip-benefits li {
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+
+        /* Risk Factors */
+        .risk-factors {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .risk-factor {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+            border-top: 4px solid var(--primary);
+        }
+
+        .risk-factor h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .risk-factor h3 i {
+            color: var(--secondary);
+        }
+
+        .risk-factor p {
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+
+        /* Warning Signs */
+        .warning-signs {
+            background: #fff5f5;
+            border-left: 4px solid #e53e3e;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .warning-signs h3 {
+            color: #c53030;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .warning-signs ul {
+            margin-bottom: 0;
+        }
+
+        .warning-signs li {
+            margin-bottom: 8px;
+            color: #742a2a;
+        }
+
+        /* Blog Sidebar */
+        .blog-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .sidebar-widget {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+        }
+
+        .widget-title {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .widget-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--secondary);
+        }
+
+        .recent-posts {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .recent-post {
+            display: flex;
+            gap: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .recent-post:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .recent-post-img {
+            width: 80px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .recent-post-content h4 {
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .recent-post-content h4 a {
+            color: var(--text);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .recent-post-content h4 a:hover {
+            color: var(--secondary);
+        }
+
+        .recent-post-date {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        .categories-list {
+            list-style: none;
+        }
+
+        .categories-list li {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .categories-list li:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .categories-list a {
+            color: var(--text);
+            text-decoration: none;
+            display: flex;
+            justify-content: space-between;
+            transition: var(--transition);
+        }
+
+        .categories-list a:hover {
+            color: var(--secondary);
+        }
+
+        .categories-list span {
+            background: var(--light);
+            color: var(--secondary);
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+        }
+
+        .tags-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background: var(--light);
+            color: var(--text);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .tag:hover {
+            background: var(--secondary);
+            color: white;
+        }
+
+        /* CTA Section */
+        .blog-cta {
+            padding: 80px 0;
+            background: var(--secondary);
+            text-align: center;
+        }
+
+        .blog-cta h2 {
+            color: var(--white);
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            margin-bottom: 20px;
+        }
+
+        .blog-cta p {
+            color: var(--text);
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer with Logo */
+        .site-footer {
+            background: var(--secondary);
+            color: var(--text);
+            padding: 30px 0 10px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 10px;
+        }
+
+        .footer-col h3 {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            margin-bottom: 25px;
+            color: var(--white);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--white);
+        }
+
+        .footer-col p {
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: var(--text);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo-image {
+            height: 80px;
+            width: auto;
+            margin-right: 10px;
+            color: var(--text);
+        }
+
+        .footer-logo-text {
+            color: var(--text);
+            font-weight: 700;
+            font-size: clamp(1.2rem, 2vw, 1.5rem);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text);
+            font-size: 0.9rem;
+        }
+
+        /* Social Icons */
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--text);
+            border-radius: 50%;
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            background: var(--white);
+            color: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        /* Scroll to Top Button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: var(--transition);
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .scroll-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-to-top:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .blog-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .risk-factors {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-toggle {
+                display: block;
+            }
+
+            .main-nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(7, 177, 208, 0.95);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                z-index: 99;
+                backdrop-filter: blur(10px);
+            }
+
+            .main-nav.active ul {
+                display: flex;
+            }
+
+            .main-nav a.active {
+                color: var(--text);
+            }
+
+            .main-nav a:hover {
+                color: var(--white);
+            }
+
+            .main-nav li {
+                margin: 10px 0;
+            }
+
+            .blog-hero {
+                padding: 80px 0 40px;
+            }
+
+            .blog-article {
+                padding: 25px;
+            }
+
+            .blog-meta {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .health-tip {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .tip-number {
+                align-self: flex-start;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .scroll-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .blog-hero h1 {
+                font-size: 2rem;
+            }
+
+            .blog-image {
+                height: 250px;
+            }
+
+            .blog-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .scroll-to-top {
+                bottom: 15px;
+                right: 15px;
+                width: 40px;
+                height: 40px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-inner">
+           <div class="logo">
+                <h1>
+                    <span class="logo-text">Emenike</span>
+                    <img
+                         src="images/IMG-20251102-WA0019-removebg-preview.png"
+                        alt="Emenike Hospital Logo"
+                        class="logo-image"
+                    />
+                    <span class="logo-text">Hospital</span>
+                </h1>
+            </div>
+
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="doctors.html">Doctors</a></li>
+                    <li><a href="blog.html" class="active">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a class="btn-outline" href="book-appoint.html">Book Appointment</a></li>
+                </ul>
+            </nav>
+
+            <button class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Blog Hero Section -->
+    <section class="blog-hero">
+        <div class="container">
+            <div class="blog-hero-content">
+                <span class="blog-category">Cardiology</span>
+                <h1>5 Ways to Improve Your Heart Health</h1>
+                <p>Learn simple lifestyle changes that can significantly reduce your risk of heart disease and improve cardiovascular health.</p>
+                <div class="blog-meta">
+                    <div class="blog-meta-item">
+                        <i class="fas fa-user-md"></i>
+                        <span>Dr. Sarah Johnson</span>
+                    </div>
+                    <div class="blog-meta-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>October 10, 2023</span>
+                    </div>
+                    <div class="blog-meta-item">
+                        <i class="fas fa-clock"></i>
+                        <span>7 min read</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Content Section -->
+    <section class="blog-content">
+        <div class="container blog-container">
+            <div class="blog-main">
+                <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Heart Health" class="blog-image">
+                
+                <article class="blog-article">
+                    <p class="blog-intro">Heart disease remains the leading cause of death worldwide, but the good news is that up to 80% of cardiovascular diseases are preventable through lifestyle modifications. Implementing these five evidence-based strategies can dramatically improve your heart health and reduce your risk of heart disease.</p>
+                    
+                    <div class="blog-section">
+                        <h2>Understanding Heart Health</h2>
+                        <p>Your heart is the hardest-working muscle in your body, beating approximately 100,000 times per day. Maintaining cardiovascular health involves keeping your blood vessels clear, your blood pressure in check, and your heart muscle strong. Small, consistent changes can yield significant long-term benefits.</p>
+                        
+                        <div class="tip-box">
+                            <h3><i class="fas fa-lightbulb"></i> Did You Know?</h3>
+                            <p>According to the American Heart Association, adults who follow five key health habits have a 75-80% lower risk of developing cardiovascular disease compared to those who follow none of these habits.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="blog-section">
+                        <h2>5 Ways to Improve Your Heart Health</h2>
+                        
+                        <div class="health-tips">
+                            <!-- Tip 1 -->
+                            <div class="health-tip">
+                                <div class="tip-number">1</div>
+                                <div class="tip-content">
+                                    <h3>Adopt a Heart-Healthy Diet</h3>
+                                    <p>What you eat directly impacts your heart health. Focus on nutrient-dense foods that support cardiovascular function while limiting those that contribute to heart disease.</p>
+                                    
+                                    <div class="tip-benefits">
+                                        <h4><i class="fas fa-check-circle"></i> Key Strategies:</h4>
+                                        <ul>
+                                            <li>Increase fruits and vegetables (aim for 5-9 servings daily)</li>
+                                            <li>Choose whole grains over refined carbohydrates</li>
+                                            <li>Limit saturated and trans fats</li>
+                                            <li>Reduce sodium intake to less than 2,300mg daily</li>
+                                            <li>Incorporate healthy fats from nuts, seeds, and fish</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <p><strong>Pro Tip:</strong> Try the Mediterranean diet, which has been extensively studied and shown to reduce heart disease risk by 30-50%.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Tip 2 -->
+                            <div class="health-tip">
+                                <div class="tip-number">2</div>
+                                <div class="tip-content">
+                                    <h3>Stay Physically Active</h3>
+                                    <p>Regular exercise strengthens your heart muscle, improves circulation, and helps maintain a healthy weight - all crucial for cardiovascular health.</p>
+                                    
+                                    <div class="tip-benefits">
+                                        <h4><i class="fas fa-check-circle"></i> Recommended Activities:</h4>
+                                        <ul>
+                                            <li>Aerobic exercise: 150 minutes of moderate or 75 minutes of vigorous activity weekly</li>
+                                            <li>Strength training: 2+ days per week</li>
+                                            <li>Incorporate movement throughout your day</li>
+                                            <li>Find activities you enjoy to maintain consistency</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <p><strong>Pro Tip:</strong> Even 10-minute bouts of activity throughout the day can significantly benefit heart health if they add up to the recommended amounts.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Tip 3 -->
+                            <div class="health-tip">
+                                <div class="tip-number">3</div>
+                                <div class="tip-content">
+                                    <h3>Manage Stress Effectively</h3>
+                                    <p>Chronic stress can contribute to high blood pressure and other heart disease risk factors. Learning to manage stress is essential for cardiovascular health.</p>
+                                    
+                                    <div class="tip-benefits">
+                                        <h4><i class="fas fa-check-circle"></i> Stress-Reduction Techniques:</h4>
+                                        <ul>
+                                            <li>Practice mindfulness and meditation</li>
+                                            <li>Engage in regular physical activity</li>
+                                            <li>Maintain social connections</li>
+                                            <li>Ensure adequate sleep and rest</li>
+                                            <li>Develop healthy coping mechanisms</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <p><strong>Pro Tip:</strong> Deep breathing exercises can immediately lower blood pressure and reduce stress hormones in the body.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Tip 4 -->
+                            <div class="health-tip">
+                                <div class="tip-number">4</div>
+                                <div class="tip-content">
+                                    <h3>Maintain a Healthy Weight</h3>
+                                    <p>Excess weight, particularly around the abdomen, increases the risk of heart disease by contributing to high blood pressure, high cholesterol, and diabetes.</p>
+                                    
+                                    <div class="tip-benefits">
+                                        <h4><i class="fas fa-check-circle"></i> Weight Management Strategies:</h4>
+                                        <ul>
+                                            <li>Focus on gradual, sustainable weight loss if needed</li>
+                                            <li>Monitor portion sizes</li>
+                                            <li>Eat mindfully and avoid emotional eating</li>
+                                            <li>Combine diet and exercise for best results</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <p><strong>Pro Tip:</strong> Losing just 5-10% of your body weight can significantly improve blood pressure, cholesterol levels, and insulin sensitivity.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Tip 5 -->
+                            <div class="health-tip">
+                                <div class="tip-number">5</div>
+                                <div class="tip-content">
+                                    <h3>Avoid Tobacco and Limit Alcohol</h3>
+                                    <p>Tobacco use and excessive alcohol consumption are major contributors to heart disease. Making changes in these areas can have immediate and long-term benefits.</p>
+                                    
+                                    <div class="tip-benefits">
+                                        <h4><i class="fas fa-check-circle"></i> Healthy Habits:</h4>
+                                        <ul>
+                                            <li>Quit smoking and avoid secondhand smoke</li>
+                                            <li>Limit alcohol to moderate levels (1 drink/day for women, 2 for men)</li>
+                                            <li>Seek support for smoking cessation if needed</li>
+                                            <li>Be aware of hidden alcohol in medications and foods</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <p><strong>Pro Tip:</strong> Within just one year of quitting smoking, your risk of heart disease drops to about half that of a continuing smoker.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="quote-box">
+                        <p class="quote-text">The human heart weighs less than a pound, but it's strong enough to carry you through a lifetime. Take care of it, and it will take care of you.</p>
+                        <p class="quote-author">- Dr. Sarah Johnson</p>
+                    </div>
+                    
+                    <div class="blog-section">
+                        <h2>Know Your Risk Factors</h2>
+                        <p>Understanding your personal risk factors for heart disease can help you take targeted action. Some risk factors are within your control, while others are not.</p>
+                        
+                        <div class="risk-factors">
+                            <div class="risk-factor">
+                                <h3><i class="fas fa-exclamation-triangle"></i> Controllable Factors</h3>
+                                <p>High blood pressure, high cholesterol, smoking, diabetes, obesity, physical inactivity, and unhealthy diet.</p>
+                            </div>
+                            
+                            <div class="risk-factor">
+                                <h3><i class="fas fa-info-circle"></i> Non-Controllable Factors</h3>
+                                <p>Age, gender, family history, and ethnicity. While you can't change these, knowing about them can motivate proactive prevention.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="blog-section">
+                        <h2>Warning Signs of Heart Problems</h2>
+                        <p>Recognizing the early signs of heart trouble can be lifesaving. Seek medical attention if you experience:</p>
+                        
+                        <div class="warning-signs">
+                            <h3><i class="fas fa-heartbeat"></i> When to Seek Immediate Help</h3>
+                            <ul>
+                                <li>Chest pain, pressure, or discomfort</li>
+                                <li>Shortness of breath</li>
+                                <li>Pain radiating to arm, neck, jaw, or back</li>
+                                <li>Unexplained nausea or cold sweats</li>
+                                <li>Lightheadedness or dizziness</li>
+                                <li>Irregular heartbeat or palpitations</li>
+                                <li>Unusual fatigue during normal activities</li>
+                            </ul>
+                        </div>
+                        
+                        <p>Remember that symptoms can vary between individuals, and women often experience different heart attack symptoms than men.</p>
+                    </div>
+                    
+                    <div class="blog-section">
+                        <h2>Creating Your Heart Health Action Plan</h2>
+                        <p>Improving heart health is a journey, not a destination. Start with these steps:</p>
+                        <ol>
+                            <li><strong>Get baseline measurements:</strong> Know your blood pressure, cholesterol, and blood sugar levels</li>
+                            <li><strong>Set realistic goals:</strong> Focus on one change at a time to avoid overwhelm</li>
+                            <li><strong>Track your progress:</strong> Use apps or journals to monitor your habits</li>
+                            <li><strong>Build a support system:</strong> Share your goals with family and friends</li>
+                            <li><strong>Schedule regular check-ups:</strong> Work with your healthcare provider to monitor your heart health</li>
+                        </ol>
+                        
+                        <div class="tip-box">
+                            <h3><i class="fas fa-tips"></i> Success Tip</h3>
+                            <p>Pair new habits with existing routines to make them stick. For example, take a walk after dinner or add vegetables to your breakfast.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="blog-section">
+                        <h2>When to Consult a Cardiologist</h2>
+                        <p>While lifestyle changes are powerful, some situations warrant professional medical guidance. Consider consulting a cardiologist if:</p>
+                        <ul>
+                            <li>You have a family history of early heart disease</li>
+                            <li>You're experiencing symptoms of heart problems</li>
+                            <li>You have multiple risk factors for heart disease</li>
+                            <li>You've been diagnosed with high blood pressure, high cholesterol, or diabetes</li>
+                            <li>You're planning to start a vigorous exercise program and have existing health concerns</li>
+                        </ul>
+                        <p>At Emenike Hospital, our cardiology team provides comprehensive heart health assessments and personalized prevention plans.</p>
+                    </div>
+                </article>
+            </div>
+            
+            <!-- Blog Sidebar -->
+            <aside class="blog-sidebar">
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">About the Author</h3>
+                    <div class="author-bio">
+                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Dr. Sarah Johnson" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover;">
+                            <div>
+                                <h4 style="margin-bottom: 5px;">Dr. Sarah Johnson</h4>
+                                <p style="font-size: 0.9rem; color: var(--text-light);">Cardiology Specialist</p>
+                            </div>
+                        </div>
+                        <p style="font-size: 0.9rem; color: var(--text-light);">Dr. Johnson is a board-certified cardiologist with over 15 years of experience in cardiovascular diseases and preventive cardiology. She is passionate about helping patients reduce their heart disease risk through evidence-based lifestyle interventions.</p>
+                    </div>
+                </div>
+                
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Recent Posts</h3>
+                    <div class="recent-posts">
+                        <div class="recent-post">
+                            <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Nutrition" class="recent-post-img">
+                            <div class="recent-post-content">
+                                <h4><a href="#">The Importance of Balanced Nutrition</a></h4>
+                                <div class="recent-post-date">Oct 20, 2023</div>
+                            </div>
+                        </div>
+                        <div class="recent-post">
+                            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Mental Health" class="recent-post-img">
+                            <div class="recent-post-content">
+                                <h4><a href="#">Managing Stress in Daily Life</a></h4>
+                                <div class="recent-post-date">Oct 15, 2023</div>
+                            </div>
+                        </div>
+                        <div class="recent-post">
+                            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Sleep" class="recent-post-img">
+                            <div class="recent-post-content">
+                                <h4><a href="#">The Science of Better Sleep</a></h4>
+                                <div class="recent-post-date">Sep 28, 2023</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Categories</h3>
+                    <ul class="categories-list">
+                        <li><a href="#">Cardiology <span>12</span></a></li>
+                        <li><a href="#">Mental Health <span>8</span></a></li>
+                        <li><a href="#">Nutrition <span>15</span></a></li>
+                        <li><a href="#">Preventive Care <span>10</span></a></li>
+                        <li><a href="#">Wellness <span>7</span></a></li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Popular Tags</h3>
+                    <div class="tags-list">
+                        <a href="#" class="tag">Heart Health</a>
+                        <a href="#" class="tag">Cardiology</a>
+                        <a href="#" class="tag">Prevention</a>
+                        <a href="#" class="tag">Exercise</a>
+                        <a href="#" class="tag">Nutrition</a>
+                        <a href="#" class="tag">Blood Pressure</a>
+                        <a href="#" class="tag">Cholesterol</a>
+                        <a href="#" class="tag">Wellness</a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="blog-cta">
+        <div class="container">
+            <h2>Concerned About Your Heart Health?</h2>
+            <p>Our cardiology team can help assess your risk factors and develop a personalized plan to protect your heart.</p>
+            <div class="hero-buttons" style="justify-content: center;">
+                <a href="book-appoint.html" class="btn-primary">Book Appointment</a>
+                <a href="contact.html" class="btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer with Logo -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img
+                           src="images/IMG-20251102-WA0019-removebg-preview.png"
+                            alt="Emenike Hospital Logo"
+                            class="footer-logo-image"
+                        />
+                        <span class="footer-logo-text">Emenike Hospital</span>
+                    </div>
+                    <p>Emenike Hospital: Where excellence, compassion, and innovation redefine healthcare. Our cutting-edge facility offers personalized, top-tier care across various specialties, ensuring every patient receives exceptional treatment.</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="doctors.html">Our Doctors</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="cardiology.html">Cardiology</a></li>
+                        <li><a href="neurology.html">Neurology</a></li>
+                        <li><a href="pediatric.html">Pediatrics</a></li>
+                        <li><a href="orthorpedic.html">Orthopedics</a></li>
+                        <li><a href="pediatric.html">Pediatric</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Plot 123 Naze Roundabout, Owerri</p>
+                    <p><i class="fas fa-phone"></i> +234 800 123 4567</p>
+                    <p><i class="fas fa-envelope"></i> info@emenikehospital.com</p>
+                    <p><i class="fas fa-clock"></i> 24/7 Opened</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> Emenike Hospital. All Rights Reserved | Developed By ERIBS tech</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script>
+        // Set current year in footer
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        // Mobile navigation toggle
+        const navToggle = document.getElementById("navToggle");
+        const mainNav = document.getElementById("mainNav");
+
+        if (navToggle && mainNav) {
+            navToggle.addEventListener("click", () => {
+                mainNav.classList.toggle("active");
+            });
+        }
+
+        // Header scroll effect
+        window.addEventListener("scroll", function () {
+            const header = document.querySelector(".site-header");
+            if (window.scrollY > 50) {
+                header.classList.add("scrolled");
+            } else {
+                header.classList.remove("scrolled");
+            }
+
+            // Show/hide scroll to top button
+            const scrollToTopBtn = document.getElementById("scrollToTop");
+            if (window.scrollY > 300) {
+                scrollToTopBtn.classList.add("visible");
+            } else {
+                scrollToTopBtn.classList.remove("visible");
+            }
+        });
+
+        // Scroll to top functionality
+        document.getElementById("scrollToTop").addEventListener("click", function () {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+            });
+        });
+    </script>
+</body>
+</html>
