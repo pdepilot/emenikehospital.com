@@ -34,6 +34,17 @@ window.addEventListener("scroll", function () {
     const scrollPosition = window.scrollY;
     aboutBgAnimation.style.transform = `translateY(${scrollPosition * 0.2}px)`;
   }
+
+  // Insurance section reveal on scroll
+  const insuranceSection = document.getElementById("insuranceSection");
+  if (insuranceSection) {
+    const sectionPosition = insuranceSection.getBoundingClientRect().top;
+    const screenPosition = window.innerHeight / 1.3;
+
+    if (sectionPosition < screenPosition) {
+      insuranceSection.classList.add("revealed");
+    }
+  }
 });
 
 // Scroll to top functionality
