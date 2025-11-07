@@ -248,7 +248,7 @@ body {
 
 /* Cardiology Hero Section */
 .cardiology-hero {
-  background: url("/images/heart.jpeg") center/cover no-repeat;
+  background: url("https://res.cloudinary.com/dl4hjr1p2/image/upload/v1762550332/heart_ncganj.jpg") center/cover no-repeat;
 
   padding: 80px 0;
   text-align: center;
@@ -667,7 +667,7 @@ body {
 /* Cardiology CTA Section */
 .cta-section {
   padding: 80px 0;
-  background: url("/images/heart.jpeg");
+  background: url("https://res.cloudinary.com/dl4hjr1p2/image/upload/v1762553490/AI_generated_Real_human_heart_isolated_on_white_background_lpscpz.jpg");
   background-size: cover;
   background-position: center;
   color: var(--text);
