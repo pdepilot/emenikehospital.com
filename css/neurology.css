@@ -250,7 +250,7 @@ body {
 
 /* Hero Section */
 .neurology-hero {
-  background: url("/images/brain.jpeg");
+  background: url("images/brain.jpeg");
   background-size: cover;
   background-position: center;
   color: var(--white);
@@ -803,7 +803,7 @@ body {
 
 /* CTA Section */
 .neurology-cta {
-  background: url("/images/IMG-20251102-WA0022.jpg");
+  background: url("images/IMG-20251102-WA0022.jpg");
   background-size: cover;
   background-position: center;
   color: var(--white);
