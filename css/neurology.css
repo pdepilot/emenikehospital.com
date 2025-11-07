@@ -250,8 +250,7 @@ body {
 
 /* Hero Section */
 .neurology-hero {
-  background: 
-    url("/images/brain.jpeg");
+  background: url("/images/brain.jpeg");
   background-size: cover;
   background-position: center;
   color: var(--white);
@@ -665,7 +664,6 @@ body {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
-
 .condition-card h3 {
   font-size: 1.3rem;
   color: var(--secondary);
@@ -805,8 +803,7 @@ body {
 
 /* CTA Section */
 .neurology-cta {
-  background: 
-    url("/images/IMG-20251102-WA0022.jpg");
+  background: url("/images/IMG-20251102-WA0022.jpg");
   background-size: cover;
   background-position: center;
   color: var(--white);
@@ -836,7 +833,6 @@ body {
   background: var(--secondary);
   color: var(--text);
   padding: 30px 0 10px;
-  
 }
 
 .footer-content {
@@ -871,7 +867,6 @@ body {
 .footer-col i {
   color: var(--white);
 }
-
 
 .footer-links {
   list-style: none;
@@ -1022,6 +1017,25 @@ body {
 
   .main-nav li {
     margin: 10px 0;
+  }
+
+  .btn-outline {
+    background: transparent;
+    border: 2px solid var(--white);
+    color: var(--secondary);
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: 700;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .btn-outline:hover {
+    background: var(--text);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(42, 178, 123, 0.2);
   }
 
   .topbar-inner {

@@ -714,8 +714,7 @@ body {
 
 /* Emergency Banner */
 .emergency-banner {
-  background: 
-    url("../images/IMG-20251102-WA0022.jpg");
+  background: url("../images/IMG-20251102-WA0022.jpg");
   color: var(--text);
   padding: 60px 0;
   text-align: center;
@@ -809,7 +808,6 @@ body {
   background: var(--secondary);
   position: relative;
   overflow: hidden;
-  
 }
 
 .testimonials-section::before {
@@ -875,7 +873,6 @@ body {
 .section-header p {
   color: var(--text);
 }
-
 
 .author-avatar {
   width: 50px;
@@ -974,7 +971,6 @@ body {
   transition: var(--transition);
 }
 
-
 .insurance-logo:hover {
   filter: grayscale(0%);
   opacity: 1;
@@ -983,8 +979,7 @@ body {
 /* CTA Section */
 .cta-section {
   padding: 100px 0;
-  background: 
-    url("../images/IMG-20251102-WA0020.jpg");
+  background: url("../images/IMG-20251102-WA0020.jpg");
   background-size: cover;
   background-position: center;
   color: var(--white);
@@ -1201,7 +1196,25 @@ body {
     flex-wrap: wrap;
     justify-content: center;
   }
-  
+
+  .btn-outline {
+    background: transparent;
+    border: 2px solid var(--white);
+    color: var(--secondary);
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: 700;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .btn-outline:hover {
+    background: var(--text);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(42, 178, 123, 0.2);
+  }
 
   .hero-video {
     height: 100vh;

@@ -245,7 +245,6 @@ body {
   text-shadow: 2px 2px 4px rgb(255, 255, 255);
   font-size: 3.5rem;
   margin-bottom: 20px;
-  
 }
 
 .pediatrics-hero p {
@@ -425,7 +424,6 @@ body {
 .service-link:hover i {
   transform: translateX(5px);
 }
-
 
 /* Scroll to Top Button */
 .scroll-to-top {
@@ -729,8 +727,7 @@ body {
 /* Pediatrics CTA Section */
 .cta-section {
   padding: 100px 0;
-  background: 
-    url("/images/Oh, baby!.jpg");
+  background: url("/images/Oh, baby!.jpg");
   background-size: cover;
   background-position: center;
   color: var(--white);
@@ -913,6 +910,25 @@ body {
 
   .main-nav li {
     margin: 10px 0;
+  }
+
+  .btn-outline {
+    background: transparent;
+    border: 2px solid var(--white);
+    color: var(--secondary);
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: 700;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .btn-outline:hover {
+    background: var(--text);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(42, 178, 123, 0.2);
   }
 
   .scroll-to-top {

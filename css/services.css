@@ -815,7 +815,7 @@ body {
     top: 100%;
     left: 0;
     width: 100%;
-    background: white;
+    background: var(--secondary);
     flex-direction: column;
     padding: 20px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
@@ -847,6 +847,25 @@ body {
     flex-wrap: wrap;
     justify-content: center;
   }
+
+  .btn-outliner {
+  background: transparent;
+  border: 2px solid var(--white);
+  color: var(--secondary);
+  padding: 10px 25px;
+  border-radius: 30px;
+  font-weight: 700;
+  transition: all 0.3s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-outliner:hover {
+  background: var(--text);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(42, 178, 123, 0.2);
+}
 
   .hero-carousel {
     height: 70vh;
