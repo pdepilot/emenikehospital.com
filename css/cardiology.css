@@ -275,20 +275,20 @@ body {
 }
 
 .cardiology-hero h1 {
-  font-size: 2.9rem;
-  color: var(--secondary);
+  color: var(--text);
+  font-size: 3rem;
   margin-bottom: 20px;
-  text-shadow: 2px 2px 4px rgb(0, 0, 0);
+  line-height: 1.2;
+  text-shadow: 2px 2px 4px rgb(5, 30, 252, 0.89);
 }
 
 .cardiology-hero p {
-  font-size: 1.5rem;
-  color: var(--white);
+  color: var(--text);
+  font-size: 1.8rem;
   max-width: 700px;
   margin: 0 auto 30px;
-  opacity: 0.9;
-  line-height: 1.6;
-  text-shadow: 5px 5px 10px rgb(0, 0, 0);
+  text-shadow: 2px 2px 4px rgba(5, 30, 252, 0.89);
+  animation: fadeInUp 1s ease-out 0.3s both;
 }
 
 .hero-buttons {
