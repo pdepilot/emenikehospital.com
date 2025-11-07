@@ -572,20 +572,6 @@ body {
   overflow: hidden;
 }
 
-/* .blog-cta h2 {
-  color: var(--white);
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
-  margin-bottom: 20px;
-}
-
-.blog-cta p {
-  color: var(--text);
-  font-size: clamp(1rem, 2vw, 1.2rem);
-  margin-bottom: 40px;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-} */
 
 .blog-cta::before {
   content: "";

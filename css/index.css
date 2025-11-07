@@ -299,6 +299,7 @@ body {
   margin-bottom: 30px;
   word-wrap: break-word;
   overflow-wrap: break-word;
+  text-shadow: 2px 2px 4px rgb(5, 30, 252, 0.89);
 }
 
 .hero-buttons {

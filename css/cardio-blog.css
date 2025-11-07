@@ -217,12 +217,15 @@ body {
 
 /* Blog Hero Section */
 .blog-hero {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-  color: white;
+  background: url("/images/Human heart on dark background with bokeh 3d illustration _ Premium AI-generated image.jpg");
   padding: 100px 0 60px;
   text-align: center;
   position: relative;
   overflow: hidden;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
 }
 
 .blog-hero::before {
@@ -244,10 +247,19 @@ body {
 }
 
 .blog-hero h1 {
+  color: var(--text);
   font-size: clamp(2rem, 5vw, 3.5rem);
   margin-bottom: 20px;
   line-height: 1.2;
+  text-shadow: 2px 2px 3px rgb(5, 30, 252, 0.89);
 }
+
+.blog-hero p {
+    color: var(--text);
+    font-size: 1.2rem;
+     text-shadow: 2px 2px 3px rgb(5, 30, 252, 0.89);
+}
+
 
 .blog-meta {
   display: flex;
@@ -263,6 +275,10 @@ body {
   align-items: center;
   gap: 8px;
   font-size: 0.9rem;
+}
+
+.blog-meta-item span {
+  color: var(--light);
 }
 
 .blog-meta-item i {
