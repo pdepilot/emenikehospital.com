@@ -862,6 +862,9 @@ body {
   .carousel-content h1 {
     font-size: 3rem;
   }
+  .carousel-content p {
+    font-size: 1.9rem;
+  }
 
   .mission-grid {
     grid-template-columns: 1fr;
@@ -949,7 +952,7 @@ body {
   }
 
   .carousel-content p {
-    font-size: 1.1rem;
+    font-size: 1.9rem;
   }
 
   .carousel-nav {

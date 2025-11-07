@@ -294,7 +294,7 @@ body {
 
 .slide-content p {
   font-size: clamp(1.5rem, 2.5vw, 1.3rem);
-  color: var(--text);
+  color: var(--light);
   max-width: 600px;
   margin-bottom: 30px;
   word-wrap: break-word;
