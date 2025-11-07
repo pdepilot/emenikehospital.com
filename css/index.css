@@ -275,7 +275,7 @@ body {
 }
 
 .slide-content {
-  color: var(--secondary);
+  color: var(--text);
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -287,14 +287,14 @@ body {
   font-size: clamp(2rem, 5vw, 3.5rem);
   margin-bottom: 20px;
   line-height: 1.2;
-  text-shadow: 2px 2px 4px rgb(255, 255, 255);
+  text-shadow: 2px 2px 4px rgb(5, 30, 252, 0.89);
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
 
 .slide-content p {
   font-size: clamp(1.5rem, 2.5vw, 1.3rem);
-  color: var(--light);
+  color: var(--text);
   max-width: 600px;
   margin-bottom: 30px;
   word-wrap: break-word;
