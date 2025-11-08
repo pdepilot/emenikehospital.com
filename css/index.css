@@ -986,7 +986,8 @@ body {
   color: var(--text);
   font-size: clamp(1.8rem, 4vw, 2.5rem);
   margin-bottom: 20px;
-  text-shadow: 10px 10px 20px rgb(9, 25, 243);
+  text-shadow: 10px 10px 20px rgb(112, 121, 248);
+  animation: fadeInUp 1s ease-out;
 }
 
 .cta-section p {
@@ -995,6 +996,7 @@ body {
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+  animation: fadeInUp 1s ease-out;
 }
 
 /* Footer with Logo */
