@@ -725,7 +725,7 @@ body {
 /* Emergency Banner */
 .emergency-banner {
   background: url("../images/IMG-20251102-WA0022.jpg");
-  color: var(--text);
+  color: var(--white);
   padding: 60px 0;
   text-align: center;
   background-size: cover;
@@ -734,24 +734,25 @@ body {
 }
 
 .emergency-banner h2 {
-  color: var(--text);
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  
+  font-size: clamp(1.8rem, 5vw, 3rem);
   margin-bottom: 20px;
-  text-shadow: 10px 10px 20px rgb(9, 25, 243);
+  line-height: 1.2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: fadeInUp 1s ease-out;
 }
 
 .emergency-banner p {
-  color: var(--white);
-  font-size: clamp(1.5rem, 2vw, 1.2rem);
-  margin-bottom: 30px;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
   max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: fadeInUp 1s ease-out 0.3s both;
 }
 
 .emergency-phone {
   font-size: clamp(1.8rem, 4vw, 2.5rem);
-  color: var(--secondary);
+  color: var(--white);
   font-weight: 800;
   display: block;
   margin-bottom: 20px;
