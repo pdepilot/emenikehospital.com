@@ -223,13 +223,25 @@ body {
   background: url("/images/Afro Medical Professionals United- Worker's Day.jpeg");
   background-size: cover;
   background-position: center;
-  color: var(--secondary);
+  /* color: var(--white); */
   padding: 80px 0 60px;
   text-align: center;
   position: relative;
   overflow: hidden;
   background-attachment: fixed;
 }
+
+.container {
+  position: relative;
+  z-index: 2;
+  color: white;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
 
 .appointment-hero::before {
   content: "";
@@ -240,10 +252,10 @@ body {
   height: 200%;
   background: radial-gradient(
     circle,
-    rgba(255, 255, 255, 0) 0%,
+    rgba(0, 0, 0, 0.4) 0%,
     transparent 70%
   );
-  animation: float 1s infinite linear;
+  animation: float 11s infinite linear;
 }
 
 @keyframes float {
@@ -256,20 +268,20 @@ body {
 }
 
 .appointment-hero h1 {
-  color: var(--text);
+  color: var(--white);
   font-size: 3rem;
   margin-bottom: 20px;
   line-height: 1.2;
-  text-shadow: 2px 2px 4px rgb(5, 30, 252, 0.89);
+  /* text-shadow: 2px 2px 4px rgb(5, 30, 252, 0.89); */
   animation: fadeInUp 1s ease-out;
 }
 
 .appointment-hero p {
-   color: var(--text);
+   color: var(--white);
   font-size: 1.8rem;
   max-width: 700px;
   margin: 0 auto 30px;
-  text-shadow: 2px 2px 4px rgb(255, 255, 255);
+  text-shadow: 2px 2px 4px rgb(0, 0, 0, 0.5);
   animation: fadeInUp 1s ease-out 0.3s both;
 }
 
