@@ -256,21 +256,21 @@ body {
 }
 
 .appointment-hero h1 {
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  color: var(--text);
+  font-size: 3rem;
   margin-bottom: 20px;
-  text-shadow: 2px 2px 4px rgb(0, 0, 0);
-  position: relative;
-  z-index: 2;
+  line-height: 1.2;
+  text-shadow: 2px 2px 4px rgb(5, 30, 252, 0.89);
+  animation: fadeInUp 1s ease-out;
 }
 
 .appointment-hero p {
-  font-size: clamp(1.3rem, 2.5vw, 1.2rem);
+   color: var(--text);
+  font-size: 1.8rem;
   max-width: 700px;
-  color: var(--white);
-  margin: 0 auto;
-  text-shadow: 1px 1px 3px rgb(0, 0, 0);
-  position: relative;
-  z-index: 2;
+  margin: 0 auto 30px;
+  text-shadow: 2px 2px 4px rgb(255, 255, 255);
+  animation: fadeInUp 1s ease-out 0.3s both;
 }
 
 /* Appointment Section */

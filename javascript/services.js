@@ -105,6 +105,25 @@ function resetInterval() {
 // Start the auto slide
 startInterval();
 
+// Tab functionality
+const tabBtns = document.querySelectorAll(".tab-btn");
+const tabContents = document.querySelectorAll(".tab-content");
+
+tabBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    // Remove active class from all buttons and contents
+    tabBtns.forEach((b) => b.classList.remove("active"));
+    tabContents.forEach((c) => c.classList.remove("active"));
+
+    // Add active class to clicked button
+    btn.classList.add("active");
+
+    // Show corresponding content
+    const tabId = btn.getAttribute("data-tab");
+    document.getElementById(tabId).classList.add("active");
+  });
+});
+
 // Animation on scroll
 const observerOptions = {
   threshold: 0.1,
@@ -121,9 +140,11 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Observe elements for animation
-document.querySelectorAll(".service-item").forEach((el) => {
-  el.style.opacity = 0;
-  el.style.transform = "translateY(20px)";
-  el.style.transition = "opacity 0.5s ease, transform 0.5s ease";
-  observer.observe(el);
-});
+document
+  .querySelectorAll(".service-card, .specialized-item, .service-item")
+  .forEach((el) => {
+    el.style.opacity = 0;
+    el.style.transform = "translateY(20px)";
+    el.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+    observer.observe(el);
+  });

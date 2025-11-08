@@ -260,19 +260,21 @@ body {
 }
 
 .contact-hero h1 {
-  font-size: clamp(2.5rem, 7vw, 3.5rem);
-  color: var(--secondary);
+  color: var(--text);
+  font-size: 3rem;
   margin-bottom: 20px;
-  text-shadow: 4px 4px 4px rgb(0, 0, 0);
+  line-height: 1.2;
+  text-shadow: 2px 2px 4px rgb(5, 30, 252, 0.89);
+  animation: fadeInUp 1s ease-out;
 }
 
 .contact-hero p {
-  font-size: clamp(1.5rem, 2vw, 1.2rem);
+   color: var(--text);
+  font-size: 1.8rem;
   max-width: 700px;
-  color: var(--white);
-  margin: 0 auto;
-  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-  padding: 0 15px;
+  margin: 0 auto 30px;
+  text-shadow: 2px 2px 4px rgb(251, 252, 255);
+  animation: fadeInUp 1s ease-out 0.3s both;
 }
 
 /* Contact Section */
