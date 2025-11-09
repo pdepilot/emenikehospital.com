@@ -775,7 +775,7 @@ body {
 /* CTA Section */
 .cta-section {
   padding: 80px 0;
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary) 100%);
+background: rgba(0, 0, 0, 0.4);
   color: white;
   text-align: center;
   position: relative;

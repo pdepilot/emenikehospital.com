@@ -200,7 +200,7 @@ body {
 }
 
 .btn-outline:hover {
-  background: var(--text);
+  background: var(--secondary);
   color: white;
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(42, 178, 123, 0.2);
@@ -249,27 +249,14 @@ body {
   z-index: 1;
 }
 
-
-.slide::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
-
 .slides-container {
   position: relative;
   z-index: 2;
-   color: white;
   height: 100%;
   width: 100%;
   display: flex;
   align-items: center;
 }
-
 
 .slide {
   position: absolute;
@@ -307,13 +294,14 @@ body {
 }
 
 .slide-content p {
-  font-size: clamp(1.5rem, 2.5vw, 1.3rem);
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
   color: var(--white);
   max-width: 600px;
   margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   word-wrap: break-word;
   overflow-wrap: break-word;
-  
+  animation: fadeInUp 1s ease-out 0.2s both;
 }
 
 .hero-buttons {
@@ -321,10 +309,11 @@ body {
   gap: 15px;
   margin-bottom: 40px;
   flex-wrap: wrap;
+  animation: fadeInUp 1s ease-out 0.4s both;
 }
 
 .btn-primary {
-  background: var(--text);
+  background: var(--white);
   color: var(--primary);
   padding: 12px 30px;
   border-radius: 30px;
@@ -335,12 +324,14 @@ body {
   transition: var(--transition);
   white-space: nowrap;
   font-size: clamp(0.9rem, 1.5vw, 1rem);
+  border: 2px solid var(--white);
 }
 
 .btn-primary:hover {
-  background: var(--text);
+  background: transparent;
+  color: var(--white);
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .btn-secondary {
@@ -361,6 +352,7 @@ body {
   background: var(--white);
   color: var(--primary);
   transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .hero-features {
@@ -369,6 +361,7 @@ body {
   gap: 30px;
   margin-bottom: 30px;
   flex-wrap: wrap;
+  animation: fadeInUp 1s ease-out 0.6s both;
 }
 
 .hero-feature {
@@ -378,7 +371,7 @@ body {
 }
 
 .hero-feature i {
-  background: var(--text);
+  background: rgba(255, 255, 255, 0.2);
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -734,7 +727,6 @@ body {
 }
 
 .emergency-banner h2 {
-  
   font-size: clamp(1.8rem, 5vw, 3rem);
   margin-bottom: 20px;
   line-height: 1.2;
@@ -964,6 +956,14 @@ body {
 .insurance-section {
   padding: 80px 0;
   background: var(--secondary);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.insurance-section.revealed {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .insurance-logos {
@@ -999,10 +999,10 @@ body {
 }
 
 .cta-section h2 {
-  color: var(--text);
+  color: var(--white);
   font-size: clamp(1.8rem, 4vw, 2.5rem);
   margin-bottom: 20px;
-  text-shadow: 10px 10px 20px rgb(112, 121, 248);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   animation: fadeInUp 1s ease-out;
 }
 
@@ -1012,7 +1012,7 @@ body {
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
-  animation: fadeInUp 1s ease-out;
+  animation: fadeInUp 1s ease-out 0.3s both;
 }
 
 /* Footer with Logo */
@@ -1142,8 +1142,8 @@ body {
     font-size: 3rem;
   }
 
-   .slide-content p {
-    font-size: 1.9rem;
+  .slide-content p {
+    font-size: 1.3rem;
   }
 
   .about-container {
@@ -1227,7 +1227,7 @@ body {
   }
 
   .btn-outline:hover {
-    background: var(--text);
+    background: var(--secondary);
     color: white;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(42, 178, 123, 0.2);
@@ -1236,7 +1236,6 @@ body {
   .hero-video {
     height: 100vh;
     min-height: 600px;
-    background-color: #0206fd;
   }
 
   .slide-content {
@@ -1248,7 +1247,7 @@ body {
   }
 
   .slide-content p {
-    font-size: 1.9rem;
+    font-size: 1.1rem;
   }
 
   .hero-buttons {
