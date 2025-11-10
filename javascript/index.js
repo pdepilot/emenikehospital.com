@@ -45,6 +45,17 @@ window.addEventListener("scroll", function () {
       insuranceSection.classList.add("revealed");
     }
   }
+
+  // Doctors section scroll reveal
+  const doctorCards = document.querySelectorAll(".doctor-card");
+  doctorCards.forEach((card) => {
+    const cardPosition = card.getBoundingClientRect().top;
+    const screenPosition = window.innerHeight / 1.2;
+
+    if (cardPosition < screenPosition) {
+      card.classList.add("revealed");
+    }
+  });
 });
 
 // Scroll to top functionality
@@ -93,29 +104,21 @@ document.addEventListener("DOMContentLoaded", function () {
   startInterval();
 });
 
-// Animation on scroll
-const observerOptions = {
+// Animation on scroll for doctors section
+const doctorObserverOptions = {
   threshold: 0.1,
   rootMargin: "0px 0px -50px 0px",
 };
 
-const observer = new IntersectionObserver((entries) => {
+const doctorObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      entry.target.style.opacity = 1;
-      entry.target.style.transform = "translateY(0)";
+      entry.target.classList.add("revealed");
     }
   });
-}, observerOptions);
+}, doctorObserverOptions);
 
-// Observe elements for animation
-document
-  .querySelectorAll(
-    ".service-card, .stat-item, .doctor-card, .testimonial-card, .tip-card"
-  )
-  .forEach((el) => {
-    el.style.opacity = 0;
-    el.style.transform = "translateY(20px)";
-    el.style.transition = "opacity 0.5s ease, transform 0.5s ease";
-    observer.observe(el);
-  });
+// Observe doctor cards for animation
+document.querySelectorAll(".doctor-card").forEach((el) => {
+  doctorObserver.observe(el);
+});

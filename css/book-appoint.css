@@ -65,6 +65,7 @@ body {
   display: flex;
   align-items: center;
   gap: 15px;
+  margin-right: 30px;
   flex-wrap: wrap;
 }
 
@@ -92,10 +93,10 @@ body {
   color: #fff;
   text-decoration: none;
   transition: var(--transition);
-  width: 35px; 
-  height: 35px; 
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
-  background: var(--text); 
+  background: var(--text);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -103,15 +104,17 @@ body {
 }
 
 .social-icons a:hover {
-  background: rgba(0, 0, 0, 0.8); 
+  background: rgba(0, 0, 0, 0.8);
   transform: translateY(-2px);
 }
+
 /* Header Styles */
 .site-header {
   background: #fff;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
   position: sticky;
   top: 0;
+  height: 100px;
   z-index: 100;
 }
 
@@ -134,7 +137,7 @@ body {
   color: var(--white);
   display: flex;
   align-items: center;
-  margin: 0;
+  margin: 0px;
   line-height: 1;
   white-space: nowrap;
 }
@@ -167,6 +170,7 @@ body {
   font-weight: 600;
   transition: color 0.3s;
   position: relative;
+  right: 50px;
   font-size: clamp(0.9rem, 1.5vw, 1rem);
 }
 
@@ -217,7 +221,7 @@ body {
   color: var(--text);
 }
 
-/* Hero Section */
+/* Hero Section with Background Overlay */
 .appointment-hero {
   background: url("https://res.cloudinary.com/dl4hjr1p2/image/upload/v1762550333/Doctors_nlnynf.png");
   background-size: cover;
@@ -229,7 +233,18 @@ body {
   background-attachment: fixed;
 }
 
-.container {
+.appointment-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.hero-content {
   position: relative;
   z-index: 2;
   color: white;
@@ -240,42 +255,16 @@ body {
   text-align: center;
 }
 
-
-.appointment-hero::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(
-    circle,
-    rgba(0, 0, 0, 0.4) 0%,
-    transparent 70%
-  );
-  animation: float 11s infinite linear;
-}
-
-/* @keyframes float {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-} */
-
 .appointment-hero h1 {
   color: var(--white);
   font-size: 3rem;
   margin-bottom: 20px;
   line-height: 1.2;
-  /* text-shadow: 2px 2px 4px rgb(5, 30, 252, 0.89); */
   animation: fadeInUp 1s ease-out;
 }
 
 .appointment-hero p {
-   color: var(--white);
+  color: var(--white);
   font-size: 1.8rem;
   max-width: 700px;
   margin: 0 auto 30px;
@@ -748,7 +737,7 @@ textarea.form-control {
   color: var(--text-light);
 }
 
-/* Footer with Logo */
+/* Footer with Logo - EXACT STYLE FROM INDEX PAGE */
 .site-footer {
   background: var(--secondary);
   color: var(--text);
@@ -757,13 +746,13 @@ textarea.form-control {
 
 .footer-content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 40px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
   margin-bottom: 10px;
 }
 
 .footer-col h3 {
-  font-size: 1.3rem;
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
   margin-bottom: 25px;
   color: var(--white);
   position: relative;
@@ -783,23 +772,27 @@ textarea.form-control {
 .footer-col p {
   margin-bottom: 20px;
   color: var(--text);
-}
-.footer-col i {
-  color: var(--white);
+  line-height: 1.7;
 }
 
 .footer-links {
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .footer-links li {
-  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
 }
 
 .footer-links a {
   color: var(--text);
   text-decoration: none;
   transition: var(--transition);
+  display: inline-block;
+  width: 100%;
 }
 
 .footer-links a:hover {
@@ -816,14 +809,14 @@ textarea.form-control {
 .footer-logo-image {
   height: 80px;
   width: auto;
-  margin-right: 10px;
-  color: var(--text);
+  margin-right: 15px;
 }
 
 .footer-logo-text {
   color: var(--text);
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  line-height: 1.2;
 }
 
 .footer-bottom {
@@ -834,14 +827,27 @@ textarea.form-control {
   font-size: 0.9rem;
 }
 
-/* Social Icons */
-.social-icons {
+.footer-col i {
+  color: var(--white);
+  margin-right: 10px;
+  width: 16px;
+  text-align: center;
+}
+
+.footer-col p {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+/* Social Icons - Footer specific */
+.footer-col .social-icons {
   display: flex;
   gap: 15px;
   margin-top: 20px;
 }
 
-.social-icons a {
+.footer-col .social-icons a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -854,10 +860,20 @@ textarea.form-control {
   transition: var(--transition);
 }
 
-.social-icons a:hover {
+.footer-col .social-icons a:hover {
   background: var(--text);
   color: var(--secondary);
   transform: translateY(-3px);
+}
+
+/* Ensure all footer columns have consistent vertical alignment */
+.footer-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-col > * {
+  flex-shrink: 0;
 }
 
 /* Scroll to Top Button */
@@ -892,6 +908,18 @@ textarea.form-control {
   background: var(--secondary);
   transform: translateY(-3px);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Responsive Styles */
@@ -979,11 +1007,6 @@ textarea.form-control {
     justify-content: center;
   }
 
-  .hero-video {
-    height: 80vh;
-    min-height: 600px;
-  }
-
   .appointment-hero h1 {
     font-size: 2.5rem;
   }
@@ -1006,6 +1029,16 @@ textarea.form-control {
 
   .footer-content {
     grid-template-columns: 1fr;
+  }
+
+  .footer-logo {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .footer-logo-image {
+    margin-right: 0;
+    margin-bottom: 10px;
   }
 
   .scroll-to-top {
@@ -1055,16 +1088,6 @@ textarea.form-control {
 
   .step-indicator::before {
     display: none;
-  }
-
-  .footer-logo {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .footer-logo-image {
-    margin-right: 0;
-    margin-bottom: 10px;
   }
 
   .scroll-to-top {

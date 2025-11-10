@@ -122,10 +122,10 @@ function populateDoctors() {
     doctorCard.className = "doctor-card";
     doctorCard.dataset.id = doctor.id;
     doctorCard.innerHTML = `
-                    <img src="${doctor.avatar}" alt="${doctor.name}" class="doctor-avatar">
-                    <div class="doctor-name">${doctor.name}</div>
-                    <div class="doctor-specialty">${doctor.specialty}</div>
-                `;
+                          <img src="${doctor.avatar}" alt="${doctor.name}" class="doctor-avatar">
+                          <div class="doctor-name">${doctor.name}</div>
+                          <div class="doctor-specialty">${doctor.specialty}</div>
+                      `;
 
     doctorCard.addEventListener("click", () => {
       document.querySelectorAll(".doctor-card").forEach((card) => {
