@@ -38,13 +38,12 @@ body {
   padding: 0 20px;
 }
 
-/* Top Bar Styles */
+/* Enhanced Top Bar Styles */
 .topbar {
   background: var(--secondary);
   color: #fff;
   font-size: 0.85rem;
-  padding: 6px 0;
-  height: 80px;
+  padding: 15px 0; /* Increased height */
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -90,20 +89,20 @@ body {
 .social-icons a {
   color: #fff;
   text-decoration: none;
-  transition: opacity 0.3s;
-  width: 24px;
-  height: 24px;
+  transition: var(--transition);
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.15);
+  background: var(--text);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 
 .social-icons a:hover {
-  background: rgba(255, 255, 255, 0.25);
-  transform: translateY(-1px);
+  background: rgba(0, 0, 0, 0.8);
+  transform: translateY(-2px);
 }
 
 /* Header Styles */
@@ -119,7 +118,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 0;
+  padding: 15px 0;
 }
 
 .logo {
@@ -189,7 +188,7 @@ body {
 }
 
 .btn-outline {
-  background: var(--white);
+  background: transparent;
   border: 2px solid var(--secondary);
   color: var(--secondary);
   padding: 8px 20px;
@@ -210,12 +209,9 @@ body {
   color: var(--text);
 }
 
-
-
 /* Hero Section */
 .appointment-hero {
-  background: linear-gradient(rgba(7, 177, 208, 0.9), rgba(7, 177, 208, 0.8)),
-    url("https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80");
+  background: url("https://res.cloudinary.com/dl4hjr1p2/image/upload/v1762550337/test-result_uabfqs.jpg");
   background-size: cover;
   background-position: center;
   padding: clamp(80px, 15vw, 150px) 0;
@@ -232,7 +228,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%2307b1d0' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+  background: rgba(0, 0, 0, 0.4);
   animation: float 20s infinite linear;
 }
 
@@ -924,6 +920,17 @@ textarea.form-control {
 }
 
 @media (max-width: 768px) {
+  .topbar-inner {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .top-right {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
   .nav-toggle {
     display: block;
   }
@@ -1002,6 +1009,11 @@ textarea.form-control {
 
   .benefit-icon {
     align-self: center;
+  }
+
+  .top-right span {
+    flex-direction: column;
+    gap: 5px;
   }
 
   .footer-logo {
