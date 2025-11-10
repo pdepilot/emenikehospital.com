@@ -713,6 +713,19 @@ body {
   transform: scale(1.05);
 }
 
+.btn-outlinee {
+  background: var(--white);
+  border: 2px solid var(--secondary);
+  color: var(--secondary);
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-weight: 700;
+  transition: all 0.3s;
+  text-decoration: none;
+  display: inline-block;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+}
+
 /* Scroll to Top Button */
 .scroll-to-top {
   position: fixed;

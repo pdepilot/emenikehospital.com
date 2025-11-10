@@ -1026,7 +1026,7 @@ background: rgba(0, 0, 0, 0.4);
     top: 100%;
     left: 0;
     width: 100%;
-    background: white;
+    background: var(--secondary);
     flex-direction: column;
     padding: 20px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
