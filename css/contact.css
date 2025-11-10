@@ -90,10 +90,10 @@ body {
   color: #fff;
   text-decoration: none;
   transition: var(--transition);
-  width: 35px; 
-  height: 35px; 
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
-  background: var(--text); 
+  background: var(--text);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -101,7 +101,7 @@ body {
 }
 
 .social-icons a:hover {
-  background: rgba(0, 0, 0, 0.8); 
+  background: rgba(0, 0, 0, 0.8);
   transform: translateY(-2px);
 }
 
@@ -349,13 +349,24 @@ body {
   z-index: 2;
 }
 
-/* Contact Form */
+/* Contact Form with Subtle Animations */
 .contact-form {
   background: var(--secondary);
   padding: clamp(25px, 5vw, 40px);
   border-radius: 15px;
   box-shadow: var(--shadow);
   transition: var(--transition);
+  animation: gentleFloat 8s ease-in-out infinite;
+}
+
+@keyframes gentleFloat {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
 }
 
 .contact-form:hover {
@@ -365,6 +376,26 @@ body {
 
 .form-group {
   margin-bottom: 25px;
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+  transform: translateY(15px);
+}
+
+/* Staggered animation for form fields */
+.form-group:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.form-group:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.form-group:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.form-group:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.form-group:nth-child(5) {
+  animation-delay: 0.5s;
 }
 
 .form-group label {
@@ -372,6 +403,12 @@ body {
   margin-bottom: 8px;
   font-weight: 600;
   color: var(--primary);
+  transition: var(--transition);
+}
+
+.form-group:focus-within label {
+  color: var(--white);
+  transform: translateX(3px);
 }
 
 .form-control {
@@ -381,13 +418,14 @@ body {
   border-radius: 8px;
   font-family: "Inter", sans-serif;
   font-size: 1rem;
-  transition: var(--transition);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-control:focus {
   outline: none;
-  border-color: var(--secondary);
-  box-shadow: 0 0 0 3px rgba(42, 178, 123, 0.2);
+  border-color: var(--white);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
 }
 
 textarea.form-control {
@@ -410,11 +448,33 @@ textarea.form-control {
   justify-content: center;
   gap: 10px;
   width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
 }
 
 .btn-primary:hover {
   background: var(--text-light);
-  transform: translateY(-3px);
+  transform: translateY(-3px) scale(1.02);
   box-shadow: 0 10px 20px rgba(42, 178, 123, 0.3);
 }
 
@@ -452,6 +512,13 @@ textarea.form-control {
   font-size: clamp(1.2rem, 2.5vw, 1.5rem);
   color: var(--secondary);
   flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.info-card:hover .info-icon {
+  transform: scale(1.05);
+  background: var(--secondary);
+  color: white;
 }
 
 .info-content h3 {
@@ -702,7 +769,7 @@ textarea.form-control {
   justify-content: center;
   width: 42px;
   height: 42px;
-  background: var(--black); 
+  background: var(--black);
   border-radius: 50%;
   color: var(--white);
   text-decoration: none;

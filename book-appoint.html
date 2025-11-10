@@ -3,11 +3,1015 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./images/IMG-20251102-WA0019-removebg-preview.png">
     <title>Book Appointment - Emenike Hospital</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/book-appoint.css">
+    <style>
+        :root {
+            --primary: #07b1d0f3;
+            --secondary: #07b1d0;
+            --accent: #0c8da5;
+            --light: #f0f9f4;
+            --dark: #0b2a25;
+            --text: #333;
+            --text-light: #666;
+            --white: #ffffff;
+            --black: #000000;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: #f8fafc;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Enhanced Top Bar Styles */
+        .topbar {
+            background: var(--secondary);
+            color: #fff;
+            font-size: 0.85rem;
+            padding: 15px 0; /* Increased height */
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .topbar-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .top-left {
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .top-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .top-right span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .top-right i {
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+
+        .phone {
+            margin-right: 10px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-icons a {
+            color: #fff;
+            text-decoration: none;
+            transition: var(--transition);
+            width: 35px; 
+            height: 35px; 
+            border-radius: 50%;
+            background: var(--text); 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+
+        .social-icons a:hover {
+            background: rgba(0, 0, 0, 0.8); 
+            transform: translateY(-2px);
+        }
+
+        /* Header Styles */
+        .site-header {
+            background: #fff;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo h1 {
+            font-size: clamp(1.5rem, 4vw, 2.2rem);
+            font-weight: 700;
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            margin: 0;
+            line-height: 1;
+            white-space: nowrap;
+        }
+
+        .logo-image {
+            height: clamp(60px, 10vw, 100px);
+            width: auto;
+            vertical-align: middle;
+            margin: 0 5px;
+        }
+
+        .logo-text {
+            color: var(--dark);
+            font-weight: 700;
+        }
+
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .main-nav li {
+            margin-left: 15px;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 600;
+            transition: color 0.3s;
+            position: relative;
+            font-size: clamp(0.9rem, 1.5vw, 1rem);
+        }
+
+        .main-nav a:hover {
+            color: var(--secondary);
+        }
+
+        .main-nav a.active {
+            color: var(--secondary);
+        }
+
+        .main-nav a.active::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--dark);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 700;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            font-size: clamp(0.9rem, 1.5vw, 1rem);
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text);
+        }
+
+        /* Hero Section */
+        .appointment-hero {
+            background:  url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: clamp(80px, 15vw, 150px) 0;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .appointment-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-100px, -100px); }
+        }
+
+        .appointment-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .appointment-hero h1 {
+            font-size: clamp(2rem, 6vw, 4rem);
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .appointment-hero p {
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            max-width: 700px;
+            margin: 0 auto 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        /* Appointment Section */
+        .appointment-section {
+            padding: clamp(60px, 10vw, 100px) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .appointment-section::before {
+            content: "";
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: var(--secondary);
+            border-radius: 50%;
+            opacity: 0.1;
+        }
+
+        .appointment-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Appointment Form */
+        .appointment-form {
+            background: var(--white);
+            padding: clamp(30px, 5vw, 50px);
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            animation: gentleFloat 8s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .appointment-form::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient);
+        }
+
+        @keyframes gentleFloat {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .appointment-form:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-header h2 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .form-header p {
+            color: var(--text-light);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+            transform: translateY(15px);
+        }
+
+        /* Staggered animation for form fields */
+        .form-group:nth-child(1) { animation-delay: 0.1s; }
+        .form-group:nth-child(2) { animation-delay: 0.2s; }
+        .form-group:nth-child(3) { animation-delay: 0.3s; }
+        .form-group:nth-child(4) { animation-delay: 0.4s; }
+        .form-group:nth-child(5) { animation-delay: 0.5s; }
+        .form-group:nth-child(6) { animation-delay: 0.6s; }
+        .form-group:nth-child(7) { animation-delay: 0.7s; }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .form-group:focus-within label {
+            color: var(--secondary);
+            transform: translateX(3px);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-family: "Inter", sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(7, 177, 208, 0.2);
+            transform: translateY(-2px);
+        }
+
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: var(--white);
+            border: none;
+            padding: 16px 30px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(7, 177, 208, 0.4);
+        }
+
+        /* Appointment Benefits */
+        .appointment-benefits {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .benefit-card {
+            background: var(--white);
+            padding: clamp(25px, 4vw, 35px);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--gradient);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .benefit-icon {
+            width: clamp(50px, 8vw, 70px);
+            height: clamp(50px, 8vw, 70px);
+            background: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            color: var(--secondary);
+            flex-shrink: 0;
+            transition: var(--transition);
+        }
+
+        .benefit-card:hover .benefit-icon {
+            transform: scale(1.1) rotate(5deg);
+            background: var(--gradient);
+            color: white;
+        }
+
+        .benefit-content h3 {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .benefit-content p {
+            color: var(--text-light);
+            margin-bottom: 5px;
+            font-size: clamp(0.9rem, 1.5vw, 1rem);
+        }
+
+        /* Specialists Section */
+        .specialists-section {
+            padding: clamp(60px, 10vw, 100px) 0;
+            background: var(--light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .specialists-section::before {
+            content: "";
+            position: absolute;
+            bottom: -100px;
+            left: -100px;
+            width: 300px;
+            height: 300px;
+            background: var(--secondary);
+            border-radius: 50%;
+            opacity: 0.1;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-header h2 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            font-size: clamp(1rem, 2vw, 1.1rem);
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .specialists-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .specialist-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .specialist-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .specialist-image {
+            height: 200px;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+
+        .specialist-info {
+            padding: 25px 20px;
+        }
+
+        .specialist-info h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .specialist-info p {
+            color: var(--text-light);
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .specialist-rating {
+            color: #ffc107;
+            margin-bottom: 15px;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 0.9rem;
+        }
+
+        .btn-secondary:hover {
+            background: var(--secondary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Process Section */
+        .process-section {
+            padding: clamp(60px, 10vw, 100px) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gradient);
+            z-index: 1;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            flex: 1;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: var(--white);
+            border: 3px solid var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin: 0 auto 20px;
+            transition: var(--transition);
+        }
+
+        .process-step:hover .step-number {
+            background: var(--gradient);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .step-content h3 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .step-content p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        .site-footer {
+            background: var(--secondary);
+            color: var(--text);
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            color: var(--white);
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .footer-col h3::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--white);
+            border-radius: 2px;
+        }
+
+        .footer-col p {
+            margin-bottom: 20px;
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-links li {
+            transition: var(--transition);
+        }
+
+        .footer-links a {
+            color: var(--text);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+            transform: translateX(5px);
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .footer-logo-image {
+            height: 70px;
+            width: auto;
+            margin-right: 15px;
+        }
+
+        .footer-logo-text {
+            color: var(--text);
+            font-weight: 700;
+            font-size: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .footer-contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            color: var(--text);
+        }
+
+        .footer-contact-item i {
+            color: var(--white);
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            color: var(--text);
+            font-size: 0.9rem;
+        }
+
+        .footer-social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .footer-social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            background: var(--black); 
+            border-radius: 50%;
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1.1rem;
+        }
+
+        .footer-social-icons a:hover {
+            background: rgba(0, 0, 0, 0.8);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Scroll to Top Button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: var(--transition);
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .scroll-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-to-top:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .appointment-container {
+                gap: 30px;
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+
+            .process-steps {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .process-steps::before {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .topbar-inner {
+                flex-direction: column;
+                gap: 8px;
+                text-align: center;
+            }
+
+            .top-right {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .nav-toggle {
+                display: block;
+            }
+
+            .main-nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(7, 177, 208, 0.95);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                z-index: 99;
+                backdrop-filter: blur(10px);
+            }
+
+            .main-nav.active ul {
+                display: flex;
+            }
+
+            .main-nav a.active {
+                color: var(--text);
+            }
+
+            .main-nav a:hover {
+                color: var(--white);
+            }
+
+            .main-nav li {
+                margin: 10px 0;
+            }
+
+            .btn-outline {
+                background: transparent;
+                border: 2px solid var(--white);
+                color: var(--secondary);
+                padding: 10px 25px;
+                border-radius: 30px;
+                font-weight: 700;
+                transition: all 0.3s;
+                text-decoration: none;
+                display: inline-block;
+            }
+
+            .appointment-container {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .footer-logo {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .footer-social-icons {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .appointment-form,
+            .benefit-card {
+                padding: 20px;
+            }
+
+            .benefit-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .benefit-icon {
+                align-self: center;
+            }
+
+            .top-right span {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .footer-logo {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-logo-image {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Top Bar -->
@@ -16,7 +1020,7 @@
             <div class="top-left">24/7 Open</div>
             <div class="top-right">
                 <span><i class="fas fa-envelope"></i> info@emenikehospital.com</span>
-                <span class="phone"><i class="fas fa-phone"></i> +234818118930</span>
+                <span class="phone"><i class="fas fa-phone"></i> +234 800 123 4567</span>
                 <div class="social-icons">
                     <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
@@ -30,7 +1034,7 @@
     <!-- Header -->
     <header class="site-header">
         <div class="container header-inner">
-           <div class="logo">
+            <div class="logo">
                 <h1>
                     <span class="logo-text">Emenike</span>
                     <img
@@ -44,12 +1048,14 @@
 
             <nav class="main-nav" id="mainNav">
                 <ul>
-                    <li><a href="index.html" >Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="doctors.html">Doctors</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    <li><a class="btn-outline" href="book-appoint.html" class="active">Book Appointment</a></li>
+                    <li>
+                        <a class="btn-outline" href="book-appoint.html">Book Appointment</a>
+                    </li>
                 </ul>
             </nav>
 
@@ -61,9 +1067,9 @@
 
     <!-- Hero Section -->
     <section class="appointment-hero">
-        <div class="hero-content">
+        <div class="container">
             <h1>Book Your Appointment</h1>
-            <p>Schedule your visit with our expert medical team in just a few simple steps. Your health journey starts here.</p>
+            <p>Schedule your visit with our world-class medical specialists and experience healthcare excellence</p>
         </div>
     </section>
 
@@ -71,204 +1077,135 @@
     <section class="appointment-section">
         <div class="container">
             <div class="appointment-container">
-                <!-- Appointment Steps -->
-                <div class="appointment-steps">
-                    <div class="step-indicator">
-                        <div class="step active" data-step="1">
-                            <div class="step-number">1</div>
-                            <div class="step-label">Personal Info</div>
-                        </div>
-                        <div class="step" data-step="2">
-                            <div class="step-number">2</div>
-                            <div class="step-label">Select Doctor</div>
-                        </div>
-                        <div class="step" data-step="3">
-                            <div class="step-number">3</div>
-                            <div class="step-label">Date & Time</div>
-                        </div>
-                        <div class="step" data-step="4">
-                            <div class="step-number">4</div>
-                            <div class="step-label">Confirmation</div>
-                        </div>
+                <!-- Appointment Form -->
+                <div class="appointment-form">
+                    <div class="form-header">
+                        <h2>Schedule Your Visit</h2>
+                        <p>Fill out the form below and we'll get back to you within 24 hours</p>
                     </div>
 
-                    <div class="appointment-summary">
-                        <h3 class="summary-title"><i class="fas fa-calendar-check"></i> Appointment Summary</h3>
-                        <div class="summary-item">
-                            <span class="summary-label">Service:</span>
-                            <span class="summary-value" id="summary-service">Not selected</span>
+                    <form id="appointmentForm">
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input
+                                type="text"
+                                id="fullName"
+                                class="form-control"
+                                placeholder="Enter your full name"
+                                required
+                            />
                         </div>
-                        <div class="summary-item">
-                            <span class="summary-label">Doctor:</span>
-                            <span class="summary-value" id="summary-doctor">Not selected</span>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input
+                                type="email"
+                                id="email"
+                                class="form-control"
+                                placeholder="Enter your email address"
+                                required
+                            />
                         </div>
-                        <div class="summary-item">
-                            <span class="summary-label">Date & Time:</span>
-                            <span class="summary-value" id="summary-datetime">Not selected</span>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input
+                                type="tel"
+                                id="phone"
+                                class="form-control"
+                                placeholder="Enter your phone number"
+                                required
+                            />
                         </div>
-                        <div class="summary-item">
-                            <span class="summary-label">Patient:</span>
-                            <span class="summary-value" id="summary-patient">-</span>
+
+                        <div class="form-group">
+                            <label for="department">Department</label>
+                            <select id="department" class="form-control" required>
+                                <option value="">Select a department</option>
+                                <option value="cardiology">Cardiology</option>
+                                <option value="neurology">Neurology</option>
+                                <option value="orthopedics">Orthopedics</option>
+                                <option value="pediatrics">Pediatrics</option>
+                                <option value="dermatology">Dermatology</option>
+                                <option value="surgery">Surgery</option>
+                            </select>
                         </div>
-                    </div>
+
+                        <div class="form-group">
+                            <label for="doctor">Preferred Doctor (Optional)</label>
+                            <select id="doctor" class="form-control">
+                                <option value="">Any available doctor</option>
+                                <option value="dr-smith">Dr. Smith Johnson</option>
+                                <option value="dr-williams">Dr. Williams Brown</option>
+                                <option value="dr-davis">Dr. Davis Miller</option>
+                                <option value="dr-taylor">Dr. Taylor Wilson</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="date">Preferred Date</label>
+                            <input
+                                type="date"
+                                id="date"
+                                class="form-control"
+                                required
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Additional Information</label>
+                            <textarea
+                                id="message"
+                                class="form-control"
+                                placeholder="Tell us about your symptoms or any special requirements..."
+                            ></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-calendar-check"></i> Book Appointment
+                        </button>
+                    </form>
                 </div>
 
-                <!-- Appointment Form -->
-                <div class="appointment-form-container">
-                    <!-- Step 1: Personal Information -->
-                    <div class="form-step active" id="step-1">
-                        <h2 class="step-title">Personal Information</h2>
-                        <p class="step-description">Please provide your basic information to get started.</p>
-                        
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label for="firstName" class="form-label">First Name</label>
-                                <input type="text" id="firstName" class="form-control" placeholder="Enter your first name" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="lastName" class="form-label">Last Name</label>
-                                <input type="text" id="lastName" class="form-control" placeholder="Enter your last name" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="email" class="form-label">Email Address</label>
-                                <input type="email" id="email" class="form-control" placeholder="Enter your email address" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="phone" class="form-label">Phone Number</label>
-                                <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="dob" class="form-label">Date of Birth</label>
-                                <input type="date" id="dob" class="form-control" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="gender" class="form-label">Gender</label>
-                                <div class="select-wrapper">
-                                    <select id="gender" class="form-control" required>
-                                        <option value="">Select gender</option>
-                                        <option value="male">Male</option>
-                                        <option value="female">Female</option>
-                                        <option value="other">Other</option>
-                                    </select>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group full-width">
-                                <label for="address" class="form-label">Address</label>
-                                <textarea id="address" class="form-control" placeholder="Enter your full address"></textarea>
-                            </div>
+                <!-- Appointment Benefits -->
+                <div class="appointment-benefits">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-clock"></i>
                         </div>
-                        
-                        <div class="form-navigation">
-                            <button class="btn-next" id="next-1">Next <i class="fas fa-arrow-right"></i></button>
+                        <div class="benefit-content">
+                            <h3>Quick Scheduling</h3>
+                            <p>Get an appointment within 24 hours with our streamlined booking process.</p>
                         </div>
                     </div>
 
-                    <!-- Step 2: Select Doctor & Service -->
-                    <div class="form-step" id="step-2">
-                        <h2 class="step-title">Select Doctor & Service</h2>
-                        <p class="step-description">Choose the medical service and specialist you'd like to consult with.</p>
-                        
-                        <div class="form-group">
-                            <label for="service" class="form-label">Medical Service</label>
-                            <div class="select-wrapper">
-                                <select id="service" class="form-control" required>
-                                    <option value="">Select a service</option>
-                                    <option value="cardiology">Cardiology</option>
-                                    <option value="neurology">Neurology</option>
-                                    <option value="pediatrics">Pediatrics</option>
-                                    <option value="orthopedics">Orthopedics</option>
-                                    <option value="dental">Dental Care</option>
-                                    <option value="ophthalmology">Ophthalmology</option>
-                                    <option value="dermatology">Dermatology</option>
-                                    <option value="general">General Consultation</option>
-                                </select>
-                            </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-user-md"></i>
                         </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label">Select Doctor</label>
-                            <div class="doctor-selection" id="doctor-selection">
-                                <!-- Doctors will be populated by JavaScript -->
-                            </div>
-                        </div>
-                        
-                        <div class="form-group full-width">
-                            <label for="symptoms" class="form-label">Symptoms / Reason for Visit</label>
-                            <textarea id="symptoms" class="form-control" placeholder="Please describe your symptoms or reason for the appointment"></textarea>
-                        </div>
-                        
-                        <div class="form-navigation">
-                            <button class="btn-prev" id="prev-2"><i class="fas fa-arrow-left"></i> Previous</button>
-                            <button class="btn-next" id="next-2">Next <i class="fas fa-arrow-right"></i></button>
+                        <div class="benefit-content">
+                            <h3>Expert Specialists</h3>
+                            <p>Access to world-renowned medical professionals across all specialties.</p>
                         </div>
                     </div>
 
-                    <!-- Step 3: Date & Time -->
-                    <div class="form-step" id="step-3">
-                        <h2 class="step-title">Select Date & Time</h2>
-                        <p class="step-description">Choose an available time slot for your appointment.</p>
-                        
-                        <div class="form-group">
-                            <label for="appointment-date" class="form-label">Preferred Date</label>
-                            <input type="date" id="appointment-date" class="form-control" min="" required>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-calendar-alt"></i>
                         </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label">Available Time Slots</label>
-                            <div class="time-slots" id="time-slots">
-                                <!-- Time slots will be populated by JavaScript -->
-                            </div>
-                        </div>
-                        
-                        <div class="form-navigation">
-                            <button class="btn-prev" id="prev-3"><i class="fas fa-arrow-left"></i> Previous</button>
-                            <button class="btn-next" id="next-3">Next <i class="fas fa-arrow-right"></i></button>
+                        <div class="benefit-content">
+                            <h3>Flexible Timing</h3>
+                            <p>Choose from morning, afternoon, or evening slots that fit your schedule.</p>
                         </div>
                     </div>
 
-                    <!-- Step 4: Confirmation -->
-                    <div class="form-step" id="step-4">
-                        <div class="confirmation-step">
-                            <div class="confirmation-icon">
-                                <i class="fas fa-check"></i>
-                            </div>
-                            <h2 class="confirmation-title">Appointment Confirmed!</h2>
-                            <p class="confirmation-message">Your appointment has been successfully scheduled. You will receive a confirmation email shortly.</p>
-                            
-                            <div class="appointment-details">
-                                <h3 class="summary-title"><i class="fas fa-calendar-alt"></i> Appointment Details</h3>
-                                <div class="summary-item">
-                                    <span class="summary-label">Appointment ID:</span>
-                                    <span class="summary-value" id="confirmation-id">AP-2023-001</span>
-                                </div>
-                                <div class="summary-item">
-                                    <span class="summary-label">Patient Name:</span>
-                                    <span class="summary-value" id="confirmation-name">-</span>
-                                </div>
-                                <div class="summary-item">
-                                    <span class="summary-label">Service:</span>
-                                    <span class="summary-value" id="confirmation-service">-</span>
-                                </div>
-                                <div class="summary-item">
-                                    <span class="summary-label">Doctor:</span>
-                                    <span class="summary-value" id="confirmation-doctor">-</span>
-                                </div>
-                                <div class="summary-item">
-                                    <span class="summary-label">Date & Time:</span>
-                                    <span class="summary-value" id="confirmation-datetime">-</span>
-                                </div>
-                            </div>
-                            
-                            <div class="form-navigation">
-                                <button class="btn-prev" id="prev-4"><i class="fas fa-arrow-left"></i> Previous</button>
-                                <a href="index.html" class="btn-submit">Back to Home <i class="fas fa-home"></i></a>
-                            </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>24/7 Support</h3>
+                            <p>Our customer service team is available round the clock to assist you.</p>
                         </div>
                     </div>
                 </div>
@@ -276,52 +1213,136 @@
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features-section">
+    <!-- Specialists Section -->
+    <section class="specialists-section">
         <div class="container">
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <h3 class="feature-title">Quick Booking</h3>
-                    <p class="feature-description">Book your appointment in just a few clicks with our streamlined process.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
+            <div class="section-header">
+                <h2>Our Top Specialists</h2>
+                <p>Meet our team of experienced medical professionals dedicated to your health</p>
+            </div>
+
+            <div class="specialists-grid">
+                <div class="specialist-card">
+                    <div class="specialist-image">
                         <i class="fas fa-user-md"></i>
                     </div>
-                    <h3 class="feature-title">Expert Doctors</h3>
-                    <p class="feature-description">Choose from our team of board-certified specialists and doctors.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-bell"></i>
+                    <div class="specialist-info">
+                        <h3>Dr. Smith Johnson</h3>
+                        <p>Cardiologist</p>
+                        <div class="specialist-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <a href="#" class="btn-secondary">View Profile</a>
                     </div>
-                    <h3 class="feature-title">Reminder Alerts</h3>
-                    <p class="feature-description">Get SMS and email reminders before your appointment.</p>
+                </div>
+
+                <div class="specialist-card">
+                    <div class="specialist-image">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <div class="specialist-info">
+                        <h3>Dr. Williams Brown</h3>
+                        <p>Neurologist</p>
+                        <div class="specialist-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <a href="#" class="btn-secondary">View Profile</a>
+                    </div>
+                </div>
+
+                <div class="specialist-card">
+                    <div class="specialist-image">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <div class="specialist-info">
+                        <h3>Dr. Davis Miller</h3>
+                        <p>Orthopedic Surgeon</p>
+                        <div class="specialist-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <a href="#" class="btn-secondary">View Profile</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer with Logo - EXACT FROM INDEX PAGE -->
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <p>Our simple 4-step process to get the care you need</p>
+            </div>
+
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Book Appointment</h3>
+                        <p>Fill out our simple online form or call our helpline</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Confirmation</h3>
+                        <p>Receive confirmation of your appointment via email/SMS</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Consultation</h3>
+                        <p>Visit our facility and meet with your specialist</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Treatment</h3>
+                        <p>Receive personalized treatment and follow-up care</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-col">
                     <div class="footer-logo">
                         <img
-                           src="images/IMG-20251102-WA0019-removebg-preview.png"
+                            src="images/IMG-20251102-WA0019-removebg-preview.png"
                             alt="Emenike Hospital Logo"
                             class="footer-logo-image"
                         />
                         <span class="footer-logo-text">Emenike Hospital</span>
                     </div>
-                    <p>Emenike Hospital: Where excellence, compassion, and innovation redefine healthcare. Our cutting-edge facility offers personalized, top-tier care across various specialties, ensuring every patient receives exceptional treatment.</p>
-                    <div class="social-icons">
+                    <p>
+                        Emenike Hospital: Where excellence, compassion, and innovation
+                        redefine healthcare. Our cutting-edge facility offers
+                        personalized, top-tier care across various specialties, ensuring
+                        every patient receives exceptional treatment.
+                    </p>
+                    <div class="footer-social-icons">
                         <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                         <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -329,7 +1350,7 @@
                         <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
-                
+
                 <div class="footer-col">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
@@ -340,7 +1361,7 @@
                         <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-col">
                     <h3>Our Services</h3>
                     <ul class="footer-links">
@@ -348,21 +1369,38 @@
                         <li><a href="neurology.html">Neurology</a></li>
                         <li><a href="pediatric.html">Pediatrics</a></li>
                         <li><a href="orthorpedic.html">Orthopedics</a></li>
-                        <li><a href="pediatric.html">Pediatric</a></li>
+                        <li><a href="pediatric.html">Pediatric Care</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-col">
                     <h3>Contact Info</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Plot 123 Naze Roundabout, Owerri</p>
-                    <p><i class="fas fa-phone"></i> +234 800 123 4567</p>
-                    <p><i class="fas fa-envelope"></i> info@emenikehospital.com</p>
-                    <p><i class="fas fa-clock"></i> 24/7 Open</p>
+                    <div class="footer-contact-info">
+                        <div class="footer-contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Plot 123 Naze Roundabout, Owerri</span>
+                        </div>
+                        <div class="footer-contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+234 800 123 4567</span>
+                        </div>
+                        <div class="footer-contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@emenikehospital.com</span>
+                        </div>
+                        <div class="footer-contact-item">
+                            <i class="fas fa-clock"></i>
+                            <span>24/7 Open</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
-                <p>&copy; <span id="year"></span> Emenike Hospital. All Rights Reserved | Developed By ERIBS tech</p>
+                <p>
+                    &copy; <span id="year"></span> Emenike Hospital. All Rights Reserved
+                    | Developed By ERIBS tech
+                </p>
             </div>
         </div>
     </footer>
@@ -372,6 +1410,89 @@
         <i class="fas fa-chevron-up"></i>
     </button>
 
-    <script src="javascript/book-appoint.js"></script>
+    <script>
+        // Set current year in footer
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        // Mobile navigation toggle
+        const navToggle = document.getElementById("navToggle");
+        const mainNav = document.getElementById("mainNav");
+
+        navToggle.addEventListener("click", () => {
+            mainNav.classList.toggle("active");
+        });
+
+        // Header scroll effect
+        window.addEventListener("scroll", function () {
+            const header = document.querySelector(".site-header");
+            if (window.scrollY > 50) {
+                header.classList.add("scrolled");
+            } else {
+                header.classList.remove("scrolled");
+            }
+
+            // Show/hide scroll to top button
+            const scrollToTopBtn = document.getElementById("scrollToTop");
+            if (window.scrollY > 300) {
+                scrollToTopBtn.classList.add("visible");
+            } else {
+                scrollToTopBtn.classList.remove("visible");
+            }
+        });
+
+        // Scroll to top functionality
+        document.getElementById("scrollToTop").addEventListener("click", function () {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+            });
+        });
+
+        // Appointment form submission
+        const appointmentForm = document.getElementById("appointmentForm");
+
+        appointmentForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            // Get form values
+            const fullName = document.getElementById("fullName").value;
+            const email = document.getElementById("email").value;
+            const department = document.getElementById("department").value;
+
+            // In a real application, you would send this data to a server
+            // For this example, we'll just show an alert
+            alert(
+                `Thank you, ${fullName}! Your appointment request for ${department} has been received. We'll send a confirmation to ${email} shortly.`
+            );
+
+            // Reset the form
+            appointmentForm.reset();
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px",
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = "translateY(0)";
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document
+            .querySelectorAll(".appointment-form, .benefit-card, .specialist-card, .process-step")
+            .forEach((el) => {
+                el.style.opacity = 0;
+                el.style.transform = "translateY(20px)";
+                el.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+                observer.observe(el);
+            });
+    </script>
 </body>
 </html>
