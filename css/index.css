@@ -43,7 +43,7 @@ body {
   color: #fff;
   font-size: 0.85rem;
   padding: 6px 0;
-  height: 80px;
+  height: auto;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -1208,6 +1208,14 @@ body {
   .top-right {
     flex-wrap: wrap;
     justify-content: center;
+  }
+
+  /* Ensure social icons are visible on mobile */
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
   }
 
   .btn-outline {

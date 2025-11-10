@@ -199,7 +199,6 @@ body {
   font-size: clamp(0.9rem, 1.5vw, 1rem);
 }
 
-
 .nav-toggle {
   display: none;
   background: none;
@@ -316,7 +315,6 @@ body {
   color: var(--white);
   margin-left: 10px;
 }
-
 
 /* Carousel Controls */
 .carousel-controls {
@@ -677,6 +675,7 @@ body {
   color: var(--white);
   text-align: center;
   background-attachment: fixed;
+  position: relative;
 }
 
 .cta-section::before {
@@ -686,17 +685,16 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-   background: rgba(0, 0, 0, 0.4);
-  background-size: cover;
-  background-position: center;
-  opacity: 0.1;
-  background-attachment: fixed;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
 }
 
 .cta-section h2 {
   color: var(--white);
   font-size: clamp(2.5rem, 4vw, 3rem);
   margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
 }
 
 .cta-section p {
@@ -878,6 +876,23 @@ body {
 }
 
 @media (max-width: 768px) {
+  .topbar-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .top-right {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .social-icons {
+    justify-content: center;
+    width: 100%;
+    margin-top: 5px;
+  }
+
   .nav-toggle {
     display: block;
   }
@@ -996,6 +1011,24 @@ body {
 }
 
 @media (max-width: 480px) {
+  .topbar-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .top-right {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .social-icons {
+    justify-content: center;
+    width: 100%;
+    margin-top: 5px;
+  }
+
   .hero-carousel {
     height: 70vh;
     min-height: 500px;
@@ -1051,7 +1084,16 @@ body {
   }
 
   .top-right {
+    flex-direction: column;
+    gap: 8px;
     justify-content: center;
+    width: 100%;
+  }
+
+  .social-icons {
+    justify-content: center;
+    width: 100%;
+    margin-top: 5px;
   }
 
   .carousel-content {
