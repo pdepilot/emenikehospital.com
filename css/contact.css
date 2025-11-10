@@ -14,6 +14,7 @@
   --text: #333;
   --text-light: #666;
   --white: #ffffff;
+  --black: #000000;
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   --transition: all 0.3s ease;
 }
@@ -37,13 +38,12 @@ body {
   padding: 0 20px;
 }
 
-
-/* Top Bar Styles */
+/* Enhanced Top Bar Styles */
 .topbar {
   background: var(--secondary);
   color: #fff;
   font-size: 0.85rem;
-  padding: 8px 0;
+  padding: 15px 0; /* Increased height */
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -89,20 +89,20 @@ body {
 .social-icons a {
   color: #fff;
   text-decoration: none;
-  transition: opacity 0.3s;
-  width: 24px;
-  height: 24px;
+  transition: var(--transition);
+  width: 35px; 
+  height: 35px; 
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.15);
+  background: var(--text); 
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 
 .social-icons a:hover {
-  background: rgba(255, 255, 255, 0.25);
-  transform: translateY(-1px);
+  background: rgba(0, 0, 0, 0.8); 
+  transform: translateY(-2px);
 }
 
 /* Header Styles */
@@ -139,7 +139,7 @@ body {
 }
 
 .logo-image {
-  height: clamp(40px, 8vw, 80px);
+  height: clamp(60px, 10vw, 100px);
   width: auto;
   vertical-align: middle;
   margin: 0 5px;
@@ -187,7 +187,7 @@ body {
   background: var(--dark);
 }
 
-.btn-outliner {
+.btn-outline {
   background: transparent;
   border: 2px solid var(--secondary);
   color: var(--secondary);
@@ -199,13 +199,6 @@ body {
   display: inline-block;
   font-size: clamp(0.9rem, 1.5vw, 1rem);
 }
-
-/* .btn-outliner:hover {
-  background: var(--text);
-  color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(42, 178, 123, 0.2);
-} */
 
 .nav-toggle {
   display: none;
@@ -696,7 +689,7 @@ textarea.form-control {
   font-size: 0.9rem;
 }
 
-/* Social Icons */
+/* Enhanced Social Icons in Footer with Black Background */
 .footer-social-icons {
   display: flex;
   gap: 15px;
@@ -709,7 +702,7 @@ textarea.form-control {
   justify-content: center;
   width: 42px;
   height: 42px;
-  background: var(--text);
+  background: var(--black); /* Black background */
   border-radius: 50%;
   color: var(--white);
   text-decoration: none;
@@ -718,8 +711,8 @@ textarea.form-control {
 }
 
 .footer-social-icons a:hover {
-  background: var(--white);
-  color: var(--secondary);
+  background: rgba(0, 0, 0, 0.8); /* Darker black on hover */
+  color: var(--white);
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }

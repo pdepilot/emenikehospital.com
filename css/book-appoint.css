@@ -91,22 +91,21 @@ body {
 .social-icons a {
   color: #fff;
   text-decoration: none;
-  transition: opacity 0.3s;
-  width: 24px;
-  height: 24px;
+  transition: var(--transition);
+  width: 35px; 
+  height: 35px; 
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.15);
+  background: var(--text); 
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 
 .social-icons a:hover {
-  background: rgba(255, 255, 255, 0.25);
-  transform: translateY(-1px);
+  background: rgba(0, 0, 0, 0.8); 
+  transform: translateY(-2px);
 }
-
 /* Header Styles */
 .site-header {
   background: #fff;
@@ -223,7 +222,6 @@ body {
   background: url("https://res.cloudinary.com/dl4hjr1p2/image/upload/v1762550333/Doctors_nlnynf.png");
   background-size: cover;
   background-position: center;
-  /* color: var(--white); */
   padding: 80px 0 60px;
   text-align: center;
   position: relative;
