@@ -220,7 +220,7 @@ body {
 
 /* Hero Section */
 .appointment-hero {
-  background: url("/images/Afro Medical Professionals United- Worker's Day.jpeg");
+  background: url("https://res.cloudinary.com/dl4hjr1p2/image/upload/v1762550331/Afro_Medical_Professionals_United-_Worker_s_Day_ecggwm.jpg");
   background-size: cover;
   background-position: center;
   /* color: var(--white); */
@@ -258,14 +258,14 @@ body {
   animation: float 11s infinite linear;
 }
 
-@keyframes float {
+/* @keyframes float {
   0% {
     transform: rotate(0deg);
   }
   100% {
     transform: rotate(360deg);
   }
-}
+} */
 
 .appointment-hero h1 {
   color: var(--white);
