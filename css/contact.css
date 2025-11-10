@@ -702,7 +702,7 @@ textarea.form-control {
   justify-content: center;
   width: 42px;
   height: 42px;
-  background: var(--black); /* Black background */
+  background: var(--black); 
   border-radius: 50%;
   color: var(--white);
   text-decoration: none;
@@ -711,7 +711,7 @@ textarea.form-control {
 }
 
 .footer-social-icons a:hover {
-  background: rgba(0, 0, 0, 0.8); /* Darker black on hover */
+  background: rgba(0, 0, 0, 0.8);
   color: var(--white);
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
