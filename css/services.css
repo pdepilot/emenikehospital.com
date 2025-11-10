@@ -1053,6 +1053,19 @@ body {
     justify-content: center;
   }
 
+  .btn-outliner {
+    background: transparent;
+    border: 2px solid var(--white);
+    color: var(--secondary);
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-weight: 700;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+  }
+
   .hero-carousel {
     height: 60vh;
     min-height: 400px;

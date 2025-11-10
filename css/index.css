@@ -209,7 +209,7 @@ body {
   color: var(--text);
 }
 
-/* Hero Video Section */
+/* Hero Video Section - COMPLETELY FIXED FOR MOBILE */
 .hero-video {
   position: relative;
   height: 100vh;
@@ -231,6 +231,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   opacity: 0.8;
 }
 
@@ -1232,6 +1233,22 @@ body {
   .hero-video {
     height: 100vh;
     min-height: 600px;
+    background-color: blue;
+  }
+
+  .video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
   }
 
   .slide-content {
@@ -1276,8 +1293,15 @@ body {
 
 @media (max-width: 480px) {
   .hero-video {
-    height: 70vh;
+    height: 100vh;
     min-height: 500px;
+  }
+
+  .video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
   }
 
   .slide-content {
@@ -1316,5 +1340,19 @@ body {
     width: 40px;
     height: 40px;
     font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .hero-video {
+    height: 100vh;
+    min-height: 450px;
+  }
+
+  .video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
   }
 }
