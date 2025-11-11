@@ -211,9 +211,9 @@ body {
 /* Hero Carousel Section */
 .hero-carousel {
   position: relative;
-  height: 70vh;
+  height: 40vh;
   min-height: 400px;
-  max-height: 600px;
+  max-height: 500px;
   overflow: hidden;
 }
 
@@ -426,13 +426,13 @@ body {
 
 .mission-content h2 {
   font-size: clamp(2rem, 4vw, 2.5rem);
-  color: var(--white);
+  color: var(--dark);
   margin-bottom: 20px;
 }
 
 .mission-content p {
   margin-bottom: 20px;
-  color: var(--text);
+  color: var(--dark);
 }
 
 .mission-stats {
@@ -458,7 +458,7 @@ body {
 
 .stat-label {
   font-size: clamp(0.9rem, 1.5vw, 1rem);
-  color: var(--text-light);
+  color: var(--dark);
 }
 
 .mission-image {
@@ -486,13 +486,13 @@ body {
 
 .section-header h2 {
   font-size: clamp(2rem, 4vw, 2.5rem);
-  color: var(--primary);
+  color: var(--dark);
   margin-bottom: 15px;
 }
 
 .section-header p {
   font-size: clamp(1rem, 2vw, 1.1rem);
-  color: var(--text-light);
+  color: var(--dark);
   max-width: 700px;
   margin: 0 auto;
 }
@@ -533,7 +533,7 @@ body {
 .value-card h3 {
   font-size: clamp(1.1rem, 2vw, 1.5rem);
   margin-bottom: 15px;
-  color: var(--primary);
+  color: var(--dark);
 }
 
 /* Timeline Section */
@@ -582,7 +582,7 @@ body {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  background: var(--text);
+  background: var(--dark);
   color: white;
   padding: 10px 20px;
   border-radius: 30px;
@@ -642,11 +642,11 @@ body {
 .member-info h3 {
   font-size: clamp(1rem, 2vw, 1.2rem);
   margin-bottom: 5px;
-  color: var(--primary);
+  color: var(--dark);
 }
 
 .member-info p {
-  color: var(--secondary);
+  color: var(--dark);
   font-weight: 600;
   margin-bottom: 10px;
 }
@@ -760,9 +760,9 @@ body {
   margin-bottom: 20px;
   color: var(--text);
 }
-.footer-col i {
+/* .footer-col i {
   color: var(--white);
-}
+} */
 
 .footer-links {
   list-style: none;
@@ -825,7 +825,7 @@ body {
   height: 40px;
   background: var(--text);
   border-radius: 50%;
-  color: var(--secondary);
+  color: var(--white);
   text-decoration: none;
   transition: var(--transition);
 }
@@ -947,8 +947,8 @@ body {
   }
 
   .hero-carousel {
-    height: 80vh;
-    min-height: 600px;
+    height: 30vh;
+    min-height: 200px;
   }
 
   .carousel-content {

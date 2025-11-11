@@ -556,7 +556,7 @@ body {
 }
 
 .service-link {
-  color: var(--secondary);
+  color: var(--dark);
   text-decoration: none;
   font-weight: 600;
   display: inline-flex;
@@ -565,6 +565,7 @@ body {
 }
 
 .service-link i {
+  color: var(--secondary);
   margin-left: 5px;
   transition: transform 0.3s ease;
 }
@@ -610,7 +611,7 @@ body {
   left: 0;
   width: 80px;
   height: 4px;
-  background: var(--secondary);
+  background: var(--dark);
   border-radius: 2px;
 }
 
@@ -683,7 +684,7 @@ body {
 
 .btn1-primary {
   background: var(--secondary);
-  color: var(--dark);
+  color: var(--white);
   padding: 12px 30px;
   border-radius: 30px;
   font-weight: 700;
@@ -693,12 +694,12 @@ body {
   transition: var(--transition);
   white-space: nowrap;
   font-size: clamp(0.9rem, 1.5vw, 1rem);
-  border: 2px solid var(--text-light);
+  border: 2px solid var(--white);
 }
 
 .btn1-primary:hover {
   background: var(--secondary);
-  color: var(--white);
+  color: var(--dark);
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
@@ -838,7 +839,7 @@ body {
   left: -100px;
   width: 300px;
   height: 300px;
-  background: var(--white);
+  background: var(--dark);
   border-radius: 50%;
   opacity: 0.1;
 }
@@ -895,6 +896,17 @@ body {
   color: var(--dark);
 }
 
+.section-header h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 180px;
+  width: 80px;
+  height: 4px;
+  background: var(--dark);
+  border-radius: 2px;
+}
+
 .author-avatar {
   width: 50px;
   height: 50px;
@@ -903,7 +915,7 @@ body {
 }
 
 .author-info h4 {
-  color: var(--secondary);
+  color: var(--dark);
   margin-bottom: 5px;
 }
 

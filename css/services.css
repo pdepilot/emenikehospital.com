@@ -211,9 +211,9 @@ body {
 /* Hero Carousel Section */
 .hero-carousel {
   position: relative;
-  height: 70vh;
+  height: 50vh;
   min-height: 400px;
-  max-height: 600px;
+  max-height: 500px;
   overflow: hidden;
 }
 
@@ -444,7 +444,7 @@ body {
 
 .section-header h2 {
   font-size: clamp(2rem, 4vw, 2.5rem);
-  color: var(--primary);
+  color: var(--dark);
   margin-bottom: 15px;
   position: relative;
   display: inline-block;
@@ -458,13 +458,13 @@ body {
   transform: translateX(-50%);
   width: 80px;
   height: 4px;
-  background: var(--secondary);
+  background: var(--dark);
   border-radius: 2px;
 }
 
 .section-header p {
   font-size: clamp(1rem, 2vw, 1.1rem);
-  color: var(--text-light);
+  color: var(--dark);
   max-width: 700px;
   margin: 0 auto;
 }
@@ -535,18 +535,18 @@ body {
 .service-content h3 {
   font-size: clamp(1.2rem, 2vw, 1.5rem);
   margin-bottom: 15px;
-  color: var(--primary);
+  color: var(--dark);
   transition: color 0.4s ease;
 }
 
 .service-content p {
-  color: var(--text-light);
+  color: var(--dark);
   margin-bottom: 20px;
   transition: color 0.4s ease;
 }
 
 .service-link {
-  color: var(--secondary);
+  color: var(--dark);
   text-decoration: none;
   font-weight: 600;
   display: inline-flex;
@@ -555,6 +555,7 @@ body {
 }
 
 .service-link i {
+  color: var(--secondary);
   margin-left: 5px;
   transition: transform 0.3s ease;
 }
@@ -598,7 +599,7 @@ body {
   left: -150px;
   width: 400px;
   height: 400px;
-  background: var(--primary);
+  background: var(--dark);
   border-radius: 50%;
   opacity: 0.05;
 }
@@ -612,12 +613,12 @@ body {
 
 .featured-content h2 {
   font-size: clamp(1.8rem, 4vw, 2.5rem);
-  color: var(--white);
+  color: var(--dark);
   margin-bottom: 20px;
 }
 
 .featured-content p {
-  color: var(--text);
+  color: var(--dark);
   margin-bottom: 30px;
 }
 
@@ -758,7 +759,7 @@ body {
 .specialized-details h4 {
   font-size: 1.3rem;
   margin-bottom: 10px;
-  color: var(--primary);
+  color: var(--dark);
 }
 
 .specialized-details p {
@@ -859,9 +860,9 @@ body {
   margin-bottom: 20px;
   color: var(--text);
 }
-.footer-col i {
+/* .footer-col i {
   color: var(--white);
-}
+} */
 
 .footer-links {
   list-style: none;
@@ -947,10 +948,10 @@ body {
 
 .service-category h3 {
   font-size: clamp(1.5rem, 3vw, 2rem);
-  color: var(--primary);
+  color: var(--dark);
   margin-bottom: 30px;
   padding-bottom: 10px;
-  border-bottom: 2px solid var(--secondary);
+  border-bottom: 2px solid var(--dark);
 }
 
 .service-subcategory {
@@ -959,7 +960,7 @@ body {
 
 .service-subcategory h4 {
   font-size: clamp(1.2rem, 2.5vw, 1.5rem);
-  color: var(--secondary);
+  color: var(--dark);
   margin-bottom: 20px;
   display: flex;
   align-items: center;
