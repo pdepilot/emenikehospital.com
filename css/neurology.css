@@ -232,12 +232,6 @@ body {
   font-size: clamp(0.9rem, 1.5vw, 1rem);
 }
 
-/* .btn-outline:hover {
-  background: var(--text);
-  color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(42, 178, 123, 0.2);
-} */
 
 .nav-toggle {
   display: none;
@@ -248,9 +242,10 @@ body {
   color: var(--text);
 }
 
+
 /* Hero Section */
 .neurology-hero {
-  background: url("https://res.cloudinary.com/dl4hjr1p2/image/upload/v1762550331/brain_d8yz2h.jpg");
+  background: url("https://res.cloudinary.com/dl4hjr1p2/image/upload/v1762890228/Human_Brain_Illustration_a1r5dv.jpg");
   background-size: cover;
   background-position: center;
   padding: 120px 0 80px;
@@ -309,7 +304,7 @@ body {
 
 .btn-primary {
   background: var(--white);
-  color: var(--primary);
+  color: var(--dark);
   padding: 12px 30px;
   border-radius: 30px;
   font-weight: 700;
@@ -396,7 +391,7 @@ body {
 
 .section-header h2 {
   font-size: clamp(2rem, 4vw, 2.5rem);
-  color: var(--primary);
+  color: var(--dark);
   margin-bottom: 15px;
   position: relative;
   display: inline-block;
@@ -410,7 +405,7 @@ body {
   transform: translateX(-50%);
   width: 80px;
   height: 4px;
-  background: var(--secondary);
+  background: var(--dark);
   border-radius: 2px;
 }
 
@@ -440,7 +435,7 @@ body {
 
 .about-content h2 {
   font-size: clamp(2rem, 4vw, 2.5rem);
-  color: var(--white);
+  color: var(--dark);
   margin-bottom: 20px;
   position: relative;
 }
@@ -452,13 +447,13 @@ body {
   left: 0;
   width: 80px;
   height: 4px;
-  background: var(--secondary);
+  background: var(--dark);
   border-radius: 2px;
 }
 
 .about-content p {
   margin-bottom: 20px;
-  color: var(--text);
+  color: var(--dark);
   line-height: 1.7;
 }
 
@@ -486,7 +481,7 @@ body {
 }
 
 .about-feature-content h4 {
-  color: var(--primary);
+  color: var(--dark);
   margin-bottom: 5px;
 }
 
@@ -587,7 +582,7 @@ body {
   justify-content: center;
   margin: 30px auto 20px;
   font-size: 2rem;
-  color: var(--secondary);
+  color: var(--dark);
   transition: var(--transition);
 }
 
@@ -599,19 +594,19 @@ body {
 .service-content h3 {
   font-size: clamp(1.2rem, 2vw, 1.5rem);
   margin-bottom: 15px;
-  color: var(--primary);
+  color: var(--dark);
   transition: var(--transition);
 }
 
 .service-content p {
-  color: var(--text);
+  color: var(--dark);
   margin-bottom: 20px;
   transition: var(--transition);
   font-size: clamp(0.9rem, 1.5vw, 1rem);
 }
 
 .service-link {
-  color: var(--secondary);
+  color: var(--dark);
   text-decoration: none;
   font-weight: 600;
   display: inline-flex;
@@ -620,6 +615,7 @@ body {
 }
 
 .service-link i {
+  color: var(--secondary);
   margin-left: 5px;
   transition: transform 0.3s ease;
 }
@@ -665,7 +661,7 @@ body {
 
 .condition-card h3 {
   font-size: 1.3rem;
-  color: var(--secondary);
+  color: var(--dark);
   margin-bottom: 15px;
   display: flex;
   align-items: center;
@@ -677,7 +673,7 @@ body {
 }
 
 .condition-card p {
-  color: var(--text);
+  color: var(--dark);
   margin-bottom: 15px;
 }
 
@@ -690,7 +686,7 @@ body {
 
 .symptom-tag {
   background: var(--light);
-  color: var(--secondary);
+  color: var(--dark);
   padding: 5px 12px;
   border-radius: 20px;
   font-size: 0.85rem;
@@ -736,12 +732,12 @@ body {
 
 .technology-content h3 {
   font-size: 1.3rem;
-  color: var(--primary);
+  color: var(--dark);
   margin-bottom: 15px;
 }
 
 .technology-content p {
-  color: var(--text);
+  color: var(--dark);
   margin-bottom: 20px;
 }
 
@@ -784,18 +780,18 @@ body {
 
 .doctor-name {
   font-size: clamp(1.1rem, 2vw, 1.3rem);
-  color: var(--secondary);
+  color: var(--dark);
   margin-bottom: 5px;
 }
 
 .doctor-specialty {
-  color: var(--secondary);
+  color: var(--dark);
   font-weight: 600;
   margin-bottom: 15px;
 }
 
 .doctor-bio {
-  color: var(--text);
+  color: var(--dark);
   font-size: 0.9rem;
   margin-bottom: 20px;
 }
@@ -823,7 +819,7 @@ body {
 .neurology-cta .container {
   position: relative;
   z-index: 2;
-  color: white;
+  color: var(--white);
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -882,10 +878,11 @@ body {
 
 .footer-col p {
   margin-bottom: 20px;
-  color: var(--text);
+  color: var(--dark);
 }
+
 .footer-col i {
-  color: var(--white);
+  color: var(--dark);
 }
 
 .footer-links {
@@ -897,7 +894,7 @@ body {
 }
 
 .footer-links a {
-  color: var(--text);
+  color: var(--dark);
   text-decoration: none;
   transition: var(--transition);
 }
@@ -917,11 +914,11 @@ body {
   height: 80px;
   width: auto;
   margin-right: 10px;
-  color: var(--text);
+  color: var(--dark);
 }
 
 .footer-logo-text {
-  color: var(--text);
+  color: var(--dark);
   font-weight: 700;
   font-size: 1.5rem;
 }
@@ -930,7 +927,7 @@ body {
   text-align: center;
   padding-top: 30px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  color: var(--text);
+  color: var(--dark);
   font-size: 0.9rem;
 }
 
@@ -947,7 +944,7 @@ body {
   justify-content: center;
   width: 40px;
   height: 40px;
-  background: var(--text);
+  background: var(--dark);
   border-radius: 50%;
   color: var(--white);
   text-decoration: none;
