@@ -427,8 +427,9 @@ body {
   text-align: center;
   padding: 30px 15px;
   border-radius: 15px;
-  background: var(--secondary);
+  background: var(--wh);
   transition: var(--transition);
+   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 .stat-item:hover {
@@ -439,14 +440,15 @@ body {
 .stat-number {
   font-size: clamp(1.8rem, 4vw, 2.5rem);
   font-weight: 800;
-  color: var(--white);
+  color: var(--secondary);
   display: block;
   margin-bottom: 10px;
 }
 
 .stat-label {
+  --text: black;
   font-size: clamp(0.9rem, 1.5vw, 1rem);
-  color: var(--text-light);
+  color: var(--text);
   font-weight: 600;
 }
 
@@ -465,7 +467,7 @@ body {
   right: -100px;
   width: 300px;
   height: 300px;
-  background: var(--text);
+  background: var(--dark);
   border-radius: 50%;
   opacity: 0.1;
 }
@@ -479,7 +481,7 @@ body {
 
 .section-header h2 {
   font-size: clamp(2rem, 4vw, 2.5rem);
-  color: var(--text);
+  color: var(--dark);
   margin-bottom: 15px;
   position: relative;
   display: inline-block;
@@ -499,7 +501,7 @@ body {
 
 .section-header p {
   font-size: clamp(1rem, 2vw, 1.1rem);
-  color: var(--text);
+  color: var(--dark);
   max-width: 700px;
   margin: 0 auto;
 }
@@ -542,12 +544,12 @@ body {
 .service-content h3 {
   font-size: clamp(1.2rem, 2vw, 1.5rem);
   margin-bottom: 15px;
-  color: var(--secondary);
+  color: var(--dark);
   transition: var(--transition);
 }
 
 .service-content p {
-  color: var(--text);
+  color: var(--dark);
   margin-bottom: 20px;
   transition: var(--transition);
   font-size: clamp(0.9rem, 1.5vw, 1rem);
@@ -596,7 +598,7 @@ body {
 
 .about-content h2 {
   font-size: clamp(2rem, 4vw, 2.5rem);
-  color: var(--primary);
+  color: var(--dark);
   margin-bottom: 20px;
   position: relative;
 }
@@ -614,7 +616,7 @@ body {
 
 .about-content p {
   margin-bottom: 20px;
-  color: var(--text-light);
+  color: var(--dark);
   line-height: 1.7;
 }
 
@@ -642,7 +644,7 @@ body {
 }
 
 .about-feature-content h4 {
-  color: var(--primary);
+  color: var(--dark);
   margin-bottom: 5px;
 }
 
@@ -677,6 +679,28 @@ body {
   z-index: 1;
   transform: translateY(0);
   transition: transform 0.1s linear;
+}
+
+.btn1-primary {
+  background: var(--secondary);
+  color: var(--dark);
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  transition: var(--transition);
+  white-space: nowrap;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  border: 2px solid var(--text-light);
+}
+
+.btn1-primary:hover {
+  background: var(--secondary);
+  color: var(--white);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* Emergency Banner */
@@ -733,8 +757,10 @@ body {
 /* Doctors Section */
 .doctors-section {
   padding: 100px 0;
-  background: var(--secondary);
+  background: var(--white);
 }
+
+
 
 .doctors-grid {
   display: grid;
@@ -781,18 +807,18 @@ body {
 
 .doctor-name {
   font-size: clamp(1.1rem, 2vw, 1.3rem);
-  color: var(--primary);
+  color: var(--dark);
   margin-bottom: 5px;
 }
 
 .doctor-specialty {
-  color: var(--secondary);
+  color: var(--dark);
   font-weight: 600;
   margin-bottom: 15px;
 }
 
 .doctor-bio {
-  color: var(--text);
+  color: var(--dark);
   font-size: 0.9rem;
   margin-bottom: 20px;
 }
@@ -851,7 +877,7 @@ body {
   left: 0;
   top: -10px;
   font-size: 3rem;
-  color: var(--text);
+  color: var(--white);
   opacity: 0.3;
 }
 
@@ -862,11 +888,11 @@ body {
 }
 
 .section-header h2 {
-  color: var(--white);
+  color: var(--dark);
 }
 
 .section-header p {
-  color: var(--text);
+  color: var(--dark);
 }
 
 .author-avatar {
@@ -877,12 +903,12 @@ body {
 }
 
 .author-info h4 {
-  color: var(--primary);
+  color: var(--secondary);
   margin-bottom: 5px;
 }
 
 .author-info p {
-  color: var(--text);
+  color: var(--dark);
   font-size: 0.9rem;
 }
 
@@ -924,7 +950,7 @@ body {
 .tip-category {
   display: inline-block;
   background: var(--light);
-  color: var(--secondary);
+  color: var(--dark);
   padding: 5px 15px;
   border-radius: 20px;
   font-size: 0.8rem;
@@ -934,12 +960,12 @@ body {
 
 .tip-title {
   font-size: clamp(1rem, 2vw, 1.2rem);
-  color: var(--primary);
+  color: var(--dark);
   margin-bottom: 15px;
 }
 
 .tip-excerpt {
-  color: var(--text);
+  color: var(--dark);
   margin-bottom: 20px;
   font-size: 0.95rem;
 }
@@ -1090,9 +1116,9 @@ body {
   font-size: 0.9rem;
 }
 
-.footer-col i {
+/* .footer-col i {
   color: var(--white);
-}
+} */
 
 /* Social Icons */
 .social-icons {
