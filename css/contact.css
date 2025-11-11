@@ -315,7 +315,7 @@ body {
 
 .section-header h2 {
   font-size: clamp(1.8rem, 4vw, 2.5rem);
-  color: var(--primary);
+  color: var(--dark);
   margin-bottom: 15px;
   position: relative;
   display: inline-block;
@@ -329,13 +329,13 @@ body {
   transform: translateX(-50%);
   width: 80px;
   height: 4px;
-  background: var(--secondary);
+  background: var(--darkdark);
   border-radius: 2px;
 }
 
 .section-header p {
   font-size: clamp(1rem, 2vw, 1.1rem);
-  color: var(--text-light);
+  color: var(--dark);
   max-width: 700px;
   margin: 0 auto;
   padding: 0 15px;
@@ -435,7 +435,7 @@ textarea.form-control {
 
 .btn-primary {
   background: var(--white);
-  color: var(--text);
+  color: var(--dark);
   border: none;
   padding: 14px 30px;
   border-radius: 30px;
@@ -473,7 +473,7 @@ textarea.form-control {
 }
 
 .btn-primary:hover {
-  background: var(--text-light);
+  background: var(--);
   transform: translateY(-3px) scale(1.02);
   box-shadow: 0 10px 20px rgba(42, 178, 123, 0.3);
 }
@@ -510,7 +510,7 @@ textarea.form-control {
   align-items: center;
   justify-content: center;
   font-size: clamp(1.2rem, 2.5vw, 1.5rem);
-  color: var(--secondary);
+  color: var(--dark);
   flex-shrink: 0;
   transition: var(--transition);
 }
@@ -523,12 +523,12 @@ textarea.form-control {
 
 .info-content h3 {
   font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-  color: var(--primary);
+  color: var(--dark);
   margin-bottom: 10px;
 }
 
 .info-content p {
-  color: var(--text-light);
+  color: var(--dark);
   margin-bottom: 5px;
   font-size: clamp(0.9rem, 1.5vw, 1rem);
 }
@@ -543,7 +543,7 @@ textarea.form-control {
 
 .map-container {
   height: 300px;
-  color: white;
+  color: var(--dark);
   border-radius: 15px;
   overflow: hidden;
   box-shadow: var(--shadow);
@@ -563,6 +563,10 @@ textarea.form-control {
   font-size: clamp(1rem, 2vw, 1.2rem);
   text-align: center;
   padding: 20px;
+}
+
+.map-placeholder i {
+  color: var(--dark);
 }
 
 /* FAQ Section */
@@ -609,7 +613,7 @@ textarea.form-control {
   padding: clamp(15px, 3vw, 20px) clamp(20px, 4vw, 25px);
   font-size: clamp(1rem, 2vw, 1.1rem);
   font-weight: 600;
-  color: var(--primary);
+  color: var(--dark);
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -622,6 +626,7 @@ textarea.form-control {
 }
 
 .faq-answer {
+  color: var(--dark);
   padding: 0 clamp(20px, 4vw, 25px);
   max-height: 0;
   overflow: hidden;
@@ -644,7 +649,7 @@ textarea.form-control {
 /* IMPROVED FOOTER SECTION */
 .site-footer {
   background: var(--secondary);
-  color: var(--text);
+  color: var(--dark);
   padding: 60px 0 20px;
 }
 
@@ -659,6 +664,7 @@ textarea.form-control {
   display: flex;
   flex-direction: column;
 }
+
 
 .footer-col h3 {
   font-size: 1.3rem;
@@ -695,6 +701,7 @@ textarea.form-control {
 .footer-links li {
   transition: var(--transition);
 }
+
 
 .footer-links a {
   color: var(--text);
@@ -756,7 +763,6 @@ textarea.form-control {
   font-size: 0.9rem;
 }
 
-/* Enhanced Social Icons in Footer with Black Background */
 .footer-social-icons {
   display: flex;
   gap: 15px;
@@ -775,6 +781,25 @@ textarea.form-control {
   text-decoration: none;
   transition: var(--transition);
   font-size: 1.1rem;
+}
+
+.footer-cols i {
+  color: var(--dark);
+}
+
+.footer-cols h3 {
+  color: var(--white);
+}
+
+.footer-cols h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: var(--white);
+  border-radius: 2px;
 }
 
 .footer-social-icons a:hover {

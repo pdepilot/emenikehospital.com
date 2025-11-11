@@ -218,7 +218,7 @@ body {
 /* Hero Carousel Section */
 .hero-carousel {
   position: relative;
-  height: 70vh;
+  height: 50vh;
   min-height: 500px;
   overflow: hidden;
 }
@@ -416,7 +416,7 @@ body {
 
 .section-header h2 {
   font-size: 2.2rem;
-  color: var(--primary);
+  color: var(--dark);
   margin-bottom: 15px;
   position: relative;
   display: inline-block;
@@ -436,7 +436,7 @@ body {
 
 .section-header p {
   font-size: 1.1rem;
-  color: var(--text-light);
+  color: var(--dark);
   max-width: 700px;
   margin: 0 auto;
 }
@@ -513,11 +513,11 @@ body {
 .doctor-info h3 {
   font-size: 1.5rem;
   margin-bottom: 10px;
-  color: var(--primary);
+  color: var(--dark);
 }
 
 .doctor-info p {
-  color: var(--text-light);
+  color: var(--dark);
   margin-bottom: 15px;
 }
 
@@ -531,7 +531,7 @@ body {
 .doctor-social a {
   width: 40px;
   height: 40px;
-  background: var(--light);
+  background: var(--dark);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -545,6 +545,10 @@ body {
   background: var(--secondary);
   color: white;
   transform: translateY(-3px);
+}
+
+.doctor-social i{
+  color: var(--white);
 }
 
 /* Specialties Section */
@@ -623,16 +627,16 @@ body {
 .specialty-card h3 {
   font-size: 1.3rem;
   margin-bottom: 15px;
-  color: var(--primary);
+  color: var(--dark);
 }
 
 .specialty-card p {
-  color: var(--text-light);
+  color: var(--dark);
   margin-bottom: 20px;
 }
 
 .specialty-link {
-  color: var(--secondary);
+  color: var(--dark);
   text-decoration: none;
   font-weight: 600;
   display: inline-flex;
@@ -641,6 +645,7 @@ body {
 }
 
 .specialty-link i {
+  color: var(--secondary);
   margin-left: 5px;
   transition: transform 0.3s ease;
 }
@@ -668,12 +673,12 @@ body {
 
 .leadership-content h2 {
   font-size: 2.2rem;
-  color: var(--white);
+  color: var(--dark);
   margin-bottom: 20px;
 }
 
 .leadership-content p {
-  color: var(--text);
+  color: var(--dark);
   margin-bottom: 30px;
 }
 
@@ -716,7 +721,7 @@ body {
 .btn-outlinee {
   background: var(--white);
   border: 2px solid var(--secondary);
-  color: var(--secondary);
+  color: var(--dark);
   padding: 8px 20px;
   border-radius: 30px;
   font-weight: 700;
@@ -724,6 +729,13 @@ body {
   text-decoration: none;
   display: inline-block;
   font-size: clamp(0.9rem, 1.5vw, 1rem);
+}
+
+.btn-outlinee:hover {
+  background: var(--secondary);
+  color: var(--white);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* Scroll to Top Button */
@@ -788,7 +800,7 @@ body {
 
 .btn-primary {
   background: white;
-  color: var(--primary);
+  color: var(--dark);
   padding: 15px 35px;
   border-radius: 30px;
   font-weight: 700;
@@ -800,7 +812,7 @@ body {
 }
 
 .btn-primary:hover {
-  background: var(--text);
+  background: var(--secondary);
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
@@ -841,9 +853,9 @@ body {
   margin-bottom: 20px;
   color: var(--text);
 }
-.footer-col i {
+/* .footer-col i {
   color: var(--white);
-}
+} */
 
 .footer-links {
   list-style: none;
