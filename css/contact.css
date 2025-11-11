@@ -795,7 +795,7 @@ textarea.form-control {
   content: "";
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 10px;
   width: 50px;
   height: 3px;
   background: var(--white);
