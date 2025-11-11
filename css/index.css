@@ -309,7 +309,7 @@ body {
 
 .btn-primary {
   background: var(--white);
-  color: var(--primary);
+  color: var(--dark);
   padding: 12px 30px;
   border-radius: 30px;
   font-weight: 700;
@@ -331,7 +331,7 @@ body {
 
 .btn-secondary {
   background: var(--white);
-  color: var(--primary);
+  color: var(--dark);
   padding: 12px 30px;
   border-radius: 30px;
   font-weight: 700;
