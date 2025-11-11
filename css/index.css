@@ -162,7 +162,7 @@ body {
 
 .main-nav a {
   text-decoration: none;
-  color: var(--text);
+  color: var(--dark);
   font-weight: 600;
   transition: color 0.3s;
   position: relative;
@@ -206,7 +206,7 @@ body {
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
-  color: var(--text);
+  color: var(--dark);
 }
 
 /* Hero Video Section */

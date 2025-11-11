@@ -210,7 +210,7 @@ body {
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
-  color: var(--text);
+  color: var(--dark);
 }
 
 /* Pediatrics Hero Section */
@@ -273,7 +273,7 @@ body {
 
 .btn-primary {
   background: var(--white);
-  color: var(--secondary);
+  color: var(--dark);
   padding: 12px 30px;
   border-radius: 30px;
   font-weight: 700;
@@ -322,7 +322,7 @@ body {
 
 .section-header h2 {
   font-size: 2.5rem;
-  color: var(--primary);
+  color: var(--dark);
   margin-bottom: 15px;
   position: relative;
   display: inline-block;
@@ -336,13 +336,13 @@ body {
   transform: translateX(-50%);
   width: 80px;
   height: 4px;
-  background: var(--secondary);
+  background: var(--dark);
   border-radius: 2px;
 }
 
 .section-header p {
   font-size: 1.1rem;
-  color: var(--text-light);
+  color: var(--dark);
   max-width: 700px;
   margin: 0 auto;
 }
@@ -370,7 +370,7 @@ body {
   left: 0;
   width: 100%;
   height: 5px;
-  background: var(--secondary);
+  background: var(--dark);
   z-index: 1;
 }
 
@@ -390,7 +390,7 @@ body {
   justify-content: center;
   margin: 30px auto 20px;
   font-size: 2rem;
-  color: var(--text);
+  color: var(--dark);
   transition: var(--transition);
 }
 
@@ -402,18 +402,18 @@ body {
 .service-content h3 {
   font-size: 1.5rem;
   margin-bottom: 15px;
-  color: var(--primary);
+  color: var(--dark);
   transition: var(--transition);
 }
 
 .service-content p {
-  color: var(--text-light);
+  color: var(--dark);
   margin-bottom: 20px;
   transition: var(--transition);
 }
 
 .service-link {
-  color: var(--text);
+  color: var(--dark);
   text-decoration: none;
   font-weight: 600;
   display: inline-flex;
@@ -422,6 +422,7 @@ body {
 }
 
 .service-link i {
+  color: var(--dark);
   margin-left: 5px;
   transition: transform 0.3s ease;
 }
@@ -497,7 +498,7 @@ body {
 
 .environment-content h2 {
   font-size: 2.5rem;
-  color: var(--primary);
+  color: var(--dark);
   margin-bottom: 20px;
   position: relative;
 }
@@ -509,13 +510,13 @@ body {
   left: 0;
   width: 80px;
   height: 4px;
-  background: var(--secondary);
+  background: var(--dark);
   border-radius: 2px;
 }
 
 .environment-content p {
   margin-bottom: 20px;
-  color: var(--text-light);
+  color: var(--dark);
   line-height: 1.7;
 }
 
@@ -543,7 +544,7 @@ body {
 }
 
 .feature-item-content h4 {
-  color: var(--primary);
+  color: var(--dark);
   margin-bottom: 5px;
 }
 
@@ -591,7 +592,7 @@ body {
   transition: var(--transition);
   text-align: center;
   padding: 40px 30px;
-  border-top: 5px solid var(--secondary);
+  border-top: 5px solid var(--dark);
 }
 
 .age-group-card:hover {
@@ -614,12 +615,12 @@ body {
 
 .age-group-card h3 {
   font-size: 1.5rem;
-  color: var(--primary);
+  color: var(--dark);
   margin-bottom: 15px;
 }
 
 .age-group-card p {
-  color: var(--text-light);
+  color: var(--dark);
   margin-bottom: 20px;
 }
 
@@ -635,7 +636,7 @@ body {
 }
 
 .age-group-list i {
-  color: var(--secondary);
+  color: var(--dark);
   margin-right: 10px;
 }
 
@@ -677,18 +678,18 @@ body {
 
 .team-name {
   font-size: 1.3rem;
-  color: var(--primary);
+  color: var(--dark);
   margin-bottom: 5px;
 }
 
 .team-specialty {
-  color: var(--secondary);
+  color: var(--dark);
   font-weight: 600;
   margin-bottom: 15px;
 }
 
 .team-bio {
-  color: var(--text-light);
+  color: var(--dark);
   font-size: 0.9rem;
   margin-bottom: 20px;
 }
@@ -697,7 +698,7 @@ body {
 .stats-section {
   padding: 80px 0;
   background: var(--white);
-  color: var(--white);
+  color: var(--dark);
   text-align: center;
 }
 
@@ -710,9 +711,9 @@ body {
 .stat-item {
   padding: 30px 20px;
   border-radius: 15px;
-  background: rgba(7, 177, 208, 0.9);
   transition: var(--transition);
   backdrop-filter: blur(10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .stat-item:hover {
@@ -764,6 +765,28 @@ body {
   margin: 0 auto;
   padding: 0 20px;
   text-align: center;
+}
+
+.btn1-secondary {
+  background: var(--white);
+  color: var(--dark);
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  transition: var(--transition);
+  white-space: nowrap;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  border: 2px solid var(--white);
+}
+
+.btn-secondary:hover {
+  background: var(--secondary);
+  color: var(--white);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -819,9 +842,9 @@ body {
   margin-bottom: 20px;
   color: var(--text);
 }
-.footer-col i {
-  color: var(--white);
-}
+/* .footer-col i {
+  color: var(--dark);
+} */
 
 .footer-links {
   list-style: none;

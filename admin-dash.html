@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Emenike Hospital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/admin-dash.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <img src="https://res.cloudinary.com/dl4hjr1p2/image/upload/v1762550333/IMG-20251102-WA0019-removebg-preview_fbt9as.png" alt=""></div>
+                <div class="sidebar-title">Emenike Hospital</div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-title">Main</div>
+                    <a href="#" class="nav-item active">
+                        <i class="fas fa-home"></i>
+                        <span class="nav-text">Dashboard</span>
+                    </a>
+                    <a href="#" class="nav-item">
+                        <i class="fas fa-calendar-check"></i>
+                        <span class="nav-text">Appointments</span>
+                        <span class="nav-badge">12</span>
+                    </a>
+                    <a href="#" class="nav-item">
+                        <i class="fas fa-user-injured"></i>
+                        <span class="nav-text">Patients</span>
+                    </a>
+                    <a href="#" class="nav-item">
+                        <i class="fas fa-user-md"></i>
+                        <span class="nav-text">Doctors</span>
+                    </a>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-title">Management</div>
+                    <a href="#" class="nav-item">
+                        <i class="fas fa-stethoscope"></i>
+                        <span class="nav-text">Departments</span>
+                    </a>
+                    <a href="#" class="nav-item">
+                        <i class="fas fa-pills"></i>
+                        <span class="nav-text">Pharmacy</span>
+                    </a>
+                    <a href="#" class="nav-item">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                        <span class="nav-text">Billing</span>
+                    </a>
+                    <a href="#" class="nav-item">
+                        <i class="fas fa-chart-bar"></i>
+                        <span class="nav-text">Reports</span>
+                    </a>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-title">System</div>
+                    <a href="#" class="nav-item">
+                        <i class="fas fa-cog"></i>
+                        <span class="nav-text">Settings</span>
+                    </a>
+                    <a href="#" class="nav-item">
+                        <i class="fas fa-users-cog"></i>
+                        <span class="nav-text">Users</span>
+                    </a>
+                    <a href="#" class="nav-item">
+                        <i class="fas fa-question-circle"></i>
+                        <span class="nav-text">Help & Support</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Top Bar -->
+            <div class="topbar">
+                <div class="topbar-left">
+                    <button class="menu-toggle" id="menuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search...">
+                    </div>
+                </div>
+                
+                <div class="topbar-right">
+                    <div class="topbar-icon">
+                        <i class="far fa-bell"></i>
+                        <span class="notification-badge">5</span>
+                    </div>
+                    <div class="topbar-icon">
+                        <i class="far fa-envelope"></i>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <div class="user-profile">
+                        <div class="user-avatar">AD</div>
+                        <div class="user-info">
+                            <div class="user-name">Admin User</div>
+                            <div class="user-role">Hospital Administrator</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="content">
+                <div class="page-header">
+                    <h1 class="page-title">Dashboard Overview</h1>
+                    <p class="page-subtitle">Welcome back! Here's what's happening at Emenike Hospital today.</p>
+                </div>
+                
+                <!-- Stats Grid -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <div class="stat-title">Total Patients</div>
+                            <div class="stat-icon patients">
+                                <i class="fas fa-user-injured"></i>
+                            </div>
+                        </div>
+                        <div class="stat-value">2,847</div>
+                        <div class="stat-change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            12.5% from last month
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <div class="stat-title">Active Doctors</div>
+                            <div class="stat-icon doctors">
+                                <i class="fas fa-user-md"></i>
+                            </div>
+                        </div>
+                        <div class="stat-value">48</div>
+                        <div class="stat-change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            2 new this month
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <div class="stat-title">Today's Appointments</div>
+                            <div class="stat-icon appointments">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                        </div>
+                        <div class="stat-value">127</div>
+                        <div class="stat-change negative">
+                            <i class="fas fa-arrow-down"></i>
+                            5% from yesterday
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <div class="stat-title">Monthly Revenue</div>
+                            <div class="stat-icon revenue">
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                        </div>
+                        <div class="stat-value">$284,720</div>
+                        <div class="stat-change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            8.2% from last month
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Charts and Activity -->
+                <div class="data-grid">
+                    <div class="chart-container">
+                        <div class="chart-header">
+                            <h3 class="chart-title">Patient Admissions Trend</h3>
+                            <div class="chart-actions">
+                                <button class="btn btn-outline">
+                                    <i class="fas fa-download"></i> Export
+                                </button>
+                                <button class="btn btn-primary">
+                                    <i class="fas fa-filter"></i> Filter
+                                </button>
+                            </div>
+                        </div>
+                        <div class="chart-placeholder">
+                            <i class="fas fa-chart-line"></i> Interactive Chart Would Appear Here
+                        </div>
+                    </div>
+                    
+                    <div class="data-container">
+                        <div class="data-header">
+                            <h3 class="data-title">Recent Activity</h3>
+                            <div class="data-actions">
+                                <button class="btn btn-outline">View All</button>
+                            </div>
+                        </div>
+                        <ul class="activity-list">
+                            <li class="activity-item">
+                                <div class="activity-icon appointment">
+                                    <i class="fas fa-calendar-plus"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <div class="activity-title">New appointment scheduled</div>
+                                    <div class="activity-time">Dr. Johnson with Patient #2847</div>
+                                    <div class="activity-time">10 minutes ago</div>
+                                </div>
+                            </li>
+                            <li class="activity-item">
+                                <div class="activity-icon patient">
+                                    <i class="fas fa-user-plus"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <div class="activity-title">New patient registered</div>
+                                    <div class="activity-time">Michael Thompson</div>
+                                    <div class="activity-time">45 minutes ago</div>
+                                </div>
+                            </li>
+                            <li class="activity-item">
+                                <div class="activity-icon payment">
+                                    <i class="fas fa-credit-card"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <div class="activity-title">Payment received</div>
+                                    <div class="activity-time">Invoice #INV-2023-0842 - $1,250</div>
+                                    <div class="activity-time">2 hours ago</div>
+                                </div>
+                            </li>
+                            <li class="activity-item">
+                                <div class="activity-icon appointment">
+                                    <i class="fas fa-calendar-times"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <div class="activity-title">Appointment cancelled</div>
+                                    <div class="activity-time">Dr. Wilson with Patient #1935</div>
+                                    <div class="activity-time">3 hours ago</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Appointments Table -->
+                <div class="table-container">
+                    <div class="table-header">
+                        <h3 class="table-title">Today's Appointments</h3>
+                        <div class="table-actions">
+                            <button class="btn btn-primary">
+                                <i class="fas fa-plus"></i> New Appointment
+                            </button>
+                        </div>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Patient</th>
+                                <th>Doctor</th>
+                                <th>Time</th>
+                                <th>Department</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Sarah Johnson</td>
+                                <td>Dr. Michael Chen</td>
+                                <td>09:00 AM</td>
+                                <td>Neurology</td>
+                                <td><span class="status-badge completed">Completed</span></td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <div class="action-btn"><i class="fas fa-eye"></i></div>
+                                        <div class="action-btn"><i class="fas fa-edit"></i></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Robert Williams</td>
+                                <td>Dr. Sarah Johnson</td>
+                                <td>10:30 AM</td>
+                                <td>Cardiology</td>
+                                <td><span class="status-badge pending">In Progress</span></td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <div class="action-btn"><i class="fas fa-eye"></i></div>
+                                        <div class="action-btn"><i class="fas fa-edit"></i></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Jennifer Lopez</td>
+                                <td>Dr. James Wilson</td>
+                                <td>11:15 AM</td>
+                                <td>Orthopedics</td>
+                                <td><span class="status-badge pending">Scheduled</span></td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <div class="action-btn"><i class="fas fa-eye"></i></div>
+                                        <div class="action-btn"><i class="fas fa-edit"></i></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>David Miller</td>
+                                <td>Dr. Emily Rodriguez</td>
+                                <td>01:45 PM</td>
+                                <td>Pediatrics</td>
+                                <td><span class="status-badge pending">Scheduled</span></td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <div class="action-btn"><i class="fas fa-eye"></i></div>
+                                        <div class="action-btn"><i class="fas fa-edit"></i></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Amanda Clark</td>
+                                <td>Dr. Michael Chen</td>
+                                <td>03:30 PM</td>
+                                <td>Neurology</td>
+                                <td><span class="status-badge cancelled">Cancelled</span></td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <div class="action-btn"><i class="fas fa-eye"></i></div>
+                                        <div class="action-btn"><i class="fas fa-edit"></i></div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Footer -->
+            <div class="footer">
+                <p>&copy; 2023 Emenike Hospital Management System. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Toggle sidebar on mobile
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.toggle('active');
+        });
+
+        // Sample data for charts (in a real app, this would come from an API)
+        const patientData = {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+            datasets: [{
+                label: 'Patient Admissions',
+                data: [120, 190, 300, 250, 200, 300],
+                borderColor: '#07b1d0',
+                backgroundColor: 'rgba(7, 177, 208, 0.1)',
+                tension: 0.4
+            }]
+        };
+        // HERE THE IMPLEMENTATION FOR THE DASH STARTS HERE FOR KIZITO
+        
+        // Simulate real-time updates
+        setInterval(() => {
+            // This would update dashboard stats in a real application
+            console.log('Updating dashboard data...');
+        }, 30000);
+    </script>
+</body>
+</html>

@@ -727,7 +727,7 @@ body {
 /* Footer with Logo */
 .site-footer {
   background: var(--secondary);
-  color: var(--text);
+  color: var(--dark);
   padding: 30px 0 10px;
 }
 
@@ -758,11 +758,8 @@ body {
 
 .footer-col p {
   margin-bottom: 20px;
-  color: var(--text);
+  color: var(--dark);
 }
-/* .footer-col i {
-  color: var(--white);
-} */
 
 .footer-links {
   list-style: none;
@@ -773,7 +770,7 @@ body {
 }
 
 .footer-links a {
-  color: var(--text);
+  color: var(--dark);
   text-decoration: none;
   transition: var(--transition);
 }
@@ -793,11 +790,11 @@ body {
   height: 80px;
   width: auto;
   margin-right: 10px;
-  color: var(--text);
+  color: var(--dark);
 }
 
 .footer-logo-text {
-  color: var(--text);
+  color: var(--dark);
   font-weight: 700;
   font-size: 1.5rem;
 }
@@ -823,7 +820,7 @@ body {
   justify-content: center;
   width: 40px;
   height: 40px;
-  background: var(--text);
+  background: var(--dark);
   border-radius: 50%;
   color: var(--white);
   text-decoration: none;

@@ -239,7 +239,7 @@ body {
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
-  color: var(--text);
+  color: var(--dark);
 }
 
 
@@ -880,10 +880,10 @@ body {
   margin-bottom: 20px;
   color: var(--dark);
 }
-
+/* 
 .footer-col i {
   color: var(--dark);
-}
+} */
 
 .footer-links {
   list-style: none;

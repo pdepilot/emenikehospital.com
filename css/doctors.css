@@ -161,7 +161,7 @@ body {
 
 .main-nav a {
   text-decoration: none;
-  color: var(--text);
+  color: var(--dark);
   font-weight: 600;
   transition: color 0.3s;
   position: relative;
@@ -430,7 +430,7 @@ body {
   transform: translateX(-50%);
   width: 80px;
   height: 4px;
-  background: var(--secondary);
+  background: var(--dark);
   border-radius: 2px;
 }
 

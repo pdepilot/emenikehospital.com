@@ -158,7 +158,7 @@ body {
 
 .main-nav a {
   text-decoration: none;
-  color: var(--text);
+  color: var(--dark);
   font-weight: 600;
   transition: color 0.3s;
   position: relative;
@@ -186,7 +186,7 @@ body {
 .btn-outline {
   background: transparent;
   border: 2px solid var(--secondary);
-  color: var(--secondary);
+  color: var(--dark);
   padding: 8px 20px;
   border-radius: 30px;
   font-weight: 700;
@@ -209,7 +209,7 @@ body {
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
-  color: var(--text);
+  color: var(--dark);
 }
 
 /* Scroll to Top Button */
@@ -305,7 +305,7 @@ body {
 
 .btn-primary {
   background: var(--white);
-  color: var(--secondary);
+  color: var(--dark);
   padding: 12px 25px;
   border-radius: 30px;
   font-weight: 700;
@@ -317,15 +317,16 @@ body {
 }
 
 .btn-primary:hover {
-  background: var(--text);
+  background: var(--primary);
+  color: var(--white);
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .btn-secondary {
   background: var(--white);
-  border: 2px solid var(--secondary);
-  color: var(--secondary);
+  border: 2px solid var(--white);
+  color: var(--dark);
   padding: 12px 25px;
   border-radius: 30px;
   font-weight: 700;
@@ -356,7 +357,7 @@ body {
 
 .section-header h2 {
   font-size: 2.2rem;
-  color: var(--primary);
+  color: var(--dark);
   margin-bottom: 15px;
   position: relative;
   display: inline-block;
@@ -370,13 +371,13 @@ body {
   transform: translateX(-50%);
   width: 80px;
   height: 4px;
-  background: var(--secondary);
+  background: var(--dark);
   border-radius: 2px;
 }
 
 .section-header p {
   font-size: 1.1rem;
-  color: var(--text-light);
+  color: var(--dark);
   max-width: 700px;
   margin: 0 auto;
   line-height: 1.6;
@@ -404,7 +405,7 @@ body {
   left: 0;
   width: 100%;
   height: 5px;
-  background: var(--secondary);
+  background: var(--dark);
   z-index: 1;
 }
 
@@ -435,19 +436,19 @@ body {
 .service-content h3 {
   font-size: 1.3rem;
   margin-bottom: 15px;
-  color: var(--primary);
+  color: var(--dark);
   transition: var(--transition);
 }
 
 .service-content p {
-  color: var(--text-light);
+  color: var(--dark);
   margin-bottom: 20px;
   transition: var(--transition);
   line-height: 1.6;
 }
 
 .service-link {
-  color: var(--secondary);
+  color: var(--dark);
   text-decoration: none;
   font-weight: 600;
   display: inline-flex;
@@ -457,6 +458,7 @@ body {
 }
 
 .service-link i {
+  color: var(--secondary);
   margin-left: 5px;
   transition: transform 0.3s ease;
 }
@@ -484,7 +486,7 @@ body {
   right: -100px;
   width: 300px;
   height: 300px;
-  background: var(--secondary);
+  background: var(--dark);
   border-radius: 50%;
   opacity: 0.1;
 }
@@ -498,7 +500,7 @@ body {
 
 .procedures-content h2 {
   font-size: 2.2rem;
-  color: var(--white);
+  color: var(--dark);
   margin-bottom: 20px;
   position: relative;
 }
@@ -510,13 +512,13 @@ body {
   left: 0;
   width: 80px;
   height: 4px;
-  background: var(--secondary);
+  background: var(--dark);
   border-radius: 2px;
 }
 
 .procedures-content p {
   margin-bottom: 20px;
-  color: var(--text);
+  color: var(--dark);
   line-height: 1.7;
 }
 
@@ -545,7 +547,7 @@ body {
 }
 
 .procedure-item-content h4 {
-  color: var(--primary);
+  color: var(--dark);
   margin-bottom: 5px;
   font-size: 1.1rem;
 }
@@ -611,12 +613,12 @@ body {
 
 .team-name {
   font-size: 1.2rem;
-  color: var(--primary);
+  color: var(--dark);
   margin-bottom: 5px;
 }
 
 .team-specialty {
-  color: var(--secondary);
+  color: var(--dark);
   font-weight: 600;
   margin-bottom: 15px;
   font-size: 0.9rem;
@@ -632,8 +634,8 @@ body {
 /* Cardiology Stats Section */
 .stats-section {
   padding: 70px 0;
-  background: var(--secondary);
-  color: var(--text);
+  background: var(--white);
+  color: var(--dark);
   text-align: center;
 }
 
@@ -649,6 +651,7 @@ body {
   background: var(--white);
   transition: var(--transition);
   backdrop-filter: blur(10px);
+   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .stat-item:hover {
@@ -755,9 +758,9 @@ body {
   margin-bottom: 20px;
   color: var(--text);
 }
-.footer-col i {
-  color: var(--white);
-}
+/* .footer-col i {
+  color: var(--dark);
+} */
 
 .footer-links {
   list-style: none;
