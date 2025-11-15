@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/IMG-20251102-WA0019-removebg-preview.png">
+    <title>Appointments - Emenike Hospital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   <link rel="stylesheet" href="css/admin-appointment.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Overlay -->
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+        
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo-container">
+                    <div class="sidebar-logo">
+                        <img src="https://res.cloudinary.com/dl4hjr1p2/image/upload/v1762550333/IMG-20251102-WA0019-removebg-preview_fbt9as.png" alt="">
+                    </div>
+                    <div class="sidebar-title">Emenike Hospital</div>
+                </div>
+                <button class="sidebar-close" id="sidebarClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-title">Main</div>
+                    <a href="admin-dash.html" class="nav-item">
+                        <i class="fas fa-home"></i>
+                        <span class="nav-text">Dashboard</span>
+                    </a>
+                    <a href="admin-appointment.html" class="nav-item active">
+                        <i class="fas fa-calendar-check"></i>
+                        <span class="nav-text">Appointments</span>
+                        <span class="nav-badge">12</span>
+                    </a>
+                    <a href="admin-contacts.html" class="nav-item">
+                        <i class="fas fa-user-injured"></i>
+                        <span class="nav-text">Contacts</span>
+                    </a>
+                    <a href="admin-doctors.html" class="nav-item">
+                        <i class="fas fa-user-md"></i>
+                        <span class="nav-text">Doctors</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Top Bar -->
+            <div class="topbar">
+                <div class="topbar-left">
+                    <button class="menu-toggle" id="menuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search appointments...">
+                    </div>
+                </div>
+                
+                <div class="topbar-right">
+                    <div class="topbar-icon">
+                        <i class="far fa-bell"></i>
+                        <span class="notification-badge">5</span>
+                    </div>
+                    <div class="topbar-icon">
+                        <i class="far fa-envelope"></i>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <div class="user-profile">
+                        <div class="user-avatar">AD</div>
+                        <div class="user-info">
+                            <div class="user-name">Admin User</div>
+                            <div class="user-role">Hospital Administrator</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="content">
+                <div class="page-header">
+                    <div>
+                        <h1 class="page-title">Appointment Management</h1>
+                        <p class="page-subtitle">Manage and track all patient appointments</p>
+                    </div>
+                    <button class="btn btn-primary" id="newAppointmentBtn">
+                        <i class="fas fa-plus"></i> New Appointment
+                    </button>
+                </div>
+                
+                <!-- Appointment Summary -->
+                <div class="appointment-summary">
+                    <div class="summary-card">
+                        <div class="summary-icon total">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div class="summary-content">
+                            <div class="summary-title">Total Appointments</div>
+                            <div class="summary-value">142</div>
+                        </div>
+                    </div>
+                    
+                    <div class="summary-card">
+                        <div class="summary-icon pending">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="summary-content">
+                            <div class="summary-title">Pending</div>
+                            <div class="summary-value">23</div>
+                        </div>
+                    </div>
+                    
+                    <div class="summary-card">
+                        <div class="summary-icon confirmed">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="summary-content">
+                            <div class="summary-title">Confirmed</div>
+                            <div class="summary-value">89</div>
+                        </div>
+                    </div>
+                    
+                    <div class="summary-card">
+                        <div class="summary-icon cancelled">
+                            <i class="fas fa-times-circle"></i>
+                        </div>
+                        <div class="summary-content">
+                            <div class="summary-title">Cancelled</div>
+                            <div class="summary-value">12</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Filters -->
+                <div class="appointment-filters">
+                    <div class="filter-row">
+                        <div class="filter-group">
+                            <label class="filter-label">Status</label>
+                            <select class="filter-select" id="statusFilter">
+                                <option value="">All Statuses</option>
+                                <option value="pending">Pending</option>
+                                <option value="confirmed">Confirmed</option>
+                                <option value="completed">Completed</option>
+                                <option value="cancelled">Cancelled</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label class="filter-label">Doctor</label>
+                            <select class="filter-select" id="doctorFilter">
+                                <option value="">All Doctors</option>
+                                <option value="dr-chen">Dr. Michael Chen</option>
+                                <option value="dr-johnson">Dr. Sarah Johnson</option>
+                                <option value="dr-wilson">Dr. James Wilson</option>
+                                <option value="dr-rodriguez">Dr. Emily Rodriguez</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label class="filter-label">Date Range</label>
+                            <input type="date" class="filter-input" id="dateFrom">
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label class="filter-label">To</label>
+                            <input type="date" class="filter-input" id="dateTo">
+                        </div>
+                    </div>
+                    
+                    <div class="filter-actions">
+                        <button class="btn btn-primary">
+                            <i class="fas fa-filter"></i> Apply Filters
+                        </button>
+                        <button class="btn btn-outline">
+                            <i class="fas fa-redo"></i> Reset
+                        </button>
+                        <button class="btn btn-success">
+                            <i class="fas fa-file-export"></i> Export
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Appointments Table -->
+                <div class="table-container">
+                    <div class="table-header">
+                        <h3 class="table-title">All Appointments</h3>
+                        <div class="table-actions">
+                            <button class="btn btn-outline">
+                                <i class="fas fa-sync"></i> Refresh
+                            </button>
+                        </div>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Patient</th>
+                                <th>Doctor</th>
+                                <th>Date & Time</th>
+                                <th>Department</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Sarah Johnson</td>
+                                <td>Dr. Michael Chen</td>
+                                <td>Nov 15, 2023 - 09:00 AM</td>
+                                <td>Neurology</td>
+                                <td><span class="status-badge completed">Completed</span></td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <div class="action-btn"><i class="fas fa-eye"></i></div>
+                                        <div class="action-btn"><i class="fas fa-edit"></i></div>
+                                        <div class="action-btn"><i class="fas fa-trash"></i></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Robert Williams</td>
+                                <td>Dr. Sarah Johnson</td>
+                                <td>Nov 15, 2023 - 10:30 AM</td>
+                                <td>Cardiology</td>
+                                <td><span class="status-badge confirmed">Confirmed</span></td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <div class="action-btn"><i class="fas fa-eye"></i></div>
+                                        <div class="action-btn"><i class="fas fa-edit"></i></div>
+                                        <div class="action-btn"><i class="fas fa-trash"></i></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Jennifer Lopez</td>
+                                <td>Dr. James Wilson</td>
+                                <td>Nov 15, 2023 - 11:15 AM</td>
+                                <td>Orthopedics</td>
+                                <td><span class="status-badge pending">Pending</span></td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <div class="action-btn"><i class="fas fa-eye"></i></div>
+                                        <div class="action-btn"><i class="fas fa-edit"></i></div>
+                                        <div class="action-btn"><i class="fas fa-trash"></i></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>David Miller</td>
+                                <td>Dr. Emily Rodriguez</td>
+                                <td>Nov 15, 2023 - 01:45 PM</td>
+                                <td>Pediatrics</td>
+                                <td><span class="status-badge pending">Pending</span></td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <div class="action-btn"><i class="fas fa-eye"></i></div>
+                                        <div class="action-btn"><i class="fas fa-edit"></i></div>
+                                        <div class="action-btn"><i class="fas fa-trash"></i></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Amanda Clark</td>
+                                <td>Dr. Michael Chen</td>
+                                <td>Nov 15, 2023 - 03:30 PM</td>
+                                <td>Neurology</td>
+                                <td><span class="status-badge cancelled">Cancelled</span></td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <div class="action-btn"><i class="fas fa-eye"></i></div>
+                                        <div class="action-btn"><i class="fas fa-edit"></i></div>
+                                        <div class="action-btn"><i class="fas fa-trash"></i></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Thomas Brown</td>
+                                <td>Dr. Sarah Johnson</td>
+                                <td>Nov 16, 2023 - 09:30 AM</td>
+                                <td>Cardiology</td>
+                                <td><span class="status-badge confirmed">Confirmed</span></td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <div class="action-btn"><i class="fas fa-eye"></i></div>
+                                        <div class="action-btn"><i class="fas fa-edit"></i></div>
+                                        <div class="action-btn"><i class="fas fa-trash"></i></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Lisa Anderson</td>
+                                <td>Dr. James Wilson</td>
+                                <td>Nov 16, 2023 - 11:00 AM</td>
+                                <td>Orthopedics</td>
+                                <td><span class="status-badge pending">Pending</span></td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <div class="action-btn"><i class="fas fa-eye"></i></div>
+                                        <div class="action-btn"><i class="fas fa-edit"></i></div>
+                                        <div class="action-btn"><i class="fas fa-trash"></i></div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Footer -->
+            <div class="footer">
+                <p>&copy; 2023 Emenike Hospital Management System. All rights reserved. | Developed By ERIBS tech</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- New Appointment Modal -->
+    <div class="modal-overlay" id="appointmentModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title">Schedule New Appointment</h3>
+                <button class="modal-close" id="modalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="appointmentForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Patient</label>
+                            <select class="form-control" required>
+                                <option value="">Select Patient</option>
+                                <option value="patient1">Sarah Johnson</option>
+                                <option value="patient2">Robert Williams</option>
+                                <option value="patient3">Jennifer Lopez</option>
+                                <option value="patient4">David Miller</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Doctor</label>
+                            <select class="form-control" required>
+                                <option value="">Select Doctor</option>
+                                <option value="dr-chen">Dr. Michael Chen</option>
+                                <option value="dr-johnson">Dr. Sarah Johnson</option>
+                                <option value="dr-wilson">Dr. James Wilson</option>
+                                <option value="dr-rodriguez">Dr. Emily Rodriguez</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Date</label>
+                            <input type="date" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Time</label>
+                            <input type="time" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Department</label>
+                        <select class="form-control" required>
+                            <option value="">Select Department</option>
+                            <option value="neurology">Neurology</option>
+                            <option value="cardiology">Cardiology</option>
+                            <option value="orthopedics">Orthopedics</option>
+                            <option value="pediatrics">Pediatrics</option>
+                            <option value="dermatology">Dermatology</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Reason for Visit</label>
+                        <textarea class="form-control" rows="3" placeholder="Brief description of the reason for appointment"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Status</label>
+                        <select class="form-control" required>
+                            <option value="pending">Pending</option>
+                            <option value="confirmed">Confirmed</option>
+                            <option value="completed">Completed</option>
+                            <option value="cancelled">Cancelled</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="cancelBtn">Cancel</button>
+                <button class="btn btn-primary" id="saveAppointmentBtn">Save Appointment</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="javascript/admin-appointment.js"></script>
+</body>
+</html>

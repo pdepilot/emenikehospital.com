@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/IMG-20251102-WA0019-removebg-preview.png">
     <title>Admin Dashboard - Emenike Hospital</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -10,37 +11,46 @@
 </head>
 <body>
     <div class="dashboard-container">
+        <!-- Sidebar Overlay -->
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+        
         <!-- Sidebar -->
         <div class="sidebar" id="sidebar">
             <div class="sidebar-header">
-                <div class="sidebar-logo">
-                    <img src="https://res.cloudinary.com/dl4hjr1p2/image/upload/v1762550333/IMG-20251102-WA0019-removebg-preview_fbt9as.png" alt=""></div>
-                <div class="sidebar-title">Emenike Hospital</div>
+                <div class="sidebar-logo-container">
+                    <div class="sidebar-logo">
+                        <img src="https://res.cloudinary.com/dl4hjr1p2/image/upload/v1762550333/IMG-20251102-WA0019-removebg-preview_fbt9as.png" alt="">
+                    </div>
+                    <div class="sidebar-title">Emenike Hospital</div>
+                </div>
+                <button class="sidebar-close" id="sidebarClose">
+                    <i class="fas fa-times"></i>
+                </button>
             </div>
             
             <nav class="sidebar-nav">
                 <div class="nav-section">
                     <div class="nav-title">Main</div>
-                    <a href="#" class="nav-item active">
+                    <a href="admin-dash.html" class="nav-item active">
                         <i class="fas fa-home"></i>
                         <span class="nav-text">Dashboard</span>
                     </a>
-                    <a href="#" class="nav-item">
+                    <a href="admin-appointment.html" class="nav-item">
                         <i class="fas fa-calendar-check"></i>
                         <span class="nav-text">Appointments</span>
                         <span class="nav-badge">12</span>
                     </a>
-                    <a href="#" class="nav-item">
+                    <a href="admin-contacts.html" class="nav-item">
                         <i class="fas fa-user-injured"></i>
-                        <span class="nav-text">Patients</span>
+                        <span class="nav-text">Contacts</span>
                     </a>
-                    <a href="#" class="nav-item">
+                    <a href="admin-doctors.html" class="nav-item">
                         <i class="fas fa-user-md"></i>
                         <span class="nav-text">Doctors</span>
                     </a>
                 </div>
                 
-                <div class="nav-section">
+                <!-- <div class="nav-section">
                     <div class="nav-title">Management</div>
                     <a href="#" class="nav-item">
                         <i class="fas fa-stethoscope"></i>
@@ -58,9 +68,9 @@
                         <i class="fas fa-chart-bar"></i>
                         <span class="nav-text">Reports</span>
                     </a>
-                </div>
+                </div> -->
                 
-                <div class="nav-section">
+                <!-- <div class="nav-section">
                     <div class="nav-title">System</div>
                     <a href="#" class="nav-item">
                         <i class="fas fa-cog"></i>
@@ -74,7 +84,7 @@
                         <i class="fas fa-question-circle"></i>
                         <span class="nav-text">Help & Support</span>
                     </a>
-                </div>
+                </div> -->
             </nav>
         </div>
         
@@ -342,35 +352,11 @@
             
             <!-- Footer -->
             <div class="footer">
-                <p>&copy; 2023 Emenike Hospital Management System. All rights reserved.</p>
+                <p>&copy; 2023 Emenike Hospital Management System. All rights reserved. | Developed By ERIBS tech</p>
             </div>
         </div>
     </div>
 
-    <script>
-        // Toggle sidebar on mobile
-        document.getElementById('menuToggle').addEventListener('click', function() {
-            document.getElementById('sidebar').classList.toggle('active');
-        });
-
-        // Sample data for charts (in a real app, this would come from an API)
-        const patientData = {
-            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-            datasets: [{
-                label: 'Patient Admissions',
-                data: [120, 190, 300, 250, 200, 300],
-                borderColor: '#07b1d0',
-                backgroundColor: 'rgba(7, 177, 208, 0.1)',
-                tension: 0.4
-            }]
-        };
-        // HERE THE IMPLEMENTATION FOR THE DASH STARTS HERE FOR KIZITO
-        
-        // Simulate real-time updates
-        setInterval(() => {
-            // This would update dashboard stats in a real application
-            console.log('Updating dashboard data...');
-        }, 30000);
-    </script>
+    <script src="javascript/admin-dash.js"></script>
 </body>
 </html>
